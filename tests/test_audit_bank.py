@@ -60,3 +60,52 @@ def test_cli_exit_codes(tmp_path):
     p.write_text(json.dumps(bank([GOOD_V, GOOD_V])))
     r = subprocess.run([sys.executable, "tools/audit_bank.py", str(p)], capture_output=True)
     assert r.returncode == 1
+
+def test_missing_stem_key_does_not_crash():
+    """Test that audit() handles missing stem keys without crashing."""
+    bank_shell = {
+        "level": "intermediate",
+        "items": [
+            {
+                "t": "v",
+                "d": 1,
+                "skill": "antonym",
+                "a": "expand",
+                "ch": ["a", "b", "c", "d"],
+                "ans": 0,
+                "why": "X."
+                # Note: no "b", "c", no "id"
+            }
+        ]
+    }
+    errs = audit(bank_shell)
+    assert isinstance(errs, list)
+    assert len(errs) > 0
+    assert any("missing" in e for e in errs)
+
+def test_report_on_malformed_bank_does_not_crash(tmp_path):
+    """Test that CLI --report handles malformed bank without traceback crash."""
+    malformed_bank = {
+        "level": "intermediate",
+        "items": [
+            {
+                "t": "v",
+                "d": 1,
+                "skill": "antonym",
+                "a": "expand",
+                "ch": ["a", "b", "c", "d"],
+                "ans": 0,
+                "why": "X."
+                # Note: no "b", "c", no "id"
+            }
+        ]
+    }
+    p = tmp_path / "malformed.json"
+    p.write_text(json.dumps(malformed_bank))
+    r = subprocess.run(
+        [sys.executable, "tools/audit_bank.py", str(p), "--report"],
+        capture_output=True,
+        text=True
+    )
+    assert r.returncode == 1
+    assert "Traceback" not in r.stderr
