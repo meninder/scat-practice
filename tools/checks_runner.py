@@ -20,7 +20,10 @@ def _truth(a, b):
 def run_checks(items, checks):
     errs = []
     for it in items:
-        cid, claimed = it["id"], it["ans"]
+        cid = it.get("id")
+        claimed = it.get("ans")
+        if cid is None or claimed is None:
+            errs.append(f"{cid or '<no id>'}: item missing id or ans"); continue
         ck = checks.get(cid)
         if ck is None:
             errs.append(f"{cid}: no check provided"); continue
