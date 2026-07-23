@@ -109,3 +109,24 @@ def test_report_on_malformed_bank_does_not_crash(tmp_path):
     )
     assert r.returncode == 1
     assert "Traceback" not in r.stderr
+
+def test_malformed_quant_item_does_not_crash():
+    """Test that audit() handles quant items missing 'ans' key without KeyError crash."""
+    malformed_bank = {
+        "level": "intermediate",
+        "items": [
+            {
+                "t": "q",
+                "d": 1,
+                "skill": "percent",
+                "A": "30% of 90",
+                "B": "25",
+                "why": "x. y. z."
+                # Note: no "ans" key
+            }
+        ]
+    }
+    errs = audit(malformed_bank)
+    assert isinstance(errs, list)
+    assert len(errs) > 0
+    assert all(isinstance(e, str) for e in errs)

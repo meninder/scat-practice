@@ -66,7 +66,7 @@ def audit(bank):
     errs += [f"duplicate id: {s} ×{c}" for s, c in ids.items() if c > 1]
     # key spread per tier among quant items
     for d in (1, 2, 3):
-        keys = [it["ans"] for it in items if it.get("t") == "q" and it.get("d") == d]
+        keys = [it.get("ans") for it in items if it.get("t") == "q" and it.get("d") == d and it.get("ans") is not None]
         if len(keys) >= 8:
             cnt = Counter(keys)
             if any(cnt[k] > len(keys) * 0.5 for k in "ABC") or not (0.05 <= cnt["D"] / len(keys) <= 0.25):
