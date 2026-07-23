@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>SCAT Intermediate — Practice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC; --ink:#16243B; --ink-soft:#46556e;
+    --accent:#1E5F8C; --gold:#C8841E;
+    --correct:#2E7D5B; --wrong:#B23A3A;
+    --line:#DCD5C6; --card:#FFFFFF; --card-2:#FBF9F3;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--paper); color:var(--ink); font-family:var(--sans);
+    -webkit-font-smoothing:antialiased; line-height:1.5;
+    padding:28px 18px 64px;
+  }
+  .wrap{max-width:760px;margin:0 auto}
+  .eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,6vw,46px);line-height:1.02;margin:.18em 0 .12em;letter-spacing:-.01em}
+  .sub{font-family:var(--serif);font-style:italic;font-size:clamp(16px,3vw,19px);color:var(--ink-soft);margin:0 0 22px}
+  .rule{height:1px;background:var(--line);border:0;margin:22px 0}
+
+  /* ---- Start screen ---- */
+  .lede{font-size:15px;color:var(--ink-soft);max-width:60ch}
+  .lede b{color:var(--ink);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:18px 0 6px}
+  .exam{
+    appearance:none;cursor:pointer;text-align:left;border:1px solid var(--line);
+    background:var(--card);border-radius:14px;padding:16px 16px 15px;color:inherit;
+    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    display:flex;flex-direction:column;gap:3px;font-family:inherit;
+  }
+  .exam:hover{transform:translateY(-2px);box-shadow:0 10px 26px -16px rgba(22,36,59,.45);border-color:var(--accent)}
+  .exam .no{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1}
+  .exam .lbl{font-size:12.5px;color:var(--ink-soft)}
+  .exam.mix{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .exam.mix .lbl{color:#c9d3e0}
+  .exam .done{font-size:11px;color:var(--gold);font-weight:600;margin-top:2px;min-height:13px}
+
+  .meta-row{display:flex;flex-wrap:wrap;gap:18px;margin:8px 0 0;font-size:13px;color:var(--ink-soft)}
+  .meta-row b{color:var(--ink)}
+
+  .hist{margin-top:26px}
+  .hist h3{font-family:var(--serif);font-weight:600;font-size:18px;margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);font-weight:700}
+  td.score{font-variant-numeric:tabular-nums;font-weight:600}
+  .empty{color:var(--ink-soft);font-size:13.5px;font-style:italic;background:var(--card-2);border:1px dashed var(--line);border-radius:12px;padding:14px 16px}
+  .clear{appearance:none;background:none;border:0;color:var(--ink-soft);font-size:12px;cursor:pointer;text-decoration:underline;padding:6px 0;font-family:inherit}
+
+  /* ---- Test screen ---- */
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px}
+  .sectiontag{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--accent);padding:4px 9px;border-radius:999px}
+  .sectiontag.q{background:var(--gold)}
+  .counter{font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .timer{font-family:var(--mono);font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .progress{height:5px;background:var(--line);border-radius:999px;overflow:hidden;margin:10px 0 22px}
+  .progress > i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s ease}
+
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;box-shadow:0 14px 40px -30px rgba(22,36,59,.5)}
+
+  /* analogy */
+  .analogy{font-family:var(--serif);font-size:clamp(22px,5vw,30px);font-weight:500;letter-spacing:.02em;text-align:center;margin:6px 0 4px;line-height:1.25}
+  .analogy .w{text-transform:uppercase;letter-spacing:.06em}
+  .analogy .sep{color:var(--accent);padding:0 .18em;font-weight:600}
+  .analogy .blank{color:var(--gold);font-weight:600}
+  .qhint{text-align:center;font-size:12.5px;color:var(--ink-soft);margin:2px 0 18px}
+
+  /* quantitative two-column */
+  .compare{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0;margin:4px 0 18px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .col{padding:22px 14px;text-align:center;background:var(--card-2)}
+  .col .lab{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .col .val{font-family:var(--mono);font-size:clamp(18px,4.4vw,24px);font-weight:600;color:var(--ink);word-break:break-word}
+  .vs{align-self:stretch;display:flex;align-items:center;justify-content:center;padding:0 10px;background:var(--ink);color:#fff;font-family:var(--serif);font-style:italic;font-size:15px}
+  .qcontext{text-align:center;font-size:13px;color:var(--ink-soft);font-style:italic;margin:-6px 0 14px}
+
+  .choices{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .choice{
+    appearance:none;cursor:pointer;text-align:left;width:100%;
+    border:1.5px solid var(--line);background:var(--card-2);border-radius:12px;
+    padding:13px 14px;font-family:inherit;font-size:15.5px;color:var(--ink);
+    display:flex;align-items:center;gap:12px;transition:border-color .1s,background .1s;
+  }
+  .choice:hover{border-color:var(--accent)}
+  .choice .key{flex:0 0 24px;height:24px;border-radius:7px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink-soft);background:#fff}
+  .choice.sel{border-color:var(--accent);background:#eef4f9}
+  .choice.sel .key{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  .nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+  .btn{appearance:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;border-radius:11px;padding:12px 20px;border:1px solid var(--ink);background:var(--ink);color:#fff;transition:opacity .12s}
+  .btn:hover{opacity:.9}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn:disabled{opacity:.35;cursor:default}
+  .btn.finish{background:var(--gold);border-color:var(--gold)}
+
+  /* ---- Results ---- */
+  .scorewrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 8px}
+  .scard{border:1px solid var(--line);border-radius:16px;padding:18px 18px;background:var(--card)}
+  .scard .t{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .scard .big{font-family:var(--serif);font-size:40px;font-weight:600;line-height:1;margin:6px 0 2px}
+  .scard .big small{font-size:18px;color:var(--ink-soft)}
+  .scard .pct{font-size:13px;color:var(--ink-soft)}
+  .resmeta{font-size:13.5px;color:var(--ink-soft);margin:6px 0 2px}
+  .review{margin-top:18px}
+  .review h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 10px}
+  .ritem{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:13px 15px;margin-bottom:10px;background:var(--card)}
+  .ritem.ok{border-left-color:var(--correct)}
+  .ritem.no{border-left-color:var(--wrong)}
+  .ritem .qline{font-size:14.5px;font-weight:600;margin-bottom:5px}
+  .ritem .qline .sep{color:var(--accent)}
+  .ritem .ans{font-size:13px;margin:2px 0}
+  .ritem .ans .you{color:var(--wrong);font-weight:600}
+  .ritem .ans .cor{color:var(--correct);font-weight:600}
+  .ritem .why{font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.5}
+  .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+  .tag.ok{background:#e3f0e9;color:var(--correct)}
+  .tag.no{background:#f6e3e3;color:var(--wrong)}
+
+  .hidden{display:none}
+  .center{text-align:center}
+
+  /* review extras */
+  .mono{font-family:var(--mono)}
+  .cap{text-transform:uppercase;letter-spacing:.04em}
+  .qctx{color:var(--ink-soft);font-style:italic}
+  .ritem .num{color:var(--ink-soft);font-weight:700;margin-right:2px}
+  .ritem.missed{border-left-color:#b29a55}
+  .tag.missed{background:#ece6d6;color:#7a6a36}
+  .tchip{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-soft);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:8px;vertical-align:middle}
+  .cgreen{color:var(--correct);font-weight:600}
+  .cred{color:var(--wrong);font-weight:600}
+  .cgrey{color:var(--ink-soft)}
+  .resnav{align-items:center}
+  .resnav-right{display:flex;gap:10px;flex-wrap:wrap}
+
+  /* print: a clean results sheet */
+  @media print{
+    @page{margin:14mm}
+    body{background:#fff;color:#000;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #start,#test,.resnav,.nav{display:none !important}
+    #results{display:block !important}
+    .scard,.ritem,.qcard{box-shadow:none !important}
+    .review h3{break-after:avoid}
+    .scorewrap{break-inside:avoid}
+    .ritem{break-inside:avoid;page-break-inside:avoid;border-color:#ccc}
+    h1#resTitle{font-size:30px;margin-top:2px}
+    .review{margin-top:12px}
+  }
+  .footnote{font-size:11.5px;color:var(--ink-soft);margin-top:30px;text-align:center;line-height:1.6}
+  @media (max-width:460px){
+    .scorewrap{grid-template-columns:1fr}
+    .qcard{padding:20px 16px}
+    .col{padding:18px 8px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  .fade{animation:fade .22s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ START ============ -->
+  <section id="start">
+    <div class="eyebrow">Johns Hopkins CTY · Intermediate level</div>
+    <h1>SCAT Practice</h1>
+    <p class="sub">Above-grade reasoning — verbal analogies &amp; quantitative comparisons.</p>
+    <p class="lede">This is the level taken in <b>grades 4–5</b>, built from material aimed at <b>grades 6–8</b> — so the questions are meant to feel like a stretch. Each set is <b>8 analogies + 8 comparisons</b>, roughly <b>8–12 minutes</b>: short enough to do four times a week. The real test allows about <b>25 seconds per question</b>, and there is <b>no penalty for guessing</b> — so never leave one blank.</p>
+
+    <div class="grid" id="examGrid"></div>
+    <div class="meta-row">
+      <span><b>16</b> questions / set</span>
+      <span><b>4</b> answer choices</span>
+      <span>Scored instantly, with explanations</span>
+    </div>
+
+    <div class="hist">
+      <hr class="rule">
+      <h3>Past attempts</h3>
+      <div id="histBox"></div>
+      <button class="clear hidden" id="clearBtn">Clear history</button>
+    </div>
+
+    <p class="footnote">Questions are original and modeled on the Intermediate SCAT format (verbal analogies; quantitative two-column comparisons, scored against older students). Not affiliated with or endorsed by Johns Hopkins CTY.</p>
+  </section>
+
+  <!-- ============ TEST ============ -->
+  <section id="test" class="hidden">
+    <div class="bar">
+      <span id="secTag" class="sectiontag">Verbal</span>
+      <span class="counter" id="counter"></span>
+      <span class="timer" id="timer">0:00</span>
+    </div>
+    <div class="progress"><i id="progFill"></i></div>
+    <div id="qhost"></div>
+    <div class="nav">
+      <button class="btn ghost" id="prevBtn">Back</button>
+      <button class="btn" id="nextBtn">Next</button>
+    </div>
+    <p class="footnote">Keys: <b>1–4</b> choose · <b>←/→</b> move · <b>Enter</b> next</p>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="results" class="hidden">
+    <div class="eyebrow" id="resEyebrow">Results</div>
+    <h1 id="resTitle">Done</h1>
+    <div class="scorewrap">
+      <div class="scard"><div class="t">Verbal</div><div class="big" id="vScore"></div><div class="pct" id="vPct"></div></div>
+      <div class="scard"><div class="t">Quantitative</div><div class="big" id="qScore"></div><div class="pct" id="qPct"></div></div>
+    </div>
+    <p class="resmeta" id="resMeta"></p>
+    <div class="nav resnav" style="margin-top:8px">
+      <button class="btn ghost" id="homeBtn">Back to sets</button>
+      <span class="resnav-right">
+        <button class="btn ghost" id="retryBtn">Retry set</button>
+        <button class="btn" id="printBtn">Print results</button>
+      </span>
+    </div>
+    <div class="review">
+      <hr class="rule">
+      <h3>Review</h3>
+      <div id="reviewHost"></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ============================================================
+   QUESTION BANK  — all original, Advanced-SCAT format
+   verbal:  {t:'v', a,b,c, ch:[...4], ans:idx, why}
+   quant:   {t:'q', A,B, ctx?, ans:'A'|'B'|'C'|'D', why}
+   ============================================================ */
+const QUANT_CHOICES = [
+  "Quantity A is greater",
+  "Quantity B is greater",
+  "The two quantities are equal",
+  "Cannot be determined from the information given"
+];
+const QI = {A:0,B:1,C:2,D:3};
+
+const EXAMS = [
+ { /* ---------- EXAM 1 ---------- */
+  v:[
+   {a:"bird",b:"nest",c:"bee",ch:["hive","honey","flower","wing"],ans:0,why:"Animal to the home it builds: a bird lives in a nest, a bee lives in a hive. The link is creature → its dwelling. 'Honey' is what a bee makes and 'flower' is where it feeds, so neither is the home."},
+   {a:"hot",b:"cold",c:"ancient",ch:["modern","old","historic","past"],ans:0,why:"Antonyms. <em>Hot</em> is the opposite of <em>cold</em>; <em>ancient</em> (from very long ago) is the opposite of <em>modern</em> (of the present day). 'Old' and 'historic' mean nearly the same as ancient, so they cannot be its opposite."},
+   {a:"author",b:"book",c:"chef",ch:["meal","kitchen","recipe","oven"],ans:0,why:"Maker to what they create: an author writes a book, a chef prepares a meal. The relationship is creator → finished product. 'Kitchen' is the workplace and 'oven' is equipment, not the thing produced."},
+   {a:"petal",b:"flower",c:"branch",ch:["tree","leaf","forest","root"],ans:0,why:"Part to whole: a petal is part of a flower, a branch is part of a tree. The order runs component → the whole it belongs to. 'Forest' is a group of trees (too big), and 'leaf' is a part of a branch, not the whole."},
+   {a:"tired",b:"exhausted",c:"hungry",ch:["starving","full","thirsty","eating"],ans:0,why:"Degree of intensity: <em>tired</em> is mild while <em>exhausted</em> is extreme; <em>hungry</em> is mild while <em>starving</em> is extreme. Each pair moves from moderate to intense. 'Full' is the opposite of hungry, not its stronger form."},
+   {a:"scissors",b:"cut",c:"broom",ch:["sweep","dust","floor","handle"],ans:0,why:"Tool to the action it performs: scissors are used to cut, a broom is used to sweep. The link is implement → its verb. 'Floor' is the surface swept and 'handle' is a part of the broom, not the action."},
+   {a:"doctor",b:"hospital",c:"teacher",ch:["school","student","lesson","book"],ans:0,why:"Worker to workplace: a doctor works in a hospital, a teacher works in a school. The pair is professional → where they do the job. 'Student' is who they teach and 'lesson' is what they teach, not the place."},
+   {a:"seed",b:"plant",c:"egg",ch:["chick","nest","shell","bird"],ans:0,why:"Starting form to what it grows into: a seed grows into a plant, an egg hatches into a chick. The relationship is beginning stage → the young living thing it becomes. 'Shell' is the covering and 'nest' is the location, not the result."},
+  ],
+  q:[
+   {A:"2⁴",B:"4²",ans:"C",why:"Both work out the same: 2⁴ = 2·2·2·2 = 16 and 4² = 4·4 = 16. Swapping base and exponent happens to give an equal result here. The two quantities are equal."},
+   {A:"⅗",B:"0.55",ans:"A",why:"Convert the fraction to a decimal: ⅗ = 3 ÷ 5 = 0.6. Since 0.6 is larger than 0.55, Quantity A is greater."},
+   {A:"25% of 60",B:"⅓ of 42",ans:"A",why:"Percent means 'out of 100', so 25% of 60 = 0.25 · 60 = 15. One third of 42 = 42 ÷ 3 = 14. Quantity A is greater."},
+   {A:"the perimeter of a rectangle 4 by 6",B:"the perimeter of a square with side 6",ans:"B",why:"Perimeter is the distance around: the rectangle gives 4+6+4+6 = 20, the square gives 4 · 6 = 24. Quantity B is greater."},
+   {A:"the number of factors of 18",B:"the number of factors of 20",ans:"C",why:"Factors are the whole numbers that divide evenly. 18 has 1, 2, 3, 6, 9, 18 → six of them; 20 has 1, 2, 4, 5, 10, 20 → also six. The two are equal."},
+   {A:"12 ÷ ½",B:"12 × ½",ans:"A",why:"Dividing by ½ means asking how many halves fit in 12, which is 24. Multiplying by ½ just halves it, giving 6. Dividing by a fraction below 1 makes a number bigger, so Quantity A is greater."},
+   {A:"n + 4",B:"4n",ctx:"n is a whole number greater than 0",ans:"D",why:"Test values: if n = 1 then A = 5 and B = 4 (A wins); if n = 2 then A = 6 and B = 8 (B wins). Because the answer flips depending on n, it cannot be determined."},
+   {A:"the average of 4, 8, and 12",B:"9",ans:"B",why:"The average (mean) is the sum divided by how many numbers there are: (4 + 8 + 12) ÷ 3 = 24 ÷ 3 = 8. Since 8 is less than 9, Quantity B is greater."},
+  ]
+ },
+ { /* ---------- EXAM 2 ---------- */
+  v:[
+   {a:"brave",b:"courageous",c:"sly",ch:["cunning","honest","bold","loud"],ans:0,why:"Synonyms. <em>Brave</em> means the same as <em>courageous</em>; <em>sly</em> (clever in a sneaky way) means the same as <em>cunning</em>. Each pair restates one meaning, so 'honest' — the opposite of sly — fails."},
+   {a:"sink",b:"float",c:"shrink",ch:["expand","shrivel","reduce","contract"],ans:0,why:"Antonyms. To <em>sink</em> is the opposite of to <em>float</em>; to <em>shrink</em> (get smaller) is the opposite of to <em>expand</em> (get bigger). 'Contract' and 'reduce' are synonyms of shrink, not its opposite."},
+   {a:"novel",b:"chapter",c:"song",ch:["verse","singer","music","album"],ans:0,why:"Whole to one of its sections: a novel is divided into chapters, a song into verses. The order runs whole work → a division within it. 'Album' is a collection of songs (bigger, not smaller), and 'singer' is a person."},
+   {a:"glove",b:"hand",c:"sock",ch:["foot","shoe","toe","leg"],ans:0,why:"Covering to the body part it fits: a glove covers a hand, a sock covers a foot. The link is garment → the part it goes on. 'Shoe' is another covering (not a body part), and 'toe' is only a piece of the foot."},
+   {a:"drip",b:"pour",c:"whisper",ch:["shout","talk","mumble","sing"],ans:0,why:"Small version to large version: a drip is a trickle while a pour is a flood; a whisper is barely audible while a shout is at full volume. Each pair scales from faint to forceful. 'Mumble' is quiet like a whisper, so it is not the intense form."},
+   {a:"key",b:"lock",c:"password",ch:["account","computer","secret","word"],ans:0,why:"Each first item is what opens the second: a key opens a lock, a password opens an account. The relationship is means of access → the thing it unlocks. 'Computer' is hardware and 'secret' describes a password, not what it opens."},
+   {a:"herd",b:"cattle",c:"flock",ch:["birds","wolves","fish","bees"],ans:0,why:"Group name to the animal it describes: cattle gather in a herd, birds gather in a flock. The link is collective noun → the animal it applies to. Wolves form a pack and fish form a school, so those collective nouns do not match."},
+   {a:"pilot",b:"airplane",c:"captain",ch:["ship","ocean","crew","sailor"],ans:0,why:"Operator to the vehicle they command: a pilot flies an airplane, a captain commands a ship. The pair is person in charge → the craft. 'Ocean' is where the ship sails and 'crew' are the people aboard."},
+  ],
+  q:[
+   {A:"3²",B:"2³",ans:"A",why:"3² = 3·3 = 9 and 2³ = 2·2·2 = 8. The exponent tells you how many times to multiply the base by itself. Quantity A is greater."},
+   {A:"½ + ¼",B:"⅘",ans:"B",why:"Add with a common denominator: ½ + ¼ = 2/4 + 1/4 = ¾ = 0.75. Meanwhile ⅘ = 0.8. Quantity B is greater."},
+   {A:"10% of 90",B:"90% of 10",ans:"C",why:"Both equal 9, because 'percent of' is just multiplication and the order of factors does not matter. In general 'a% of b' always equals 'b% of a'. The two are equal."},
+   {A:"7 × 8",B:"6 × 10",ans:"B",why:"7 × 8 = 56 and 6 × 10 = 60. Quantity B is greater."},
+   {A:"the area of a rectangle 3 by 8",B:"the area of a square with side 5",ans:"B",why:"Area of a rectangle is length × width = 3 · 8 = 24. Area of a square is side × side = 5 · 5 = 25. Quantity B is greater by 1."},
+   {A:"x",B:"5",ctx:"x is a whole number between 1 and 10",ans:"D",why:"x could be 2 (less than 5), exactly 5 (equal), or 8 (greater than 5). Since the range allows all three outcomes, it cannot be determined."},
+   {A:"0.4",B:"⅜",ans:"A",why:"Convert to a common form: ⅜ = 3 ÷ 8 = 0.375. Since 0.4 is larger than 0.375, Quantity A is greater."},
+   {A:"the number of minutes in 2 hours",B:"100",ans:"A",why:"One hour is 60 minutes, so 2 hours = 2 · 60 = 120 minutes. That is more than 100, so Quantity A is greater."},
+  ]
+ },
+ { /* ---------- EXAM 3 ---------- */
+  v:[
+   {a:"rare",b:"common",c:"fragile",ch:["sturdy","delicate","breakable","thin"],ans:0,why:"Antonyms. <em>Rare</em> (seldom found) is the opposite of <em>common</em> (found everywhere); <em>fragile</em> (easily broken) is the opposite of <em>sturdy</em> (strong and solid). 'Delicate' and 'breakable' restate fragile, so they cannot be its opposite."},
+   {a:"gigantic",b:"large",c:"freezing",ch:["cold","warm","cool","icy"],ans:0,why:"Extreme form to the ordinary form: <em>gigantic</em> is an intense version of <em>large</em>, and <em>freezing</em> is an intense version of <em>cold</em>. The pair steps down from extreme to normal. 'Cool' is milder than cold and 'icy' is another extreme, so neither fits the ordinary slot."},
+   {a:"thermometer",b:"temperature",c:"ruler",ch:["length","inches","straight","line"],ans:0,why:"Instrument to the quantity it measures: a thermometer measures temperature, a ruler measures length. The link is device → what it reads. 'Inches' is one unit of length, not the quantity itself."},
+   {a:"lion",b:"mammal",c:"eagle",ch:["bird","nest","sky","feather"],ans:0,why:"Member to the category it belongs to: a lion is a mammal, an eagle is a bird. The order runs specific animal → its class. 'Feather' is a part of an eagle and 'nest' is its home, not its category."},
+   {a:"poet",b:"poem",c:"painter",ch:["painting","brush","canvas","color"],ans:0,why:"Artist to the work they produce: a poet writes a poem, a painter creates a painting. The relationship is creator → finished artwork. 'Brush' is the tool and 'canvas' is the surface, not the work itself."},
+   {a:"cub",b:"bear",c:"fawn",ch:["deer","forest","spots","antler"],ans:0,why:"Young animal to its adult form: a cub grows into a bear, a fawn grows into a deer. The pair is offspring → the grown animal. 'Forest' is the habitat and 'spots' describe a fawn's markings."},
+   {a:"library",b:"books",c:"pantry",ch:["food","kitchen","shelf","cook"],ans:0,why:"Place to what is stored there: a library stores books, a pantry stores food. The link is storage space → its contents. 'Shelf' is a fixture inside and 'cook' is a person, not the contents."},
+   {a:"wilt",b:"plant",c:"rust",ch:["metal","water","orange","tool"],ans:0,why:"Form of decay to the thing it damages: plants wilt (droop and dry out), metal rusts (corrodes). The relationship is deterioration → the material it attacks. 'Orange' is rust's color and 'tool' is only one metal object."},
+  ],
+  q:[
+   {A:"5 × 6",B:"4 × 8",ans:"B",why:"5 × 6 = 30 and 4 × 8 = 32. Quantity B is greater."},
+   {A:"¾",B:"0.7",ans:"A",why:"¾ = 3 ÷ 4 = 0.75, which is larger than 0.7. Quantity A is greater."},
+   {A:"20% of 50",B:"¼ of 40",ans:"C",why:"20% of 50 = 0.20 · 50 = 10, and ¼ of 40 = 40 ÷ 4 = 10. The two are equal."},
+   {A:"2 + 3 × 4",B:"(2 + 3) × 4",ans:"B",why:"Order of operations says multiply before you add: 2 + 3·4 = 2 + 12 = 14. Parentheses force the addition first: (2+3)·4 = 5·4 = 20. Quantity B is greater."},
+   {A:"the number of factors of 12",B:"the number of factors of 16",ans:"A",why:"12 has factors 1, 2, 3, 4, 6, 12 → six of them. 16 has 1, 2, 4, 8, 16 → five. A number built from different primes (12 = 2·2·3) often has more factors than a pure power (16 = 2⁴). Quantity A is greater."},
+   {A:"n × n",B:"n + n",ctx:"n is a positive whole number",ans:"D",why:"If n = 1 then A = 1 and B = 2 (B wins); if n = 3 then A = 9 and B = 6 (A wins); at n = 2 they are equal. The outcome changes with n, so it cannot be determined."},
+   {A:"the perimeter of a square with area 16",B:"15",ans:"A",why:"If the area is 16, the side must be 4 (since 4 · 4 = 16), so the perimeter is 4 · 4 = 16. That is greater than 15, so Quantity A is greater."},
+   {A:"the average of 5, 10, and 15",B:"12",ans:"B",why:"The average is (5 + 10 + 15) ÷ 3 = 30 ÷ 3 = 10. Since 10 is less than 12, Quantity B is greater."},
+  ]
+ },
+ { /* ---------- EXAM 4 ---------- */
+  v:[
+   {a:"generous",b:"selfish",c:"humble",ch:["arrogant","modest","quiet","shy"],ans:0,why:"Antonyms. <em>Generous</em> (willing to give) is the opposite of <em>selfish</em>; <em>humble</em> (modest about oneself) is the opposite of <em>arrogant</em> (full of self-importance). 'Modest' is a synonym of humble, which is the trap."},
+   {a:"cautious",b:"careful",c:"eager",ch:["enthusiastic","lazy","bored","calm"],ans:0,why:"Synonyms. <em>Cautious</em> means the same as <em>careful</em>; <em>eager</em> means the same as <em>enthusiastic</em> (keen and excited). Each pair shares one meaning, so 'bored' — the opposite of eager — is out."},
+   {a:"hive",b:"bee",c:"burrow",ch:["rabbit","hole","dirt","carrot"],ans:0,why:"Home to the animal that lives in it: a hive houses bees, a burrow houses a rabbit. The link is dwelling → its occupant. 'Dirt' is what a burrow is dug in and 'carrot' is food, not the resident."},
+   {a:"minute",b:"hour",c:"inch",ch:["foot","ruler","length","yard"],ans:0,why:"Smaller unit to the larger unit it fits inside: minutes make up an hour, inches make up a foot. Both pairs are a small measure → the next standard measure up. 'Ruler' is the tool and 'length' is the quantity, not a unit."},
+   {a:"sprinkle",b:"downpour",c:"chuckle",ch:["roar","giggle","smile","grin"],ans:0,why:"Gentle version to intense version: a sprinkle is light rain while a downpour is heavy; a chuckle is a soft laugh while a roar is a huge one. Each pair scales up in force. 'Giggle' is as light as a chuckle, so it is not the intense form."},
+   {a:"saw",b:"carpenter",c:"needle",ch:["tailor","thread","cloth","sew"],ans:0,why:"Tool to the worker who uses it: a carpenter cuts with a saw, a tailor stitches with a needle. The link is implement → its skilled user. 'Thread' passes through the needle and 'cloth' is the material, but neither is a person."},
+   {a:"wind",b:"erosion",c:"sun",ch:["sunburn","heat","light","day"],ans:0,why:"Cause to the damage it produces: wind causes erosion (the wearing away of land), the sun causes sunburn. The relationship is natural force → the harm it does over time. 'Heat' and 'light' are what the sun gives off, not damage."},
+   {a:"pod",b:"peas",c:"bunch",ch:["grapes","fruit","basket","vine"],ans:0,why:"Grouping to what it holds: peas grow in a pod, grapes grow in a bunch. The link is natural container or cluster → its contents. 'Vine' is the plant it grows on and 'basket' is man-made."},
+  ],
+  q:[
+   {A:"4³",B:"8²",ans:"C",why:"4³ = 4·4·4 = 64 and 8² = 8·8 = 64. The two quantities are equal."},
+   {A:"0.25",B:"⅕",ans:"A",why:"⅕ = 1 ÷ 5 = 0.2, while 0.25 equals ¼. Since 0.25 > 0.2, Quantity A is greater."},
+   {A:"15% of 200",B:"25% of 100",ans:"A",why:"15% of 200 = 0.15 · 200 = 30, and 25% of 100 = 25. Quantity A is greater — a smaller percent of a much bigger number can still win."},
+   {A:"100 ÷ 4",B:"100 ÷ ¼",ans:"B",why:"Dividing by 4 gives 25, but dividing by ¼ asks how many quarters fit in 100, which is 400. Dividing by a number below 1 makes the result larger. Quantity B is greater."},
+   {A:"the number of prime numbers between 1 and 10",B:"5",ans:"B",why:"A prime has exactly two factors, 1 and itself. Between 1 and 10 the primes are 2, 3, 5, and 7 — four of them (1 is not prime). Since 4 < 5, Quantity B is greater."},
+   {A:"a",B:"b",ctx:"a and b are whole numbers and a + b = 10",ans:"D",why:"The pair could be a = 3, b = 7 (B greater), a = 5, b = 5 (equal), or a = 8, b = 2 (A greater). Because many splits satisfy the equation, it cannot be determined."},
+   {A:"⅔ of 9",B:"¾ of 8",ans:"C",why:"⅔ of 9 = (9 ÷ 3) · 2 = 6, and ¾ of 8 = (8 ÷ 4) · 3 = 6. The two are equal."},
+   {A:"2 + 2 + 2 + 2 + 2",B:"2⁵",ans:"B",why:"Adding five 2s gives 10, but 2⁵ means multiplying five 2s: 2·2·2·2·2 = 32. Repeated multiplication grows far faster than repeated addition. Quantity B is greater."},
+  ]
+ },
+ { /* ---------- EXAM 5 ---------- */
+  v:[
+   {a:"dull",b:"sharp",c:"crooked",ch:["straight","bent","curved","angled"],ans:0,why:"Antonyms. <em>Dull</em> (blunt) is the opposite of <em>sharp</em>; <em>crooked</em> (not straight) is the opposite of <em>straight</em>. 'Bent' and 'curved' are synonyms of crooked, so they cannot be its opposite."},
+   {a:"shovel",b:"dig",c:"telescope",ch:["observe","star","lens","night"],ans:0,why:"Tool to the action it enables: a shovel is used to dig, a telescope is used to observe. The link is device → its purpose. 'Lens' is a part of the telescope and 'star' is what you look at, not the action."},
+   {a:"verse",b:"poem",c:"scene",ch:["play","actor","stage","drama"],ans:0,why:"Part to whole: a verse is a section of a poem, a scene is a unit of a play. The order runs division → the complete work. 'Actor' and 'stage' belong to a play but are not a structural section of it."},
+   {a:"calf",b:"cow",c:"piglet",ch:["pig","farm","mud","pen"],ans:0,why:"Young animal to the adult it becomes: a calf grows into a cow, a piglet grows into a pig. The link is offspring → grown animal. 'Farm' and 'pen' are places, not the adult form."},
+   {a:"damp",b:"drenched",c:"warm",ch:["scalding","cool","tepid","mild"],ans:0,why:"Slight degree to extreme degree: <em>damp</em> is a little wet while <em>drenched</em> is soaked through; <em>warm</em> is a little hot while <em>scalding</em> is dangerously hot. Each pair intensifies. 'Tepid' and 'mild' are as gentle as warm, not the extreme."},
+   {a:"chef",b:"kitchen",c:"mechanic",ch:["garage","car","wrench","engine"],ans:0,why:"Worker to workplace: a chef works in a kitchen, a mechanic works in a garage. The pair is professional → where the work happens. 'Wrench' is the tool and 'car' is what is repaired, not the place."},
+   {a:"drought",b:"rain",c:"famine",ch:["food","hunger","crops","water"],ans:0,why:"Each first word names a severe shortage of the second: a drought is a lack of rain, a famine is a lack of food. The link is crisis → the missing resource. 'Hunger' is the effect of famine, not the thing in short supply."},
+   {a:"optimist",b:"hopeful",c:"pessimist",ch:["gloomy","cheerful","angry","calm"],ans:0,why:"Type of person to the outlook that defines them: an <em>optimist</em> expects good outcomes and so is hopeful; a <em>pessimist</em> expects bad ones and so is gloomy. The link is personality → its characteristic mood. 'Cheerful' describes an optimist, which is the trap."},
+  ],
+  q:[
+   {A:"6²",B:"2⁶",ans:"B",why:"6² = 36, while 2⁶ = 2·2·2·2·2·2 = 64. Even with a small base, a large exponent can win. Quantity B is greater."},
+   {A:"⅝",B:"0.6",ans:"A",why:"⅝ = 5 ÷ 8 = 0.625, which is larger than 0.6. Quantity A is greater."},
+   {A:"30% of 40",B:"40% of 30",ans:"C",why:"Both equal 12, because 'a% of b' is the same multiplication as 'b% of a'. The two are equal."},
+   {A:"9 × 11",B:"10²",ans:"B",why:"9 × 11 = 99, just one below 10² = 100. Multiplying a pair that sits one on each side of 10 always falls a little short of 10². Quantity B is greater."},
+   {A:"the number of sides of a hexagon",B:"the number of sides of a pentagon",ans:"A",why:"A hexagon has six sides ('hex' means six); a pentagon has five ('penta' means five). Quantity A is greater."},
+   {A:"x + 1",B:"2x",ctx:"x is greater than 0",ans:"D",why:"If x = 0.5 then A = 1.5 and B = 1 (A wins); if x = 3 then A = 4 and B = 6 (B wins). Since the winner depends on x, it cannot be determined."},
+   {A:"½ of 30",B:"⅓ of 42",ans:"A",why:"Half of 30 is 15, and a third of 42 is 14. Quantity A is greater."},
+   {A:"1000 ÷ 8",B:"130",ans:"B",why:"1000 ÷ 8 = 125, which is less than 130. Quantity B is greater."},
+  ]
+ },
+ { /* ---------- EXAM 6 ---------- */
+  v:[
+   {a:"pebble",b:"boulder",c:"pond",ch:["ocean","lake","water","stream"],ans:0,why:"Small example to a far larger one of the same kind: a pebble is a tiny rock and a boulder a huge one; a pond is a small body of water and an ocean a vast one. The pair scales up in size. 'Lake' is bigger than a pond but nowhere near the extreme, so 'ocean' is the better match."},
+   {a:"transparent",b:"clear",c:"sturdy",ch:["strong","weak","thin","soft"],ans:0,why:"Synonyms. <em>Transparent</em> means see-through, the same as <em>clear</em>; <em>sturdy</em> means solidly built, the same as <em>strong</em>. Each pair shares one meaning, so 'weak' — the opposite of sturdy — fails."},
+   {a:"compass",b:"direction",c:"scale",ch:["weight","balance","pounds","measure"],ans:0,why:"Instrument to what it measures: a compass shows direction, a scale shows weight. The link is device → the quantity it reports. 'Pounds' is one unit of weight, not the quantity itself."},
+   {a:"author",b:"novel",c:"composer",ch:["symphony","orchestra","note","piano"],ans:0,why:"Creator to the large work they compose: an author writes a novel, a composer writes a symphony. The relationship is artist → their major work. 'Orchestra' performs it and 'piano' is an instrument, not the composition."},
+   {a:"wolf",b:"pack",c:"fish",ch:["school","water","fin","ocean"],ans:0,why:"Animal to the name for its group: wolves travel in a pack, fish swim in a school. The link is creature → its collective noun. 'Ocean' is the habitat and 'fin' is a body part."},
+   {a:"lazy",b:"industrious",c:"cowardly",ch:["brave","fearful","timid","weak"],ans:0,why:"Antonyms. <em>Lazy</em> is the opposite of <em>industrious</em> (hard-working); <em>cowardly</em> is the opposite of <em>brave</em>. 'Fearful' and 'timid' are synonyms of cowardly, so they cannot be its opposite."},
+   {a:"paint",b:"canvas",c:"ink",ch:["paper","pen","write","black"],ans:0,why:"Substance to the surface it is applied to: paint goes onto canvas, ink goes onto paper. The link is medium → the surface that receives it. 'Pen' is the tool that holds ink, not the surface."},
+   {a:"bud",b:"blossom",c:"caterpillar",ch:["butterfly","cocoon","leaf","crawl"],ans:0,why:"Earlier stage to the mature form it becomes: a bud opens into a blossom, a caterpillar transforms into a butterfly. The link is before → after. 'Cocoon' is the in-between stage, not the final form."},
+  ],
+  q:[
+   {A:"5²",B:"2⁵",ans:"B",why:"5² = 25 and 2⁵ = 32. Here the larger exponent beats the larger base. Quantity B is greater."},
+   {A:"⅞",B:"0.9",ans:"B",why:"⅞ = 7 ÷ 8 = 0.875, which is just below 0.9. Quantity B is greater."},
+   {A:"50% of 80",B:"80% of 50",ans:"C",why:"Both equal 40, since 'percent of' is multiplication and order does not change a product. The two are equal."},
+   {A:"3 × (4 + 2)",B:"3 × 4 + 2",ans:"A",why:"Parentheses first: 3 · (4+2) = 3 · 6 = 18. Without them, multiply before adding: 3·4 + 2 = 12 + 2 = 14. Quantity A is greater."},
+   {A:"p",B:"q",ctx:"p and q are whole numbers and p × q = 12",ans:"D",why:"The pair could be p = 2, q = 6 (B greater), p = 12, q = 1 (A greater), or p = q = … no equal split exists with whole numbers, but A and B still swap. Since the outcome changes, it cannot be determined."},
+   {A:"n²",B:"2n",ctx:"n is a whole number greater than 2",ans:"A",why:"For any whole number above 2, squaring beats doubling: n = 3 gives 9 vs 6, n = 4 gives 16 vs 8, and the gap only widens. Quantity A is greater."},
+   {A:"the average of 2, 4, 6, and 8",B:"5",ans:"C",why:"The average is (2 + 4 + 6 + 8) ÷ 4 = 20 ÷ 4 = 5. That matches Quantity B, so the two are equal."},
+   {A:"7² − 3²",B:"(7 − 3)²",ans:"A",why:"Squares must be taken before subtracting: 49 − 9 = 40. But (7−3)² = 4² = 16 — you cannot subtract first and then square. Quantity A is greater."},
+  ]
+ }
+];
+
+/* ============================================================
+   APP
+   ============================================================ */
+const $ = s => document.querySelector(s);
+const STORE_KEY = "scat_history_intermediate_v1";
+
+// ---- history (persistent storage with graceful fallback) ----
+async function loadHistory(){
+  try{
+    if(window.storage){
+      const r = await window.storage.get(STORE_KEY);
+      return r && r.value ? JSON.parse(r.value) : [];
+    }
+  }catch(e){/* not set yet or unavailable */}
+  return [];
+}
+async function saveHistory(list){
+  try{ if(window.storage){ await window.storage.set(STORE_KEY, JSON.stringify(list)); } }
+  catch(e){/* ignore */}
+}
+
+let HISTORY = [];
+let bestByExam = {};
+
+function computeBest(){
+  bestByExam = {};
+  HISTORY.forEach(h=>{
+    if(h.examKey===undefined) return;
+    const tot = h.v + h.q;
+    if(bestByExam[h.examKey]===undefined || tot>bestByExam[h.examKey]) bestByExam[h.examKey]=tot;
+  });
+}
+
+// ---- build the bank for a chosen exam ----
+function buildSet(examIndex){
+  // examIndex: 0..5 = fixed exam ; -1 = random mix
+  let vs, qs, label, key;
+  if(examIndex>=0){
+    vs = EXAMS[examIndex].v.map(x=>({...x,t:'v'}));
+    qs = EXAMS[examIndex].q.map(x=>({...x,t:'q'}));
+    label = "Set " + (examIndex+1);
+    key = "E"+examIndex;
+  }else{
+    const allV=[], allQ=[];
+    EXAMS.forEach(e=>{ e.v.forEach(x=>allV.push({...x,t:'v'})); e.q.forEach(x=>allQ.push({...x,t:'q'})); });
+    vs = sample(allV,8); qs = sample(allQ,8);
+    label = "Random Mix"; key = "MIX";
+  }
+  return { questions:[...vs.map(shuffleChoices), ...qs], nV:vs.length, nQ:qs.length, label, key };
+}
+// verbal choices are shuffled each attempt so the correct answer is never in a fixed slot
+function shuffleChoices(q){
+  const order = sample([0,1,2,3],4);
+  return {...q, ch: order.map(i=>q.ch[i]), ans: order.indexOf(q.ans)};
+}
+function sample(arr,n){
+  const c=[...arr];
+  for(let i=c.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[c[i],c[j]]=[c[j],c[i]];}
+  return c.slice(0,n);
+}
+
+// ---- state ----
+let SET=null, idx=0, answers=[], t0=0, timerId=null;
+let qTime=[], qStart=0, doneAt=null;
+function commitTime(){ if(qStart){ qTime[idx]=(qTime[idx]||0)+(Date.now()-qStart)/1000; qStart=0; } }
+
+function show(id){ ["start","test","results"].forEach(s=>$("#"+s).classList.toggle("hidden", s!==id)); window.scrollTo(0,0); }
+
+// ---- START SCREEN ----
+function renderStart(){
+  const grid = $("#examGrid");
+  grid.innerHTML="";
+  EXAMS.forEach((e,i)=>{
+    const b=document.createElement("button");
+    b.className="exam";
+    const best = bestByExam["E"+i];
+    b.innerHTML = `<span class="no">${i+1}</span><span class="lbl">Practice set</span><span class="done">${best!==undefined?("Best "+best+"/16"):""}</span>`;
+    b.onclick=()=>startSet(i);
+    grid.appendChild(b);
+  });
+  const mix=document.createElement("button");
+  mix.className="exam mix";
+  mix.innerHTML=`<span class="no">∞</span><span class="lbl">Random Mix</span><span class="done"></span>`;
+  mix.onclick=()=>startSet(-1);
+  grid.appendChild(mix);
+
+  renderHistory();
+}
+
+function renderHistory(){
+  const box=$("#histBox");
+  if(!HISTORY.length){ box.innerHTML=`<div class="empty">No attempts yet. Finish a set and it'll show up here so you can watch the trend.</div>`; $("#clearBtn").classList.add("hidden"); return; }
+  $("#clearBtn").classList.remove("hidden");
+  const rows = HISTORY.slice().reverse().slice(0,12).map(h=>{
+    const d=new Date(h.ts);
+    const date = (d.getMonth()+1)+"/"+d.getDate();
+    const mm=Math.floor(h.sec/60), ss=String(h.sec%60).padStart(2,"0");
+    return `<tr><td>${date}</td><td>${h.label}</td><td class="score">${h.v}/8</td><td class="score">${h.q}/8</td><td class="score">${h.v+h.q}/16</td><td>${mm}:${ss}</td></tr>`;
+  }).join("");
+  box.innerHTML=`<table><thead><tr><th>Date</th><th>Set</th><th>Verbal</th><th>Quant</th><th>Total</th><th>Time</th></tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+$("#clearBtn").onclick=async()=>{
+  if(!confirm("Clear all past attempts? This can't be undone.")) return;
+  HISTORY=[]; computeBest(); await saveHistory(HISTORY); renderStart();
+};
+
+// ---- START A SET ----
+function startSet(examIndex){
+  SET = buildSet(examIndex);
+  idx=0; answers=new Array(SET.questions.length).fill(null);
+  qTime=new Array(SET.questions.length).fill(0); qStart=0; doneAt=null;
+  t0=Date.now();
+  if(timerId) clearInterval(timerId);
+  timerId=setInterval(updateTimer,1000); updateTimer();
+  show("test"); renderQuestion();
+}
+function updateTimer(){
+  const s=Math.floor((Date.now()-t0)/1000);
+  $("#timer").textContent = Math.floor(s/60)+":"+String(s%60).padStart(2,"0");
+}
+
+// ---- RENDER A QUESTION ----
+function renderQuestion(){
+  const q=SET.questions[idx];
+  const isV = q.t==='v';
+  $("#secTag").textContent = isV?"Verbal · Analogy":"Quantitative · Comparison";
+  $("#secTag").className = "sectiontag"+(isV?"":" q");
+  $("#counter").textContent = `Question ${idx+1} of ${SET.questions.length}`;
+  $("#progFill").style.width = (100*(idx)/SET.questions.length)+"%";
+
+  const host=$("#qhost");
+  let body="";
+  if(isV){
+    body = `<div class="qcard fade">
+      <div class="analogy">
+        <span class="w">${q.a}</span><span class="sep">:</span><span class="w">${q.b}</span>
+        <span class="sep">::</span>
+        <span class="w">${q.c}</span><span class="sep">:</span><span class="blank">?</span>
+      </div>
+      <div class="qhint">Which word completes the analogy in the same way?</div>
+      <div class="choices">${q.ch.map((c,i)=>choiceHTML(i,c)).join("")}</div>
+    </div>`;
+  }else{
+    body = `<div class="qcard fade">
+      ${q.ctx?`<div class="qcontext">${q.ctx}</div>`:""}
+      <div class="compare">
+        <div class="col"><div class="lab">Quantity A</div><div class="val">${q.A}</div></div>
+        <div class="vs">vs</div>
+        <div class="col"><div class="lab">Quantity B</div><div class="val">${q.B}</div></div>
+      </div>
+      <div class="choices">${QUANT_CHOICES.map((c,i)=>choiceHTML(i,c)).join("")}</div>
+    </div>`;
+  }
+  host.innerHTML=body;
+
+  // wire choices
+  host.querySelectorAll(".choice").forEach(el=>{
+    el.onclick=()=>{ answers[idx]=parseInt(el.dataset.i); markSelected(); };
+  });
+  markSelected();
+
+  $("#prevBtn").disabled = idx===0;
+  const last = idx===SET.questions.length-1;
+  $("#nextBtn").textContent = last? "Finish & score" : "Next";
+  $("#nextBtn").className = "btn"+(last?" finish":"");
+  qStart=Date.now();
+}
+function choiceHTML(i,label){
+  const keys=["1","2","3","4"];
+  return `<button class="choice" data-i="${i}"><span class="key">${keys[i]}</span><span>${label}</span></button>`;
+}
+function markSelected(){
+  document.querySelectorAll("#qhost .choice").forEach(el=>{
+    el.classList.toggle("sel", parseInt(el.dataset.i)===answers[idx]);
+  });
+}
+
+// ---- NAV ----
+function goPrev(){ if(idx>0){ commitTime(); idx--; renderQuestion(); } }
+function goNext(){ commitTime(); if(idx<SET.questions.length-1){ idx++; renderQuestion(); } else { finish(); } }
+$("#prevBtn").onclick=goPrev;
+$("#nextBtn").onclick=goNext;
+document.addEventListener("keydown",e=>{
+  if($("#test").classList.contains("hidden")) return;
+  if(["1","2","3","4"].includes(e.key)){ answers[idx]=parseInt(e.key)-1; markSelected(); }
+  else if(e.key==="ArrowLeft"){ goPrev(); }
+  else if(e.key==="ArrowRight"||e.key==="Enter"){ goNext(); }
+});
+
+// ---- FINISH ----
+async function finish(){
+  if(timerId) clearInterval(timerId);
+  doneAt=new Date();
+  const sec=Math.floor((Date.now()-t0)/1000);
+  let v=0,qn=0,wrong=0,missed=0;
+  SET.questions.forEach((q,i)=>{
+    const correct = q.t==='v' ? q.ans : QI[q.ans];
+    if(answers[i]===null) missed++;
+    else if(answers[i]===correct){ if(q.t==='v') v++; else qn++; }
+    else wrong++;
+  });
+
+  // record
+  const rec={ts:Date.now(),label:SET.label,examKey:SET.key,v,q:qn,sec};
+  HISTORY.push(rec); computeBest(); await saveHistory(HISTORY);
+
+  // scores
+  const dstr = doneAt.toLocaleDateString(undefined,{month:"short",day:"numeric",year:"numeric"});
+  const tstr = doneAt.toLocaleTimeString(undefined,{hour:"numeric",minute:"2-digit"});
+  $("#resEyebrow").textContent = SET.label + " · " + dstr + " · " + tstr;
+  $("#resTitle").textContent = grade(v+qn);
+  $("#vScore").innerHTML = `${v}<small>/8</small>`;
+  $("#qScore").innerHTML = `${qn}<small>/8</small>`;
+  $("#vPct").textContent = pctText(v);
+  $("#qPct").textContent = pctText(qn);
+  const mm=Math.floor(sec/60), ss=String(sec%60).padStart(2,"0");
+  const per=Math.round(sec/SET.questions.length);
+  $("#resMeta").innerHTML = `<b>${v+qn}/16</b> correct &nbsp;·&nbsp; <span class="cgreen">${v+qn} right</span> · <span class="cred">${wrong} wrong</span> · <span class="cgrey">${missed} missed</span> &nbsp;·&nbsp; total ${mm}:${ss} (~${per}s/question; test pace ≈25s)`;
+
+  renderReview();
+  show("results");
+}
+function pctText(n){ return Math.round(100*n/8)+"% correct"; }
+function grade(total){
+  if(total>=15) return "Excellent";
+  if(total>=12) return "Strong";
+  if(total>=9)  return "Solid start";
+  return "Keep practicing";
+}
+
+function renderReview(){
+  const host=$("#reviewHost"); host.innerHTML="";
+  SET.questions.forEach((q,i)=>{
+    const isV=q.t==='v';
+    const correct = isV? q.ans : QI[q.ans];
+    const noAns = answers[i]===null;
+    const ok = !noAns && answers[i]===correct;
+    const state = noAns ? "missed" : (ok ? "ok" : "no");
+    const stateLabel = noAns ? "missed" : (ok ? "correct" : "wrong");
+    const yourTxt = noAns ? "—" : (isV? q.ch[answers[i]] : QUANT_CHOICES[answers[i]]);
+    const corTxt = isV? q.ch[correct] : QUANT_CHOICES[correct];
+    const secs = Math.round(qTime[i]||0);
+    const head = isV
+      ? `<span class="cap">${q.a}</span> <span class="sep">:</span> <span class="cap">${q.b}</span> <span class="sep">::</span> <span class="cap">${q.c}</span> <span class="sep">:</span> <b>${corTxt.toUpperCase()}</b>`
+      : `${q.ctx?`<span class="qctx">(${q.ctx})</span> &nbsp;`:""}<span class="mono">${q.A}</span> &nbsp;vs&nbsp; <span class="mono">${q.B}</span>`;
+    const el=document.createElement("div");
+    el.className="ritem "+state;
+    el.innerHTML = `
+      <div class="qline"><span class="num">${i+1}.</span> ${head}<span class="tag ${state}">${stateLabel}</span><span class="tchip">${secs}s</span></div>
+      ${ok? "" : `<div class="ans">${noAns?'<span class="cgrey">Left blank</span>':'Your answer: <span class="you">'+yourTxt+'</span>'}</div>`}
+      <div class="ans">Correct: <span class="cor">${corTxt}</span></div>
+      <div class="why">${q.why}</div>`;
+    host.appendChild(el);
+  });
+}
+
+// ---- results buttons ----
+$("#homeBtn").onclick=()=>{ renderStart(); show("start"); };
+$("#retryBtn").onclick=()=>{
+  // retry same set type
+  const examIndex = SET.key==="MIX" ? -1 : parseInt(SET.key.slice(1));
+  startSet(examIndex);
+};
+$("#printBtn").onclick=()=>window.print();
+
+// ---- boot ----
+(async function(){
+  HISTORY = await loadHistory();
+  computeBest();
+  renderStart();
+})();
+</script>
+</body>
+</html>
