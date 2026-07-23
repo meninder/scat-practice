@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>SCAT Practice — Purewal Family</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC; --ink:#16243B; --ink-soft:#46556e;
+    --accent:#1E5F8C; --gold:#C8841E;
+    --correct:#2E7D5B; --wrong:#B23A3A;
+    --line:#DCD5C6; --card:#FFFFFF; --card-2:#FBF9F3;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--paper); color:var(--ink); font-family:var(--sans);
+    -webkit-font-smoothing:antialiased; line-height:1.5;
+    padding:28px 18px 64px;
+  }
+  .wrap{max-width:760px;margin:0 auto}
+  .eyebrow{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,6vw,46px);line-height:1.02;margin:.18em 0 .12em;letter-spacing:-.01em}
+  .sub{font-family:var(--serif);font-style:italic;font-size:clamp(16px,3vw,19px);color:var(--ink-soft);margin:0 0 22px}
+  .rule{height:1px;background:var(--line);border:0;margin:22px 0}
+
+  /* ---- Start screen ---- */
+  .lede{font-size:15px;color:var(--ink-soft);max-width:60ch}
+  .lede b{color:var(--ink);font-weight:600}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:18px 0 6px}
+  .exam{
+    appearance:none;cursor:pointer;text-align:left;border:1px solid var(--line);
+    background:var(--card);border-radius:14px;padding:16px 16px 15px;color:inherit;
+    transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    display:flex;flex-direction:column;gap:3px;font-family:inherit;
+  }
+  .exam:hover{transform:translateY(-2px);box-shadow:0 10px 26px -16px rgba(22,36,59,.45);border-color:var(--accent)}
+  .exam .no{font-family:var(--serif);font-size:24px;font-weight:600;line-height:1}
+  .exam .lbl{font-size:12.5px;color:var(--ink-soft)}
+  .exam.mix{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .exam.mix .lbl{color:#c9d3e0}
+  .exam .done{font-size:11px;color:var(--gold);font-weight:600;margin-top:2px;min-height:13px}
+
+  .meta-row{display:flex;flex-wrap:wrap;gap:18px;margin:8px 0 0;font-size:13px;color:var(--ink-soft)}
+  .meta-row b{color:var(--ink)}
+
+  .hist{margin-top:26px}
+  .hist h3{font-family:var(--serif);font-weight:600;font-size:18px;margin:0 0 8px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);font-weight:700}
+  td.score{font-variant-numeric:tabular-nums;font-weight:600}
+  .empty{color:var(--ink-soft);font-size:13.5px;font-style:italic;background:var(--card-2);border:1px dashed var(--line);border-radius:12px;padding:14px 16px}
+  .clear{appearance:none;background:none;border:0;color:var(--ink-soft);font-size:12px;cursor:pointer;text-decoration:underline;padding:6px 0;font-family:inherit}
+
+  /* ---- Test screen ---- */
+  .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px}
+  .sectiontag{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--accent);padding:4px 9px;border-radius:999px}
+  .sectiontag.q{background:var(--gold)}
+  .counter{font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .timer{font-family:var(--mono);font-size:13px;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+  .progress{height:5px;background:var(--line);border-radius:999px;overflow:hidden;margin:10px 0 22px}
+  .progress > i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s ease}
+
+  .qcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;box-shadow:0 14px 40px -30px rgba(22,36,59,.5)}
+
+  /* analogy */
+  .analogy{font-family:var(--serif);font-size:clamp(22px,5vw,30px);font-weight:500;letter-spacing:.02em;text-align:center;margin:6px 0 4px;line-height:1.25}
+  .analogy .w{text-transform:uppercase;letter-spacing:.06em}
+  .analogy .sep{color:var(--accent);padding:0 .18em;font-weight:600}
+  .analogy .blank{color:var(--gold);font-weight:600}
+  .qhint{text-align:center;font-size:12.5px;color:var(--ink-soft);margin:2px 0 18px}
+
+  /* quantitative two-column */
+  .compare{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0;margin:4px 0 18px;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .col{padding:22px 14px;text-align:center;background:var(--card-2)}
+  .col .lab{font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:8px}
+  .col .val{font-family:var(--mono);font-size:clamp(18px,4.4vw,24px);font-weight:600;color:var(--ink);word-break:break-word}
+  .vs{align-self:stretch;display:flex;align-items:center;justify-content:center;padding:0 10px;background:var(--ink);color:#fff;font-family:var(--serif);font-style:italic;font-size:15px}
+  .qcontext{text-align:center;font-size:13px;color:var(--ink-soft);font-style:italic;margin:-6px 0 14px}
+
+  .choices{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .choice{
+    appearance:none;cursor:pointer;text-align:left;width:100%;
+    border:1.5px solid var(--line);background:var(--card-2);border-radius:12px;
+    padding:13px 14px;font-family:inherit;font-size:15.5px;color:var(--ink);
+    display:flex;align-items:center;gap:12px;transition:border-color .1s,background .1s;
+  }
+  .choice:hover{border-color:var(--accent)}
+  .choice .key{flex:0 0 24px;height:24px;border-radius:7px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink-soft);background:#fff}
+  .choice.sel{border-color:var(--accent);background:#eef4f9}
+  .choice.sel .key{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  .nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+  .btn{appearance:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;border-radius:11px;padding:12px 20px;border:1px solid var(--ink);background:var(--ink);color:#fff;transition:opacity .12s}
+  .btn:hover{opacity:.9}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn:disabled{opacity:.35;cursor:default}
+  .btn.finish{background:var(--gold);border-color:var(--gold)}
+
+  /* ---- Results ---- */
+  .scorewrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 8px}
+  .scard{border:1px solid var(--line);border-radius:16px;padding:18px 18px;background:var(--card)}
+  .scard .t{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+  .scard .big{font-family:var(--serif);font-size:40px;font-weight:600;line-height:1;margin:6px 0 2px}
+  .scard .big small{font-size:18px;color:var(--ink-soft)}
+  .scard .pct{font-size:13px;color:var(--ink-soft)}
+  .resmeta{font-size:13.5px;color:var(--ink-soft);margin:6px 0 2px}
+  .review{margin-top:18px}
+  .review h3{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 10px}
+  .ritem{border:1px solid var(--line);border-left-width:4px;border-radius:10px;padding:13px 15px;margin-bottom:10px;background:var(--card)}
+  .ritem.ok{border-left-color:var(--correct)}
+  .ritem.no{border-left-color:var(--wrong)}
+  .ritem .qline{font-size:14.5px;font-weight:600;margin-bottom:5px}
+  .ritem .qline .sep{color:var(--accent)}
+  .ritem .ans{font-size:13px;margin:2px 0}
+  .ritem .ans .you{color:var(--wrong);font-weight:600}
+  .ritem .ans .cor{color:var(--correct);font-weight:600}
+  .ritem .why{font-size:13px;color:var(--ink-soft);margin-top:6px;line-height:1.5}
+  .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle}
+  .tag.ok{background:#e3f0e9;color:var(--correct)}
+  .tag.no{background:#f6e3e3;color:var(--wrong)}
+
+  .hidden{display:none}
+  .center{text-align:center}
+
+  /* review extras */
+  .mono{font-family:var(--mono)}
+  .cap{text-transform:uppercase;letter-spacing:.04em}
+  .qctx{color:var(--ink-soft);font-style:italic}
+  .ritem .num{color:var(--ink-soft);font-weight:700;margin-right:2px}
+  .ritem.missed{border-left-color:#b29a55}
+  .tag.missed{background:#ece6d6;color:#7a6a36}
+  .tchip{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--ink-soft);background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:8px;vertical-align:middle}
+  .cgreen{color:var(--correct);font-weight:600}
+  .cred{color:var(--wrong);font-weight:600}
+  .cgrey{color:var(--ink-soft)}
+  .resnav{align-items:center}
+  .resnav-right{display:flex;gap:10px;flex-wrap:wrap}
+
+  /* print: a clean results sheet */
+  @media print{
+    @page{margin:14mm}
+    body{background:#fff;color:#000;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    #start,#test,.resnav,.nav{display:none !important}
+    #results{display:block !important}
+    .scard,.ritem,.qcard{box-shadow:none !important}
+    .review h3{break-after:avoid}
+    .scorewrap{break-inside:avoid}
+    .ritem{break-inside:avoid;page-break-inside:avoid;border-color:#ccc}
+    h1#resTitle{font-size:30px;margin-top:2px}
+    .review{margin-top:12px}
+  }
+  .footnote{font-size:11.5px;color:var(--ink-soft);margin-top:30px;text-align:center;line-height:1.6}
+  @media (max-width:460px){
+    .scorewrap{grid-template-columns:1fr}
+    .qcard{padding:20px 16px}
+    .col{padding:18px 8px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  .fade{animation:fade .22s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .pinbox{display:flex;gap:10px;max-width:340px;margin-top:16px}
+  .pinbox input{flex:1;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:18px;font-family:var(--mono);letter-spacing:.3em;background:var(--card)}
+  .pinerr{color:var(--wrong);font-size:13px;min-height:18px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin:6px 0 16px}
+  .chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:13px}
+  .chip b{color:var(--accent)}
+  .btn.start{font-size:16px;padding:14px 26px}
+  .celebrate{background:var(--card-2);border:1px solid var(--gold);border-radius:12px;padding:12px 16px;margin:10px 0;font-size:14.5px}
+  .mrow{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 2px;border-bottom:1px solid var(--line)}
+  .mrow .mbar{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ PIN GATE ============ -->
+  <section id="gate">
+    <div class="eyebrow">Purewal family</div>
+    <h1>SCAT Practice</h1>
+    <p class="sub">Short sittings. Big stretches.</p>
+    <div class="pinbox">
+      <input id="pinInput" type="password" inputmode="numeric" autocomplete="off" placeholder="Family PIN" aria-label="Family PIN">
+      <button class="btn" id="pinBtn">Unlock</button>
+    </div>
+    <p class="pinerr" id="pinErr"></p>
+  </section>
+
+  <!-- ============ PROFILE PICKER ============ -->
+  <section id="pick" class="hidden">
+    <div class="eyebrow">Purewal family</div>
+    <h1>Who's practicing?</h1>
+    <div class="grid" id="kidGrid"></div>
+    <p class="footnote">Questions are original, modeled on the SCAT format. Not affiliated with or endorsed by Johns Hopkins CTY.</p>
+  </section>
+
+  <!-- ============ HOME (per kid) ============ -->
+  <section id="home" class="hidden">
+    <div class="eyebrow" id="homeEyebrow"></div>
+    <h1 id="homeTitle"></h1>
+    <p class="sub" id="homeSub"></p>
+    <div class="chips" id="levelRow"></div>
+    <button class="btn start" id="startBtn">Start today's sitting</button>
+    <div class="meta-row">
+      <span><b>8</b> analogies + <b>8</b> comparisons</span>
+      <span>about <b>8–12 minutes</b></span>
+      <span>No penalty for guessing</span>
+    </div>
+    <div class="hist">
+      <hr class="rule">
+      <h3>Past sittings</h3>
+      <div id="histBox"></div>
+    </div>
+    <div class="hist">
+      <hr class="rule">
+      <h3>Skills</h3>
+      <div id="masteryBox"></div>
+    </div>
+    <button class="clear" id="switchBtn">Switch player</button>
+  </section>
+
+  <!-- ============ TEST ============ -->
+  <section id="test" class="hidden">
+    <div class="bar">
+      <span id="secTag" class="sectiontag">Verbal</span>
+      <span class="counter" id="counter"></span>
+      <span class="timer" id="timer">0:00</span>
+    </div>
+    <div class="progress"><i id="progFill"></i></div>
+    <div id="qhost"></div>
+    <div class="nav">
+      <button class="btn ghost" id="prevBtn">Back</button>
+      <button class="btn" id="nextBtn">Next</button>
+    </div>
+    <p class="footnote">Keys: <b>1–4</b> choose · <b>←/→</b> move · <b>Enter</b> next</p>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="results" class="hidden">
+    <div class="eyebrow" id="resEyebrow">Results</div>
+    <h1 id="resTitle">Done</h1>
+    <div class="celebrate hidden" id="celebrate"></div>
+    <div class="scorewrap">
+      <div class="scard"><div class="t">Verbal</div><div class="big" id="vScore"></div><div class="pct" id="vPct"></div></div>
+      <div class="scard"><div class="t">Quantitative</div><div class="big" id="qScore"></div><div class="pct" id="qPct"></div></div>
+    </div>
+    <p class="resmeta" id="resMeta"></p>
+    <div class="nav resnav" style="margin-top:8px">
+      <button class="btn ghost" id="homeBtn">Back to sets</button>
+      <span class="resnav-right">
+        <button class="btn" id="printBtn">Print results</button>
+      </span>
+    </div>
+    <div class="review">
+      <hr class="rule">
+      <h3>Review</h3>
+      <div id="reviewHost"></div>
+    </div>
+  </section>
+
+</div>
+
+<script type="module" src="./app.js"></script>
+</body>
+</html>
