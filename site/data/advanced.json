@@ -1,0 +1,1634 @@
+{
+ "level": "advanced",
+ "items": [
+  {
+   "id": "v-ed80ade4",
+   "t": "v",
+   "d": 1,
+   "skill": "synonym",
+   "a": "abundant",
+   "b": "plentiful",
+   "c": "hazardous",
+   "ch": [
+    "dangerous",
+    "safe",
+    "rare",
+    "useful"
+   ],
+   "ans": 0,
+   "why": "Synonym pair: abundant means present in large amounts, just like plentiful, and hazardous means dangerous. The trap is 'safe', which is the antonym of hazardous, not its twin. 'Rare' and 'useful' describe other qualities entirely."
+  },
+  {
+   "id": "v-d144ef9b",
+   "t": "v",
+   "d": 1,
+   "skill": "synonym",
+   "a": "novice",
+   "b": "beginner",
+   "c": "foe",
+   "ch": [
+    "enemy",
+    "friend",
+    "stranger",
+    "soldier"
+   ],
+   "ans": 0,
+   "why": "Synonyms: a novice is a beginner, and a foe is an enemy. 'Friend' is the trap because it is the opposite of foe, and the pattern demands a word with the same meaning. 'Stranger' and 'soldier' are people you might meet, but neither means foe."
+  },
+  {
+   "id": "v-d2b24cea",
+   "t": "v",
+   "d": 1,
+   "skill": "synonym",
+   "a": "vacant",
+   "b": "empty",
+   "c": "brisk",
+   "ch": [
+    "quick",
+    "slow",
+    "warm",
+    "gentle"
+   ],
+   "ans": 0,
+   "why": "Synonyms: vacant means empty, and brisk means quick and energetic. 'Slow' is the trap — it is the antonym of brisk, not its synonym. 'Warm' and 'gentle' do not match brisk at all."
+  },
+  {
+   "id": "v-f8fce601",
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "praise",
+   "b": "criticize",
+   "c": "permit",
+   "ch": [
+    "forbid",
+    "allow",
+    "request",
+    "ignore"
+   ],
+   "ans": 0,
+   "why": "Antonyms: to praise is the opposite of to criticize, and to permit (allow) is the opposite of to forbid. 'Allow' is the trap because it means the same as permit, when the pattern demands its opposite."
+  },
+  {
+   "id": "v-b69703fa",
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "victory",
+   "b": "defeat",
+   "c": "surplus",
+   "ch": [
+    "shortage",
+    "excess",
+    "profit",
+    "supply"
+   ],
+   "ans": 0,
+   "why": "Antonyms: victory is the opposite of defeat, and a surplus (more than is needed) is the opposite of a shortage (not enough). 'Excess' is the trap — it is a synonym of surplus, not its opposite."
+  },
+  {
+   "id": "v-06da6b32",
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "timid",
+   "b": "bold",
+   "c": "sluggish",
+   "ch": [
+    "energetic",
+    "lazy",
+    "angry",
+    "quiet"
+   ],
+   "ans": 0,
+   "why": "Antonyms: timid (easily frightened) is the opposite of bold, and sluggish (slow and inactive) is the opposite of energetic. 'Lazy' is the trap because it means nearly the same as sluggish, when the pattern needs its opposite."
+  },
+  {
+   "id": "v-aad4adde",
+   "t": "v",
+   "d": 1,
+   "skill": "part-whole",
+   "a": "petal",
+   "b": "flower",
+   "c": "scale",
+   "ch": [
+    "fish",
+    "fin",
+    "water",
+    "seaweed"
+   ],
+   "ans": 0,
+   "why": "Part to whole: a petal is one piece of a flower, and a scale is one of the small plates covering a fish. 'Fin' is the trap — it is another part of a fish, so it gives part-to-part instead of part-to-whole."
+  },
+  {
+   "id": "v-638c914d",
+   "t": "v",
+   "d": 1,
+   "skill": "part-whole",
+   "a": "wing",
+   "b": "airplane",
+   "c": "sail",
+   "ch": [
+    "ship",
+    "mast",
+    "wind",
+    "ocean"
+   ],
+   "ans": 0,
+   "why": "Part to whole: a wing is the part of an airplane that catches the air, and a sail is the part of a ship that catches the wind. 'Mast' is the trap: it is another piece of the ship, which makes the pair part-to-part instead of part-to-whole."
+  },
+  {
+   "id": "v-e8764d14",
+   "t": "v",
+   "d": 1,
+   "skill": "tool-user",
+   "a": "whistle",
+   "b": "referee",
+   "c": "stethoscope",
+   "ch": [
+    "doctor",
+    "patient",
+    "hospital",
+    "heartbeat"
+   ],
+   "ans": 0,
+   "why": "Tool to user: a referee signals with a whistle, and a doctor listens to the body with a stethoscope. 'Patient' is the trap — the stethoscope is used on the patient, not by the patient. 'Hospital' and 'heartbeat' are the place and the sound, not the user."
+  },
+  {
+   "id": "v-720b4460",
+   "t": "v",
+   "d": 1,
+   "skill": "tool-action",
+   "a": "shovel",
+   "b": "dig",
+   "c": "broom",
+   "ch": [
+    "sweep",
+    "mop",
+    "dustpan",
+    "floor"
+   ],
+   "ans": 0,
+   "why": "Tool to action: a shovel is used to dig, and a broom is used to sweep. 'Mop' is the trap because it is another cleaning tool, not the action a broom performs."
+  },
+  {
+   "id": "v-26691d15",
+   "t": "v",
+   "d": 1,
+   "skill": "maker-product",
+   "a": "sculptor",
+   "b": "statue",
+   "c": "tailor",
+   "ch": [
+    "garment",
+    "fabric",
+    "needle",
+    "mannequin"
+   ],
+   "ans": 0,
+   "why": "Maker to product: a sculptor produces a statue, and a tailor produces a garment (a piece of clothing). 'Fabric' is the trap — it is the material a tailor starts with, not the finished product. 'Needle' and 'mannequin' are tools of the trade."
+  },
+  {
+   "id": "v-becec957",
+   "t": "v",
+   "d": 1,
+   "skill": "worker-workplace",
+   "a": "chef",
+   "b": "kitchen",
+   "c": "blacksmith",
+   "ch": [
+    "forge",
+    "anvil",
+    "hammer",
+    "horseshoe"
+   ],
+   "ans": 0,
+   "why": "Worker to workplace: a chef works in a kitchen, and a blacksmith works in a forge (the workshop with the fire for heating metal). 'Anvil' is the trap because it is the blacksmith's tool, not the place where he works."
+  },
+  {
+   "id": "v-09a3f72d",
+   "t": "v",
+   "d": 1,
+   "skill": "category-member",
+   "a": "instrument",
+   "b": "violin",
+   "c": "fruit",
+   "ch": [
+    "mango",
+    "carrot",
+    "juice",
+    "vine"
+   ],
+   "ans": 0,
+   "why": "Category to member: a violin is one kind of instrument, and a mango is one kind of fruit. 'Carrot' is the trap — it is a vegetable, a member of the wrong category. 'Juice' and 'vine' are a product and a plant, not fruits."
+  },
+  {
+   "id": "v-ee34c2d7",
+   "t": "v",
+   "d": 1,
+   "skill": "intensity",
+   "a": "chuckle",
+   "b": "laugh",
+   "c": "whimper",
+   "ch": [
+    "cry",
+    "sob",
+    "smile",
+    "shout"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: a chuckle is a small, quiet laugh, and a whimper is a small, weak cry. 'Sob' is the trap because it is a stronger cry than a whimper, so it runs the intensity in the wrong direction."
+  },
+  {
+   "id": "v-5d03dd2c",
+   "t": "v",
+   "d": 1,
+   "skill": "intensity",
+   "a": "annoy",
+   "b": "enrage",
+   "c": "please",
+   "ch": [
+    "delight",
+    "upset",
+    "bore",
+    "satisfy"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: to annoy is to bother mildly while to enrage is to make furious, and to please mildly becomes to delight strongly. 'Satisfy' is the trap — it just restates please instead of strengthening it."
+  },
+  {
+   "id": "v-49d71e17",
+   "t": "v",
+   "d": 1,
+   "skill": "cause-effect",
+   "a": "friction",
+   "b": "heat",
+   "c": "lightning",
+   "ch": [
+    "thunder",
+    "storm",
+    "rain",
+    "cloud"
+   ],
+   "ans": 0,
+   "why": "Cause to effect: friction produces heat, and lightning produces thunder. 'Storm' is the trap because a storm produces lightning — that reverses the cause-and-effect direction."
+  },
+  {
+   "id": "v-7ca3908d",
+   "t": "v",
+   "d": 1,
+   "skill": "object-material",
+   "a": "boot",
+   "b": "leather",
+   "c": "brick",
+   "ch": [
+    "clay",
+    "stone",
+    "mortar",
+    "wall"
+   ],
+   "ans": 0,
+   "why": "Object to material: a boot is made of leather, and a brick is molded and baked from clay. 'Stone' is the trap — it looks like brick material, but a stone is a different building block, not what bricks are made from."
+  },
+  {
+   "id": "v-252a159c",
+   "t": "v",
+   "d": 1,
+   "skill": "instrument-measures",
+   "a": "compass",
+   "b": "direction",
+   "c": "thermometer",
+   "ch": [
+    "temperature",
+    "weather",
+    "heat",
+    "mercury"
+   ],
+   "ans": 0,
+   "why": "Instrument to what it measures: a compass shows direction, and a thermometer measures temperature. 'Heat' is the trap — it sounds right, but a thermometer reads a temperature value, and 'mercury' is only what is inside the tube."
+  },
+  {
+   "id": "v-f37dc5d8",
+   "t": "v",
+   "d": 1,
+   "skill": "young-adult",
+   "a": "gosling",
+   "b": "goose",
+   "c": "kid",
+   "ch": [
+    "goat",
+    "sheep",
+    "lamb",
+    "calf"
+   ],
+   "ans": 0,
+   "why": "Young to adult: a gosling grows into a goose, and a kid is a young goat. 'Lamb' is the trap — it is another baby animal, not the adult a kid becomes."
+  },
+  {
+   "id": "v-9d29cca9",
+   "t": "v",
+   "d": 1,
+   "skill": "animal-home",
+   "a": "bee",
+   "b": "hive",
+   "c": "ant",
+   "ch": [
+    "anthill",
+    "colony",
+    "picnic",
+    "tunnel"
+   ],
+   "ans": 0,
+   "why": "Animal to home: bees live in a hive, and ants live in an anthill. 'Colony' is the trap because it names the group of ants, not the place they live. 'Tunnel' is only one passage inside the anthill."
+  },
+  {
+   "id": "q-5493089c",
+   "t": "q",
+   "d": 1,
+   "skill": "exponents",
+   "A": "2⁵",
+   "B": "5²",
+   "ans": "A",
+   "why": "Compute each power: 2⁵ = 32 while 5² = 25. Swapping base and exponent changes the value, and here the longer chain of doublings wins. Quantity A is greater."
+  },
+  {
+   "id": "q-22ff5758",
+   "t": "q",
+   "d": 1,
+   "skill": "absolute-value",
+   "A": "√169",
+   "B": "|−12|",
+   "ans": "A",
+   "why": "√169 = 13 because 13² = 169, and |−12| = 12 since absolute value drops the sign. Comparing 13 with 12, Quantity A is greater."
+  },
+  {
+   "id": "q-6bc57385",
+   "t": "q",
+   "d": 1,
+   "skill": "radicals",
+   "A": "√50",
+   "B": "7",
+   "ans": "A",
+   "why": "Benchmark with perfect squares: 7² = 49, so √50 must be a little more than 7. Quantity A is greater."
+  },
+  {
+   "id": "q-0941a3c2",
+   "t": "q",
+   "d": 1,
+   "skill": "exponents",
+   "A": "3⁰ + 4⁰",
+   "B": "(3 + 4)⁰",
+   "ans": "A",
+   "why": "Any nonzero number to the zero power is 1. So 3⁰ + 4⁰ = 1 + 1 = 2, while (3 + 4)⁰ = 7⁰ = 1. Quantity A is greater."
+  },
+  {
+   "id": "q-a7f0624c",
+   "t": "q",
+   "d": 1,
+   "skill": "averages",
+   "A": "the average of 11, 17, and 23",
+   "B": "17",
+   "ans": "C",
+   "why": "The numbers 11, 17, 23 are evenly spaced, and the mean of an evenly spaced list is its middle value. Check: (11 + 17 + 23) ÷ 3 = 51 ÷ 3 = 17. The two quantities are equal."
+  },
+  {
+   "id": "q-d1a3d9ed",
+   "t": "q",
+   "d": 1,
+   "skill": "number-sense",
+   "A": "0.2 × 0.3",
+   "B": "0.2 + 0.3",
+   "ans": "B",
+   "why": "Multiplying two numbers below 1 shrinks them: 0.2 × 0.3 = 0.06. Adding keeps their full size: 0.2 + 0.3 = 0.5. Quantity B is greater."
+  },
+  {
+   "id": "q-8acd063e",
+   "t": "q",
+   "d": 1,
+   "skill": "exponents",
+   "A": "5³",
+   "B": "3⁵",
+   "ans": "B",
+   "why": "Evaluate: 5³ = 125 and 3⁵ = 243. When base and exponent trade places, the bigger exponent usually wins because repeated multiplication piles up fast. Quantity B is greater."
+  },
+  {
+   "id": "q-b3749d4c",
+   "t": "q",
+   "d": 1,
+   "skill": "number-sense",
+   "A": "1 ÷ 0.25",
+   "B": "0.25 × 16",
+   "ans": "C",
+   "why": "Dividing by 0.25 means multiplying by 4, so 1 ÷ 0.25 = 4. And 0.25 × 16 = 16 ÷ 4 = 4. The two quantities are equal."
+  },
+  {
+   "id": "q-86589f15",
+   "t": "q",
+   "d": 1,
+   "skill": "absolute-value",
+   "A": "|−7| + |3|",
+   "B": "|−7 + 3|",
+   "ans": "A",
+   "why": "Taking absolute values first gives 7 + 3 = 10, but adding first gives |−4| = 4. When the signs differ, the numbers partly cancel inside the bars, so combining first leaves less. Quantity A is greater."
+  },
+  {
+   "id": "q-e49430c2",
+   "t": "q",
+   "d": 1,
+   "skill": "percent-change",
+   "A": "50 increased by 20%",
+   "B": "49 increased by 25%",
+   "ans": "B",
+   "why": "A 20% increase multiplies by 1.2, so 50 becomes 60. A 25% increase multiplies by 1.25, so 49 becomes 61.25. The bigger percentage on the slightly smaller start wins here: Quantity B is greater."
+  },
+  {
+   "id": "q-64ed383c",
+   "t": "q",
+   "d": 1,
+   "skill": "percent-change",
+   "A": "100 increased by 10%, then that result decreased by 10%",
+   "B": "100",
+   "ans": "B",
+   "why": "Up 10% takes 100 to 110, but the 10% coming down is taken of 110, so you lose 11 and land on 99. A percent up followed by the same percent down never returns to the start. Quantity B is greater."
+  },
+  {
+   "id": "q-07176878",
+   "t": "q",
+   "d": 1,
+   "skill": "radicals",
+   "A": "√36 + √64",
+   "B": "√100",
+   "ans": "A",
+   "why": "Square roots do not add across a plus sign: √36 + √64 = 6 + 8 = 14, while √100 = 10. Quantity A is greater."
+  },
+  {
+   "id": "q-d6b1c591",
+   "t": "q",
+   "d": 1,
+   "skill": "fractions",
+   "A": "⅓",
+   "B": "0.3",
+   "ans": "A",
+   "why": "As a decimal, ⅓ = 0.333…, which repeats forever. That is more than 0.3 by the extra 0.0333…. Quantity A is greater."
+  },
+  {
+   "id": "q-08e6d2d8",
+   "t": "q",
+   "d": 1,
+   "skill": "exponent-rules",
+   "A": "4⁵",
+   "B": "2¹⁰",
+   "ans": "C",
+   "why": "Rewrite with the same base: 4 = 2², so 4⁵ = (2²)⁵ = 2¹⁰. Both sides equal 1024, so the two quantities are equal."
+  },
+  {
+   "id": "q-0405efe3",
+   "t": "q",
+   "d": 1,
+   "skill": "exponent-rules",
+   "A": "2⁴ × 2³",
+   "B": "2¹²",
+   "ans": "B",
+   "why": "When multiplying powers of the same base, add the exponents: 2⁴ × 2³ = 2⁷ = 128 — do not multiply them. 2¹² = 4096 is far bigger. Quantity B is greater."
+  },
+  {
+   "id": "q-c44521b7",
+   "t": "q",
+   "d": 1,
+   "skill": "radicals",
+   "A": "√(9 + 16)",
+   "B": "√9 + √16",
+   "ans": "B",
+   "why": "√(9 + 16) = √25 = 5, but √9 + √16 = 3 + 4 = 7. A root of a sum is not the sum of the roots. Quantity B is greater."
+  },
+  {
+   "id": "q-b14d3b44",
+   "t": "q",
+   "d": 1,
+   "skill": "averages",
+   "A": "the average of 2, 4, 6, and 100",
+   "B": "30",
+   "ans": "B",
+   "why": "The mean is (2 + 4 + 6 + 100) ÷ 4 = 112 ÷ 4 = 28. Even one huge value cannot lift the average past 30 here, because the three small numbers drag it down. Quantity B is greater."
+  },
+  {
+   "id": "q-4050ad72",
+   "t": "q",
+   "d": 1,
+   "skill": "linear-comparison",
+   "A": "x + 5",
+   "B": "2x",
+   "ctx": "x is a positive number",
+   "ans": "D",
+   "why": "Set them equal: x + 5 = 2x gives x = 5, the break-even point. For x = 1, x + 5 = 6 beats 2. For x = 10, 2x = 20 beats 15. Since the winner depends on x, it cannot be determined."
+  },
+  {
+   "id": "q-d24472d1",
+   "t": "q",
+   "d": 1,
+   "skill": "absolute-value",
+   "A": "|x|",
+   "B": "x",
+   "ctx": "x is a real number",
+   "ans": "D",
+   "why": "If x is 0 or positive, |x| = x and the quantities are equal. If x is negative, say x = −3, then |x| = 3 is greater. Sometimes equal, sometimes A — with no single relationship, it cannot be determined."
+  },
+  {
+   "id": "q-0ba18317",
+   "t": "q",
+   "d": 1,
+   "skill": "even-powers",
+   "A": "x²",
+   "B": "9",
+   "ctx": "x is a real number with −4 < x < 4",
+   "ans": "D",
+   "why": "Squaring depends on distance from 0, and x can sit anywhere between −4 and 4. At x = 0, x² = 0 < 9; at x = 3.5, x² = 12.25 > 9; at x = 3 they are equal. The comparison flips, so it cannot be determined."
+  },
+  {
+   "id": "v-6908ce50",
+   "t": "v",
+   "d": 2,
+   "skill": "synonym",
+   "a": "pragmatic",
+   "b": "practical",
+   "c": "austere",
+   "ch": [
+    "plain",
+    "lavish",
+    "cheerful",
+    "costly"
+   ],
+   "ans": 0,
+   "why": "Synonyms: pragmatic means practical and focused on what works, and austere means plain and without luxury. 'Lavish' is the trap — it is the opposite of austere, not its match. 'Cheerful' and 'costly' miss the meaning entirely."
+  },
+  {
+   "id": "v-11371e7a",
+   "t": "v",
+   "d": 2,
+   "skill": "synonym",
+   "a": "tenacious",
+   "b": "persistent",
+   "c": "prudent",
+   "ch": [
+    "cautious",
+    "reckless",
+    "proud",
+    "curious"
+   ],
+   "ans": 0,
+   "why": "Synonyms: tenacious means persistent, refusing to let go, and prudent means cautious and sensible. 'Reckless' is the trap because it is the antonym of prudent, not its twin."
+  },
+  {
+   "id": "v-c246c16a",
+   "t": "v",
+   "d": 2,
+   "skill": "synonym",
+   "a": "meticulous",
+   "b": "careful",
+   "c": "arduous",
+   "ch": [
+    "difficult",
+    "effortless",
+    "brief",
+    "common"
+   ],
+   "ans": 0,
+   "why": "Synonyms: meticulous means extremely careful with details, and arduous means difficult, demanding great effort. 'Effortless' is the trap — it is the opposite of arduous, and the pattern needs a match."
+  },
+  {
+   "id": "v-9c94e55c",
+   "t": "v",
+   "d": 2,
+   "skill": "antonym",
+   "a": "lucid",
+   "b": "confusing",
+   "c": "scarce",
+   "ch": [
+    "abundant",
+    "rare",
+    "precious",
+    "hidden"
+   ],
+   "ans": 0,
+   "why": "Antonyms: lucid means clear and easy to follow, the opposite of confusing, and scarce (in short supply) is the opposite of abundant (plentiful). 'Rare' is the trap because it means the same as scarce, when the pattern demands its opposite."
+  },
+  {
+   "id": "v-bf6932ff",
+   "t": "v",
+   "d": 2,
+   "skill": "antonym",
+   "a": "verbose",
+   "b": "concise",
+   "c": "flimsy",
+   "ch": [
+    "sturdy",
+    "fragile",
+    "heavy",
+    "new"
+   ],
+   "ans": 0,
+   "why": "Antonyms: verbose (using too many words) is the opposite of concise, and flimsy (weakly built) is the opposite of sturdy. 'Fragile' is the trap — it is a synonym of flimsy, not its opposite."
+  },
+  {
+   "id": "v-d9c5c3e2",
+   "t": "v",
+   "d": 2,
+   "skill": "antonym",
+   "a": "chaotic",
+   "b": "orderly",
+   "c": "turbulent",
+   "ch": [
+    "calm",
+    "stormy",
+    "loud",
+    "wet"
+   ],
+   "ans": 0,
+   "why": "Antonyms: chaotic is the opposite of orderly, and turbulent (violently unsettled) is the opposite of calm. 'Stormy' is the trap because it restates turbulent instead of opposing it."
+  },
+  {
+   "id": "v-18b92796",
+   "t": "v",
+   "d": 2,
+   "skill": "part-whole",
+   "a": "verse",
+   "b": "song",
+   "c": "scene",
+   "ch": [
+    "play",
+    "actor",
+    "stage",
+    "curtain"
+   ],
+   "ans": 0,
+   "why": "Part to whole: a verse is one section of a song, and a scene is one section of a play. 'Stage' is the trap — it belongs to the world of theater, but it is where a play happens, not a section of one."
+  },
+  {
+   "id": "v-e8e52d7b",
+   "t": "v",
+   "d": 2,
+   "skill": "part-whole",
+   "a": "lens",
+   "b": "camera",
+   "c": "engine",
+   "ch": [
+    "car",
+    "fuel",
+    "road",
+    "driver"
+   ],
+   "ans": 0,
+   "why": "Part to whole: a lens is the essential part of a camera that forms the image, and an engine is the essential part of a car that makes it move. 'Fuel' is the trap because the engine burns it — it is a supply, not the machine the engine belongs to."
+  },
+  {
+   "id": "v-72b5f0a0",
+   "t": "v",
+   "d": 2,
+   "skill": "tool-user",
+   "a": "scalpel",
+   "b": "surgeon",
+   "c": "trowel",
+   "ch": [
+    "mason",
+    "carpenter",
+    "brick",
+    "mortar"
+   ],
+   "ans": 0,
+   "why": "Tool to user: a surgeon cuts with a scalpel, and a mason spreads mortar with a trowel. 'Carpenter' is the trap — a related builder, but one who works with wood, not brick. 'Brick' and 'mortar' are materials, not users."
+  },
+  {
+   "id": "v-9ba92744",
+   "t": "v",
+   "d": 2,
+   "skill": "tool-action",
+   "a": "sieve",
+   "b": "strain",
+   "c": "loom",
+   "ch": [
+    "weave",
+    "spin",
+    "thread",
+    "cloth"
+   ],
+   "ans": 0,
+   "why": "Tool to action: a sieve is used to strain, and a loom is used to weave cloth. 'Spin' is the trap because it is a nearby textile action — but spinning makes the thread, and the loom then weaves it."
+  },
+  {
+   "id": "v-04578a27",
+   "t": "v",
+   "d": 2,
+   "skill": "maker-product",
+   "a": "weaver",
+   "b": "tapestry",
+   "c": "potter",
+   "ch": [
+    "vase",
+    "clay",
+    "kiln",
+    "wheel"
+   ],
+   "ans": 0,
+   "why": "Maker to product: a weaver produces a tapestry, and a potter produces a vase. 'Clay' is the trap — it is the potter's raw material, not the finished product; the kiln and wheel are tools."
+  },
+  {
+   "id": "v-74a96923",
+   "t": "v",
+   "d": 2,
+   "skill": "worker-workplace",
+   "a": "astronomer",
+   "b": "observatory",
+   "c": "librarian",
+   "ch": [
+    "library",
+    "archive",
+    "bookstore",
+    "classroom"
+   ],
+   "ans": 0,
+   "why": "Worker to workplace: an astronomer works in an observatory, and a librarian works in a library. 'Archive' is the trap — it also stores collections, but it is the archivist's workplace, not the librarian's. A bookstore sells books rather than lending them, and a classroom belongs to a teacher."
+  },
+  {
+   "id": "v-86556985",
+   "t": "v",
+   "d": 2,
+   "skill": "category-member",
+   "a": "beverage",
+   "b": "cider",
+   "c": "grain",
+   "ch": [
+    "barley",
+    "flour",
+    "bread",
+    "orchard"
+   ],
+   "ans": 0,
+   "why": "Category to member: cider is one kind of beverage, and barley is one kind of grain. 'Flour' is the trap — it is made from grain, which is a product relationship, not category-to-member."
+  },
+  {
+   "id": "v-e3b42d54",
+   "t": "v",
+   "d": 2,
+   "skill": "intensity",
+   "a": "simmer",
+   "b": "boil",
+   "c": "glow",
+   "ch": [
+    "blaze",
+    "shine",
+    "flicker",
+    "spark"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: to simmer is to bubble gently while a boil is the full, rolling version, and a glow is faint light while a blaze is intense light and flame. 'Shine' is the trap because it merely restates glow without raising the intensity."
+  },
+  {
+   "id": "v-6a7b6117",
+   "t": "v",
+   "d": 2,
+   "skill": "intensity",
+   "a": "push",
+   "b": "shove",
+   "c": "tap",
+   "ch": [
+    "pound",
+    "pat",
+    "touch",
+    "poke"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: a shove is a hard push, and to pound is to strike hard where a tap is a light touch. 'Pat' is the trap — it is as gentle as a tap, so it fails to step up the force."
+  },
+  {
+   "id": "v-4b140b8c",
+   "t": "v",
+   "d": 2,
+   "skill": "cause-effect",
+   "a": "virus",
+   "b": "illness",
+   "c": "drought",
+   "ch": [
+    "famine",
+    "rain",
+    "harvest",
+    "flood"
+   ],
+   "ans": 0,
+   "why": "Cause to effect: a virus can cause illness, and a drought (a long spell without rain) can cause famine (a severe food shortage). 'Rain' is the trap because it would end a drought — it reverses the relationship."
+  },
+  {
+   "id": "v-4ddfc57c",
+   "t": "v",
+   "d": 2,
+   "skill": "object-material",
+   "a": "tent",
+   "b": "canvas",
+   "c": "sword",
+   "ch": [
+    "steel",
+    "blade",
+    "sheath",
+    "armor"
+   ],
+   "ans": 0,
+   "why": "Object to material: a tent is made of canvas, and a sword is forged from steel. 'Blade' is the trap — it is a part of the sword, not what the sword is made of."
+  },
+  {
+   "id": "v-4a60724f",
+   "t": "v",
+   "d": 2,
+   "skill": "instrument-measures",
+   "a": "sundial",
+   "b": "time",
+   "c": "speedometer",
+   "ch": [
+    "speed",
+    "distance",
+    "engine",
+    "dashboard"
+   ],
+   "ans": 0,
+   "why": "Instrument to what it measures: a sundial tells time, and a speedometer measures speed. 'Distance' is the trap — that is the odometer's job, the dial next door on the dashboard."
+  },
+  {
+   "id": "v-44ccf1db",
+   "t": "v",
+   "d": 2,
+   "skill": "young-adult",
+   "a": "joey",
+   "b": "kangaroo",
+   "c": "cygnet",
+   "ch": [
+    "swan",
+    "duck",
+    "goose",
+    "stork"
+   ],
+   "ans": 0,
+   "why": "Young to adult: a joey is a baby kangaroo, and a cygnet is a baby swan. 'Duck' is the trap — a duckling, not a cygnet, grows into a duck."
+  },
+  {
+   "id": "v-43fbe8fb",
+   "t": "v",
+   "d": 2,
+   "skill": "animal-home",
+   "a": "lion",
+   "b": "den",
+   "c": "wolf",
+   "ch": [
+    "lair",
+    "pack",
+    "forest",
+    "cub"
+   ],
+   "ans": 0,
+   "why": "Animal to home: a lion shelters in a den, and a wolf shelters in a lair. 'Pack' is the trap because it names the wolf's group, not its dwelling. 'Forest' is the whole habitat, far bigger than a home."
+  },
+  {
+   "id": "q-cf66b909",
+   "t": "q",
+   "d": 2,
+   "skill": "difference-of-squares",
+   "A": "49 × 51",
+   "B": "50²",
+   "ans": "B",
+   "why": "Difference of squares: 49 × 51 = (50 − 1)(50 + 1) = 50² − 1 = 2499. That is exactly 1 less than 50² = 2500. Quantity B is greater."
+  },
+  {
+   "id": "q-23b6d8db",
+   "t": "q",
+   "d": 2,
+   "skill": "sign-powers",
+   "A": "(−2)⁴",
+   "B": "−(2⁴)",
+   "ans": "A",
+   "why": "An even power wipes out a negative sign: (−2)⁴ = 16. But −(2⁴) says compute 2⁴ = 16 first, then negate, giving −16. Positive beats negative, so Quantity A is greater."
+  },
+  {
+   "id": "q-009553aa",
+   "t": "q",
+   "d": 2,
+   "skill": "sign-powers",
+   "A": "(−3)⁵",
+   "B": "(−5)³",
+   "ans": "B",
+   "why": "Odd powers keep the negative sign: (−3)⁵ = −243 and (−5)³ = −125. For negative numbers, the one closer to zero is greater, and −125 > −243. Quantity B is greater."
+  },
+  {
+   "id": "q-930323e0",
+   "t": "q",
+   "d": 2,
+   "skill": "factorials",
+   "A": "8! ÷ 6!",
+   "B": "7 × 8",
+   "ans": "C",
+   "why": "Factorials cancel: 8! ÷ 6! = (8 × 7 × 6!) ÷ 6! = 8 × 7 = 56. Quantity B is 7 × 8 = 56 as well. The two quantities are equal."
+  },
+  {
+   "id": "q-cfa81181",
+   "t": "q",
+   "d": 2,
+   "skill": "factorials",
+   "A": "5! × 2",
+   "B": "6!",
+   "ans": "B",
+   "why": "6! = 6 × 5!, so Quantity B is six copies of 5!, not two. Concretely, 5! × 2 = 240 while 6! = 720. Quantity B is greater."
+  },
+  {
+   "id": "q-8605dd19",
+   "t": "q",
+   "d": 2,
+   "skill": "slope",
+   "A": "the slope of the line through (1, 2) and (3, 8)",
+   "B": "2",
+   "ans": "A",
+   "why": "Slope is rise over run: (8 − 2) ÷ (3 − 1) = 6 ÷ 2 = 3. That beats 2, so Quantity A is greater."
+  },
+  {
+   "id": "q-8b5e9fd9",
+   "t": "q",
+   "d": 2,
+   "skill": "slope",
+   "A": "the slope of the line through (0, 5) and (4, 5)",
+   "B": "the slope of the line through (2, 1) and (5, 4)",
+   "ans": "B",
+   "why": "The first line has no rise: (5 − 5) ÷ (4 − 0) = 0, because a horizontal line has slope 0. The second has slope (4 − 1) ÷ (5 − 2) = 1. Quantity B is greater."
+  },
+  {
+   "id": "q-757abb5a",
+   "t": "q",
+   "d": 2,
+   "skill": "circle",
+   "A": "the circumference of a circle with radius 5",
+   "B": "the area of a circle with radius 3",
+   "ans": "A",
+   "why": "Keep everything in terms of π: circumference = 2πr = 10π, and area = πr² = 9π. Since 10π > 9π, Quantity A is greater — no decimal work needed."
+  },
+  {
+   "id": "q-06ba3078",
+   "t": "q",
+   "d": 2,
+   "skill": "circle",
+   "A": "the area of a circle with radius 2",
+   "B": "the circumference of a circle with radius 2",
+   "ans": "C",
+   "why": "Area is πr² = 4π and circumference is 2πr = 4π. Radius 2 is the special case where the two formulas coincide, because r² = 2r when r = 2. The two quantities are equal."
+  },
+  {
+   "id": "q-70362e4d",
+   "t": "q",
+   "d": 2,
+   "skill": "median-mean",
+   "A": "the median of 1, 2, 3, 4, 100",
+   "B": "the mean of 1, 2, 3, 4, 100",
+   "ans": "B",
+   "why": "The median of the ordered list is the middle value, 3. The mean is (1 + 2 + 3 + 4 + 100) ÷ 5 = 110 ÷ 5 = 22, dragged up by the outlier 100. The median ignores the outlier, so Quantity B is greater."
+  },
+  {
+   "id": "q-3e882258",
+   "t": "q",
+   "d": 2,
+   "skill": "median-mean",
+   "A": "the median of 5, 9, 11, 13",
+   "B": "10",
+   "ans": "C",
+   "why": "With an even count of numbers, the median is the average of the two middle ones: (9 + 11) ÷ 2 = 10. The two quantities are equal."
+  },
+  {
+   "id": "q-e75544d9",
+   "t": "q",
+   "d": 2,
+   "skill": "radicals",
+   "A": "√80",
+   "B": "9",
+   "ans": "B",
+   "why": "Benchmark with a perfect square: 9² = 81, so √80 sits just under 9. Quantity B is greater."
+  },
+  {
+   "id": "q-70395bcd",
+   "t": "q",
+   "d": 2,
+   "skill": "radicals",
+   "A": "√2 × √8",
+   "B": "3",
+   "ans": "A",
+   "why": "Roots multiply under one radical: √2 × √8 = √16 = 4. Since 4 > 3, Quantity A is greater."
+  },
+  {
+   "id": "q-34899841",
+   "t": "q",
+   "d": 2,
+   "skill": "exponent-rules",
+   "A": "(2³)⁴",
+   "B": "2⁷ × 2⁴",
+   "ans": "A",
+   "why": "A power of a power multiplies exponents: (2³)⁴ = 2¹². A product of powers adds them: 2⁷ × 2⁴ = 2¹¹. Same base, bigger exponent — Quantity A is greater."
+  },
+  {
+   "id": "q-74d7638f",
+   "t": "q",
+   "d": 2,
+   "skill": "median-mean",
+   "A": "the mean of 4, 6, 8, 22",
+   "B": "the median of 4, 6, 8, 22",
+   "ans": "A",
+   "why": "The mean is (4 + 6 + 8 + 22) ÷ 4 = 40 ÷ 4 = 10. The median is the average of the middle pair: (6 + 8) ÷ 2 = 7. The outlier 22 pulls the mean above the median, so Quantity A is greater."
+  },
+  {
+   "id": "q-db3434bd",
+   "t": "q",
+   "d": 2,
+   "skill": "difference-of-squares",
+   "A": "61 × 59",
+   "B": "3598",
+   "ans": "A",
+   "why": "Difference of squares: 61 × 59 = (60 + 1)(60 − 1) = 3600 − 1 = 3599. That is 1 more than 3598, so Quantity A is greater."
+  },
+  {
+   "id": "q-7e39a645",
+   "t": "q",
+   "d": 2,
+   "skill": "circle",
+   "A": "the radius of a circle with area 25π",
+   "B": "the radius of a circle with circumference 12π",
+   "ans": "B",
+   "why": "Area 25π means πr² = 25π, so r² = 25 and r = 5. Circumference 12π means 2πr = 12π, so r = 6. Quantity B is greater."
+  },
+  {
+   "id": "q-346929b4",
+   "t": "q",
+   "d": 2,
+   "skill": "even-powers",
+   "A": "a²",
+   "B": "b²",
+   "ctx": "a < b",
+   "ans": "D",
+   "why": "Squares care about distance from zero, not order. If a = −3 and b = 2, then a² = 9 > b² = 4; if a = 1 and b = 2, then 1 < 4; if a = −2 and b = 2, they tie at 4. Since a < b allows all three outcomes, it cannot be determined."
+  },
+  {
+   "id": "q-986a0342",
+   "t": "q",
+   "d": 2,
+   "skill": "even-powers",
+   "A": "x⁴",
+   "B": "x²",
+   "ctx": "x is a nonzero number",
+   "ans": "D",
+   "why": "Both powers are even, so both sides are positive — but the winner still depends on x. If x = 2, x⁴ = 16 beats x² = 4; if x = ½, x⁴ = 1/16 loses to 1/4; if x = 1 they are equal. It cannot be determined."
+  },
+  {
+   "id": "q-fbe4394f",
+   "t": "q",
+   "d": 2,
+   "skill": "slope",
+   "A": "the slope of the line through (0, 0) and (a, 4)",
+   "B": "1",
+   "ctx": "a is a positive number",
+   "ans": "D",
+   "why": "The slope is 4 ÷ a, which shrinks as a grows. For a = 2 the slope is 2 > 1; for a = 4 it is exactly 1; for a = 8 it is ½ < 1. The comparison flips with a, so it cannot be determined."
+  },
+  {
+   "id": "v-820051fa",
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "ephemeral",
+   "b": "fleeting",
+   "c": "magnanimous",
+   "ch": [
+    "generous",
+    "stingy",
+    "famous",
+    "proud"
+   ],
+   "ans": 0,
+   "why": "Synonyms: ephemeral means fleeting, lasting only a short time, and magnanimous means generous, especially toward a rival or someone weaker. 'Stingy' is the trap — it is the opposite of magnanimous, not its match."
+  },
+  {
+   "id": "v-d9cd88b0",
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "obfuscate",
+   "b": "confuse",
+   "c": "placate",
+   "ch": [
+    "soothe",
+    "provoke",
+    "flatter",
+    "deceive"
+   ],
+   "ans": 0,
+   "why": "Synonyms: to obfuscate is to deliberately confuse or muddy an issue, and to placate is to soothe someone's anger. 'Provoke' is the trap because it is the antonym of placate — it stirs anger up instead of calming it."
+  },
+  {
+   "id": "v-97adf1ed",
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "ubiquitous",
+   "b": "widespread",
+   "c": "tenuous",
+   "ch": [
+    "flimsy",
+    "sturdy",
+    "tense",
+    "broad"
+   ],
+   "ans": 0,
+   "why": "Synonyms: ubiquitous means widespread, found everywhere, and tenuous means flimsy or weak, like a thread about to snap. 'Sturdy' is the trap — it is the opposite of tenuous. 'Tense' only sounds similar."
+  },
+  {
+   "id": "v-d1768408",
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "loquacious",
+   "b": "taciturn",
+   "c": "prodigal",
+   "ch": [
+    "frugal",
+    "wasteful",
+    "wealthy",
+    "humble"
+   ],
+   "ans": 0,
+   "why": "Antonyms: loquacious (talkative) is the opposite of taciturn (saying little), and prodigal (recklessly wasteful with money) is the opposite of frugal. 'Wasteful' is the trap because it is a synonym of prodigal, when the pattern demands its opposite."
+  },
+  {
+   "id": "v-65af6f36",
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "zenith",
+   "b": "nadir",
+   "c": "euphoria",
+   "ch": [
+    "despair",
+    "bliss",
+    "anxiety",
+    "boredom"
+   ],
+   "ans": 0,
+   "why": "Antonyms: the zenith is the highest point and the nadir the lowest, and euphoria (intense joy) is the emotional high whose opposite is despair. 'Bliss' is the trap — it is a synonym of euphoria, not its opposite."
+  },
+  {
+   "id": "v-aac6b59c",
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "candor",
+   "b": "deceit",
+   "c": "humility",
+   "ch": [
+    "arrogance",
+    "modesty",
+    "shyness",
+    "kindness"
+   ],
+   "ans": 0,
+   "why": "Antonyms: candor (frank honesty) is the opposite of deceit, and humility is the opposite of arrogance. 'Modesty' is the trap because it means the same as humility, when the pattern needs its opposite."
+  },
+  {
+   "id": "v-69504a5c",
+   "t": "v",
+   "d": 3,
+   "skill": "part-whole",
+   "a": "aria",
+   "b": "opera",
+   "c": "soliloquy",
+   "ch": [
+    "play",
+    "monologue",
+    "stage",
+    "audience"
+   ],
+   "ans": 0,
+   "why": "Part to whole: an aria is a solo song within an opera, and a soliloquy is a solo speech within a play. 'Monologue' is the trap — it is nearly a synonym of soliloquy, another part, not the whole work that contains it."
+  },
+  {
+   "id": "v-749ad614",
+   "t": "v",
+   "d": 3,
+   "skill": "part-whole",
+   "a": "preamble",
+   "b": "constitution",
+   "c": "overture",
+   "ch": [
+    "opera",
+    "finale",
+    "orchestra",
+    "conductor"
+   ],
+   "ans": 0,
+   "why": "Part to whole, specifically the opening section: a preamble introduces a constitution, and an overture is the orchestral opening of an opera. 'Finale' is the trap — it is also a section, but the closing one, and it is not the whole the overture belongs to."
+  },
+  {
+   "id": "v-112a449c",
+   "t": "v",
+   "d": 3,
+   "skill": "tool-user",
+   "a": "quill",
+   "b": "scribe",
+   "c": "baton",
+   "ch": [
+    "conductor",
+    "composer",
+    "orchestra",
+    "drummer"
+   ],
+   "ans": 0,
+   "why": "Tool to user: a scribe (a professional copyist) wrote with a quill, and a conductor directs with a baton. 'Composer' is the trap — composers write the music, but it is the conductor who wields the baton."
+  },
+  {
+   "id": "v-83f48997",
+   "t": "v",
+   "d": 3,
+   "skill": "tool-action",
+   "a": "pestle",
+   "b": "grind",
+   "c": "whetstone",
+   "ch": [
+    "sharpen",
+    "polish",
+    "dull",
+    "slice"
+   ],
+   "ans": 0,
+   "why": "Tool to action: a pestle is used to grind, and a whetstone is used to sharpen blades. 'Polish' is the trap because it is a similar rubbing motion, but a whetstone's purpose is a keen edge, not a shine."
+  },
+  {
+   "id": "v-08f53f15",
+   "t": "v",
+   "d": 3,
+   "skill": "maker-product",
+   "a": "lexicographer",
+   "b": "dictionary",
+   "c": "choreographer",
+   "ch": [
+    "ballet",
+    "dancer",
+    "studio",
+    "costume"
+   ],
+   "ans": 0,
+   "why": "Maker to product: a lexicographer compiles a dictionary, and a choreographer creates a ballet. 'Dancer' is the trap — dancers perform the ballet, they do not compose it."
+  },
+  {
+   "id": "v-05f265ae",
+   "t": "v",
+   "d": 3,
+   "skill": "worker-workplace",
+   "a": "professor",
+   "b": "university",
+   "c": "diplomat",
+   "ch": [
+    "embassy",
+    "parliament",
+    "treaty",
+    "passport"
+   ],
+   "ans": 0,
+   "why": "Worker to workplace: a professor works at a university, and a diplomat is posted to an embassy. 'Parliament' is the trap — it is a government building, but it belongs to legislators, not diplomats. A treaty is what diplomats produce, not where they work."
+  },
+  {
+   "id": "v-6b0fec83",
+   "t": "v",
+   "d": 3,
+   "skill": "category-member",
+   "a": "primate",
+   "b": "lemur",
+   "c": "crustacean",
+   "ch": [
+    "lobster",
+    "clam",
+    "salmon",
+    "jellyfish"
+   ],
+   "ans": 0,
+   "why": "Category to member: a lemur is a primate, and a lobster is a crustacean (a shelled animal with jointed legs). 'Clam' is the trap — it also has a shell, but it is a mollusk, a member of the wrong category."
+  },
+  {
+   "id": "v-7895f31a",
+   "t": "v",
+   "d": 3,
+   "skill": "intensity",
+   "a": "confident",
+   "b": "arrogant",
+   "c": "frugal",
+   "ch": [
+    "miserly",
+    "thrifty",
+    "generous",
+    "poor"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity, from virtue to excess: arrogant is confidence taken too far, and miserly is thrift taken too far. 'Thrifty' is the trap because it simply restates frugal instead of pushing it to an extreme."
+  },
+  {
+   "id": "v-420794db",
+   "t": "v",
+   "d": 3,
+   "skill": "intensity",
+   "a": "mishap",
+   "b": "catastrophe",
+   "c": "quarrel",
+   "ch": [
+    "feud",
+    "squabble",
+    "truce",
+    "apology"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: a mishap is a minor accident and a catastrophe a disastrous one, just as a quarrel is a brief dispute and a feud a long, bitter one. 'Squabble' is the trap — it is even smaller than a quarrel, so the intensity moves the wrong way."
+  },
+  {
+   "id": "v-291382e6",
+   "t": "v",
+   "d": 3,
+   "skill": "cause-effect",
+   "a": "infection",
+   "b": "fever",
+   "c": "insult",
+   "ch": [
+    "resentment",
+    "apology",
+    "compliment",
+    "praise"
+   ],
+   "ans": 0,
+   "why": "Cause to effect: an infection brings on a fever, and an insult breeds resentment (lasting bitterness). 'Apology' is the trap because it is what might repair an insult, not what the insult produces."
+  },
+  {
+   "id": "v-62ddeba8",
+   "t": "v",
+   "d": 3,
+   "skill": "object-material",
+   "a": "medal",
+   "b": "bronze",
+   "c": "monument",
+   "ch": [
+    "granite",
+    "plaque",
+    "sculptor",
+    "pedestal"
+   ],
+   "ans": 0,
+   "why": "Object to material: a medal is struck from bronze, and a monument is carved from granite. 'Plaque' is the trap — it is another commemorative object, not the stone a monument is made of."
+  },
+  {
+   "id": "v-c9b1cd40",
+   "t": "v",
+   "d": 3,
+   "skill": "instrument-measures",
+   "a": "hourglass",
+   "b": "time",
+   "c": "seismograph",
+   "ch": [
+    "tremors",
+    "eruptions",
+    "tides",
+    "storms"
+   ],
+   "ans": 0,
+   "why": "Instrument to what it measures: an hourglass marks time, and a seismograph records tremors (shakings of the ground). 'Eruptions' is the trap — volcanic and dramatic, but a different event from the ground-shaking a seismograph traces."
+  },
+  {
+   "id": "v-2d3c6673",
+   "t": "v",
+   "d": 3,
+   "skill": "young-adult",
+   "a": "fledgling",
+   "b": "bird",
+   "c": "seedling",
+   "ch": [
+    "plant",
+    "seed",
+    "flower",
+    "soil"
+   ],
+   "ans": 0,
+   "why": "Young to adult: a fledgling is a young bird just learning to fly, and a seedling is a young plant. 'Seed' is the trap because it is the stage before the seedling — the analogy must move forward to the grown form, not backward."
+  },
+  {
+   "id": "v-f0bbaa9a",
+   "t": "v",
+   "d": 3,
+   "skill": "animal-home",
+   "a": "wasp",
+   "b": "nest",
+   "c": "beaver",
+   "ch": [
+    "lodge",
+    "dam",
+    "river",
+    "tail"
+   ],
+   "ans": 0,
+   "why": "Animal to home: a wasp builds and lives in a nest, and a beaver lives in a lodge. 'Dam' is the trap — a beaver builds dams too, but the dam blocks the stream while the lodge is where it actually lives."
+  },
+  {
+   "id": "q-144dcfec",
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-rules",
+   "A": "2¹⁰⁰",
+   "B": "4⁴⁹",
+   "ans": "A",
+   "why": "Convert to one base: 4⁴⁹ = (2²)⁴⁹ = 2⁹⁸. Same base, so compare exponents: 100 > 98. Quantity A is greater."
+  },
+  {
+   "id": "q-331fa9a5",
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-rules",
+   "A": "9⁶",
+   "B": "3¹³",
+   "ans": "B",
+   "why": "Rewrite with base 3: 9⁶ = (3²)⁶ = 3¹². Against 3¹³, the larger exponent on the same base wins. Quantity B is greater."
+  },
+  {
+   "id": "q-e2b3d656",
+   "t": "q",
+   "d": 3,
+   "skill": "radicals",
+   "A": "√5 + √5",
+   "B": "√20",
+   "ans": "C",
+   "why": "Two copies of √5 make 2√5, and pulling the 2 inside the radical squares it: 2√5 = √(4 × 5) = √20. The two quantities are equal."
+  },
+  {
+   "id": "q-7546132b",
+   "t": "q",
+   "d": 3,
+   "skill": "radicals",
+   "A": "√2 + √3",
+   "B": "√5",
+   "ans": "A",
+   "why": "Square Quantity A: (√2 + √3)² = 2 + 3 + 2√6 = 5 + 2√6, while (√5)² = 5. The cross term 2√6 is pure surplus, so √2 + √3 > √5. Quantity A is greater."
+  },
+  {
+   "id": "q-c77647dc",
+   "t": "q",
+   "d": 3,
+   "skill": "radicals",
+   "A": "1 ÷ √2",
+   "B": "√2 ÷ 2",
+   "ans": "C",
+   "why": "Rationalize: multiply 1 ÷ √2 by √2 on top and bottom to get √2 ÷ 2. They are two ways of writing the same number, about 0.707. The two quantities are equal."
+  },
+  {
+   "id": "q-7fe7cfc3",
+   "t": "q",
+   "d": 3,
+   "skill": "radicals",
+   "A": "√0.49",
+   "B": "0.49",
+   "ans": "A",
+   "why": "For a number between 0 and 1, the square root is larger than the number itself: √0.49 = 0.7. Since 0.7 > 0.49, Quantity A is greater."
+  },
+  {
+   "id": "q-6f0e6d47",
+   "t": "q",
+   "d": 3,
+   "skill": "factorials",
+   "A": "10! ÷ 8!",
+   "B": "9! ÷ 7!",
+   "ans": "A",
+   "why": "Cancel the factorials: 10! ÷ 8! = 10 × 9 = 90, and 9! ÷ 7! = 9 × 8 = 72. Quantity A is greater."
+  },
+  {
+   "id": "q-7460969f",
+   "t": "q",
+   "d": 3,
+   "skill": "factorials",
+   "A": "100! ÷ 99!",
+   "B": "99",
+   "ans": "A",
+   "why": "Everything cancels except the top factor: 100! ÷ 99! = 100. Since 100 > 99, Quantity A is greater."
+  },
+  {
+   "id": "q-0fb76a98",
+   "t": "q",
+   "d": 3,
+   "skill": "sign-powers",
+   "A": "(−1)⁹⁹ + (−1)¹⁰⁰",
+   "B": "0",
+   "ans": "C",
+   "why": "An odd power keeps the sign and an even power erases it: (−1)⁹⁹ = −1 and (−1)¹⁰⁰ = 1. Their sum is −1 + 1 = 0. The two quantities are equal."
+  },
+  {
+   "id": "q-15fc0be3",
+   "t": "q",
+   "d": 3,
+   "skill": "powers-below-one",
+   "A": "0.9⁹",
+   "B": "0.9¹⁰",
+   "ans": "A",
+   "why": "0.9¹⁰ is 0.9⁹ multiplied by one more factor of 0.9, and multiplying by a number below 1 shrinks the value. The extra factor makes Quantity B smaller. Quantity A is greater."
+  },
+  {
+   "id": "q-b29de5df",
+   "t": "q",
+   "d": 3,
+   "skill": "fractions",
+   "A": "(⅓)⁴",
+   "B": "(¼)³",
+   "ans": "B",
+   "why": "Compute: (⅓)⁴ = 1/81 and (¼)³ = 1/64. With equal numerators, the smaller denominator gives the bigger fraction, and 64 < 81. Quantity B is greater."
+  },
+  {
+   "id": "q-d0d79c6d",
+   "t": "q",
+   "d": 3,
+   "skill": "radicals",
+   "A": "√99 − √98",
+   "B": "√98 − √97",
+   "ans": "B",
+   "why": "Square roots grow more slowly as numbers get bigger, so each step of 1 under the radical adds less than the step before. The gap from √98 to √99 is therefore smaller than the gap from √97 to √98. Quantity B is greater."
+  },
+  {
+   "id": "q-12e312dd",
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-rules",
+   "A": "2⁴⁰",
+   "B": "3²⁰",
+   "ans": "A",
+   "why": "Match the exponents: 2⁴⁰ = (2²)²⁰ = 4²⁰, then compare with 3²⁰. Same exponent, bigger base: 4 > 3. Quantity A is greater."
+  },
+  {
+   "id": "q-1145d3ae",
+   "t": "q",
+   "d": 3,
+   "skill": "sign-powers",
+   "A": "−(5²)",
+   "B": "(−5)²",
+   "ans": "B",
+   "why": "Parentheses decide what gets squared: −(5²) = −25, but (−5)² = (−5) × (−5) = 25. Quantity B is greater."
+  },
+  {
+   "id": "q-0693b2d9",
+   "t": "q",
+   "d": 3,
+   "skill": "median-mean",
+   "A": "the mean of 1, 2, 3, 94",
+   "B": "the median of 40, 41, 42",
+   "ans": "B",
+   "why": "Quantity A is (1 + 2 + 3 + 94) ÷ 4 = 100 ÷ 4 = 25 — one large value cannot outvote three tiny ones. Quantity B is the middle of 40, 41, 42, which is 41. Quantity B is greater."
+  },
+  {
+   "id": "q-e505acc1",
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-rules",
+   "A": "2⁵⁰ + 2⁵⁰",
+   "B": "2¹⁰⁰",
+   "ans": "B",
+   "why": "Adding two equal powers only bumps the exponent by one: 2⁵⁰ + 2⁵⁰ = 2 × 2⁵⁰ = 2⁵¹. That is nowhere near 2¹⁰⁰, which is 2⁴⁹ times larger. Quantity B is greater."
+  },
+  {
+   "id": "q-58433ae6",
+   "t": "q",
+   "d": 3,
+   "skill": "estimation",
+   "A": "π²",
+   "B": "10",
+   "ans": "B",
+   "why": "π ≈ 3.14159, so π² ≈ 9.87. Another way to see it: π is a little less than √10 ≈ 3.162, so its square stays under 10. Quantity B is greater."
+  },
+  {
+   "id": "q-67eae98a",
+   "t": "q",
+   "d": 3,
+   "skill": "reciprocals",
+   "A": "x + 1/x",
+   "B": "2",
+   "ctx": "x is a positive number",
+   "ans": "D",
+   "why": "At x = 1 the sum is 1 + 1 = 2, exactly equal. At x = 2 it is 2.5, greater; at x = ½ it is again 2.5, greater. The result is sometimes equal and sometimes greater — no single relationship holds, so it cannot be determined."
+  },
+  {
+   "id": "q-c8e2184f",
+   "t": "q",
+   "d": 3,
+   "skill": "sign-powers",
+   "A": "x⁵",
+   "B": "x³",
+   "ctx": "x is a nonzero real number",
+   "ans": "D",
+   "why": "If x = 2, x⁵ = 32 beats x³ = 8. If x = ½, x⁵ = 1/32 loses to 1/8. If x = −1, both equal −1. All three outcomes are possible, so it cannot be determined."
+  },
+  {
+   "id": "q-7b20f361",
+   "t": "q",
+   "d": 3,
+   "skill": "averages",
+   "A": "the mean of x, 4, and 8",
+   "B": "x",
+   "ctx": "x is a positive number",
+   "ans": "D",
+   "why": "The mean is (x + 4 + 8) ÷ 3. For x = 3 it is 5, greater than x; for x = 6 it is 6, equal; for x = 12 it is 8, less. The winner changes with x, so it cannot be determined."
+  }
+ ]
+}
