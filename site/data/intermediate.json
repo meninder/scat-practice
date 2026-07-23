@@ -1,0 +1,1635 @@
+{
+ "level": "intermediate",
+ "items": [
+  {
+   "id": "v-2d5bcb36",
+   "t": "v",
+   "d": 1,
+   "skill": "synonym",
+   "a": "fragile",
+   "b": "breakable",
+   "c": "sturdy",
+   "ch": [
+    "strong",
+    "weak",
+    "heavy",
+    "wooden"
+   ],
+   "ans": 0,
+   "why": "Fragile means easily broken, so fragile and breakable are synonyms, words with the same meaning. Sturdy means strongly built, and its synonym is strong. Weak is the trap: it is the opposite of sturdy, not a match for it."
+  },
+  {
+   "id": "v-9e5b8dc9",
+   "t": "v",
+   "d": 1,
+   "skill": "synonym",
+   "a": "harbor",
+   "b": "shelter",
+   "c": "peril",
+   "ch": [
+    "danger",
+    "safety",
+    "ocean",
+    "warning"
+   ],
+   "ans": 0,
+   "why": "This is a synonym pair: a harbor is a place of shelter for ships, so harbor and shelter mean the same thing. Peril means danger, so danger completes the pair. Safety is the trap because it is the opposite of peril."
+  },
+  {
+   "id": "v-ea21a164",
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "expand",
+   "b": "shrink",
+   "c": "ascend",
+   "ch": [
+    "descend",
+    "climb",
+    "float",
+    "jump"
+   ],
+   "ans": 0,
+   "why": "Expand and shrink are antonyms, words with opposite meanings. Ascend means to go up, so its opposite is descend, to go down. Climb is the trap: it means almost the same as ascend, but we need its opposite."
+  },
+  {
+   "id": "v-b35e0e86",
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "scarce",
+   "b": "plentiful",
+   "c": "rigid",
+   "ch": [
+    "flexible",
+    "stiff",
+    "fragile",
+    "solid"
+   ],
+   "ans": 0,
+   "why": "Scarce means hard to find, and plentiful is its antonym, or opposite. Rigid means stiff and unbending, so its opposite is flexible. Stiff is the trap because it is a synonym of rigid, not its opposite."
+  },
+  {
+   "id": "v-f9b8a734",
+   "t": "v",
+   "d": 1,
+   "skill": "part-whole",
+   "a": "page",
+   "b": "book",
+   "c": "rung",
+   "ch": [
+    "ladder",
+    "step",
+    "climbing",
+    "wood"
+   ],
+   "ans": 0,
+   "why": "This is part to whole: a page is one part of a book, and a rung is one bar of a ladder. So ladder completes the pair. Step is the trap: it is almost a synonym for rung, another part, not the whole thing."
+  },
+  {
+   "id": "v-2adf10cf",
+   "t": "v",
+   "d": 1,
+   "skill": "part-whole",
+   "a": "yolk",
+   "b": "egg",
+   "c": "core",
+   "ch": [
+    "apple",
+    "seed",
+    "peel",
+    "tree"
+   ],
+   "ans": 0,
+   "why": "Part to whole: the yolk is the yellow center of an egg, and the core is the center of an apple. So apple completes the pair. Seed is the trap because it is another small part inside the apple, not the whole fruit."
+  },
+  {
+   "id": "v-579c0ea8",
+   "t": "v",
+   "d": 1,
+   "skill": "tool-user",
+   "a": "whisk",
+   "b": "chef",
+   "c": "chisel",
+   "ch": [
+    "sculptor",
+    "statue",
+    "hammer",
+    "kitchen"
+   ],
+   "ans": 0,
+   "why": "Tool to user: a chef uses a whisk to beat food, and a sculptor uses a chisel to carve stone. Statue is the trap: it is what the sculptor makes, not the person who uses the tool."
+  },
+  {
+   "id": "v-96710ad5",
+   "t": "v",
+   "d": 1,
+   "skill": "tool-action",
+   "a": "pen",
+   "b": "write",
+   "c": "knife",
+   "ch": [
+    "cut",
+    "sharpen",
+    "fork",
+    "bread"
+   ],
+   "ans": 0,
+   "why": "Tool to action: a pen is used to write, and a knife is used to cut. Sharpen is the trap because sharpening is something you do to a knife, not something you do with it."
+  },
+  {
+   "id": "v-b14db0bc",
+   "t": "v",
+   "d": 1,
+   "skill": "maker-product",
+   "a": "author",
+   "b": "novel",
+   "c": "composer",
+   "ch": [
+    "symphony",
+    "orchestra",
+    "piano",
+    "singer"
+   ],
+   "ans": 0,
+   "why": "Maker to product: an author writes a novel, and a composer writes a symphony, a long piece of music. Orchestra is the trap: it performs the music but is not the thing the composer creates."
+  },
+  {
+   "id": "v-7122b5ab",
+   "t": "v",
+   "d": 1,
+   "skill": "worker-workplace",
+   "a": "judge",
+   "b": "courtroom",
+   "c": "teacher",
+   "ch": [
+    "classroom",
+    "student",
+    "lesson",
+    "homework"
+   ],
+   "ans": 0,
+   "why": "Worker to workplace: a judge works in a courtroom, and a teacher works in a classroom. Student is the trap because a student is a person the teacher helps, not the place where the teacher works."
+  },
+  {
+   "id": "v-99b4821c",
+   "t": "v",
+   "d": 1,
+   "skill": "category-member",
+   "a": "insect",
+   "b": "beetle",
+   "c": "bird",
+   "ch": [
+    "robin",
+    "nest",
+    "feather",
+    "wing"
+   ],
+   "ans": 0,
+   "why": "Category to member: a beetle is one kind of insect, and a robin is one kind of bird. Nest is the trap: it is a bird's home, which is a different relationship."
+  },
+  {
+   "id": "v-4c494cac",
+   "t": "v",
+   "d": 1,
+   "skill": "intensity",
+   "a": "cool",
+   "b": "freezing",
+   "c": "damp",
+   "ch": [
+    "soaked",
+    "dry",
+    "misty",
+    "rainy"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: cool means slightly cold and freezing means extremely cold. Damp means slightly wet, so the extreme version is soaked. Dry is the trap because it is the opposite of damp, not a stronger form of it."
+  },
+  {
+   "id": "v-7d7716f5",
+   "t": "v",
+   "d": 1,
+   "skill": "cause-effect",
+   "a": "germ",
+   "b": "illness",
+   "c": "spark",
+   "ch": [
+    "fire",
+    "smoke",
+    "match",
+    "water"
+   ],
+   "ans": 0,
+   "why": "Cause to effect: a germ can cause an illness, and a spark can cause a fire. Smoke is the trap: it is something fire produces afterward, not what the spark starts."
+  },
+  {
+   "id": "v-5101d7d5",
+   "t": "v",
+   "d": 1,
+   "skill": "object-material",
+   "a": "window",
+   "b": "glass",
+   "c": "coin",
+   "ch": [
+    "metal",
+    "money",
+    "pocket",
+    "bank"
+   ],
+   "ans": 0,
+   "why": "Object to material: a window is made of glass, and a coin is made of metal. Money is the trap because it names what a coin is used as, not what it is made from."
+  },
+  {
+   "id": "v-d1b6fe06",
+   "t": "v",
+   "d": 1,
+   "skill": "instrument-measures",
+   "a": "thermometer",
+   "b": "temperature",
+   "c": "scale",
+   "ch": [
+    "weight",
+    "kilograms",
+    "balance",
+    "height"
+   ],
+   "ans": 0,
+   "why": "Instrument to what it measures: a thermometer measures temperature, and a scale measures weight. Kilograms is the trap: it is a unit printed on the scale, not the thing being measured."
+  },
+  {
+   "id": "v-5bf5f1a5",
+   "t": "v",
+   "d": 1,
+   "skill": "young-adult",
+   "a": "tadpole",
+   "b": "frog",
+   "c": "caterpillar",
+   "ch": [
+    "butterfly",
+    "cocoon",
+    "worm",
+    "insect"
+   ],
+   "ans": 0,
+   "why": "Young to adult: a tadpole grows into a frog, and a caterpillar grows into a butterfly. Cocoon is the trap because it is the wrapping the caterpillar changes inside, a stage along the way, not the adult it becomes."
+  },
+  {
+   "id": "v-b789c36b",
+   "t": "v",
+   "d": 1,
+   "skill": "animal-home",
+   "a": "bird",
+   "b": "nest",
+   "c": "spider",
+   "ch": [
+    "web",
+    "silk",
+    "fly",
+    "garden"
+   ],
+   "ans": 0,
+   "why": "Animal to home: a bird builds and lives in a nest, and a spider builds and lives in a web. Silk is the trap: it is the material the web is made of, not the home itself."
+  },
+  {
+   "id": "v-27a78b0b",
+   "t": "v",
+   "d": 1,
+   "skill": "tool-user",
+   "a": "wrench",
+   "b": "plumber",
+   "c": "needle",
+   "ch": [
+    "tailor",
+    "thread",
+    "cloth",
+    "pipe"
+   ],
+   "ans": 0,
+   "why": "Tool to user: a plumber works with a wrench, and a tailor, a person who sews clothes, works with a needle. Thread is the trap because it goes through a needle but is not the person who uses it."
+  },
+  {
+   "id": "v-052c0ade",
+   "t": "v",
+   "d": 1,
+   "skill": "cause-effect",
+   "a": "practice",
+   "b": "improvement",
+   "c": "exercise",
+   "ch": [
+    "strength",
+    "gym",
+    "running",
+    "weights"
+   ],
+   "ans": 0,
+   "why": "Cause to effect: practice leads to improvement, and exercise leads to strength. Gym is the trap: it is the place where exercise happens, not the result exercise produces."
+  },
+  {
+   "id": "v-98a2c596",
+   "t": "v",
+   "d": 1,
+   "skill": "intensity",
+   "a": "tired",
+   "b": "exhausted",
+   "c": "hungry",
+   "ch": [
+    "starving",
+    "thirsty",
+    "full",
+    "snacking"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: tired means somewhat weary and exhausted means completely worn out. Hungry grows into starving, which means extremely hungry. Thirsty is the trap because it is a different feeling, not a stronger form of hunger."
+  },
+  {
+   "id": "q-8858f87c",
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-decimal",
+   "A": "⅗",
+   "B": "0.65",
+   "ans": "B",
+   "why": "Write both as decimals: ⅗ = 0.6, and 0.65 is more than 0.6. Putting a fraction into decimal form makes the comparison direct. Quantity B is greater."
+  },
+  {
+   "id": "q-1314337a",
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-of-number",
+   "A": "¾ of 40",
+   "B": "⅔ of 45",
+   "ans": "C",
+   "why": "Compute each share: ¾ of 40 = 30, and ⅔ of 45 = 30. A bigger fraction of a smaller number can match a smaller fraction of a bigger number. The two quantities are equal."
+  },
+  {
+   "id": "q-5f802e53",
+   "t": "q",
+   "d": 1,
+   "skill": "perimeter",
+   "A": "the perimeter of a square with side 6",
+   "B": "the perimeter of a rectangle 8 by 4",
+   "ans": "C",
+   "why": "Perimeter adds all the sides. The square gives 6 × 4 = 24, and the rectangle gives 8 + 4 + 8 + 4 = 24. The two quantities are equal."
+  },
+  {
+   "id": "q-d28d648d",
+   "t": "q",
+   "d": 1,
+   "skill": "percent-of-number",
+   "A": "10% of 250",
+   "B": "20% of 120",
+   "ans": "A",
+   "why": "Take 10% by moving the decimal point: 10% of 250 = 25. Then 20% of 120 is double 10% of 120, so it is 24. Quantity A is greater."
+  },
+  {
+   "id": "q-6d53ebcd",
+   "t": "q",
+   "d": 1,
+   "skill": "one-step-equation",
+   "ctx": "x + 7 = 15",
+   "A": "x",
+   "B": "8",
+   "ans": "C",
+   "why": "Solve the one-step equation by subtracting 7 from both sides: x = 15 − 7 = 8. That is exactly Quantity B. The two quantities are equal."
+  },
+  {
+   "id": "q-4f5c52e0",
+   "t": "q",
+   "d": 1,
+   "skill": "decimal-place-value",
+   "A": "0.09",
+   "B": "0.1",
+   "ans": "B",
+   "why": "Line up place values: 0.1 is the same as 0.10, and 0.10 is more than 0.09. Having more digits after the decimal point does not make a number bigger. Quantity B is greater."
+  },
+  {
+   "id": "q-55f28e0a",
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-addition",
+   "A": "½ + ⅓",
+   "B": "¾",
+   "ans": "A",
+   "why": "Add with a common denominator: ½ + ⅓ = 3/6 + 2/6 = ⅚. Since ⅚ is more than ¾ (compare 10/12 with 9/12), Quantity A is greater."
+  },
+  {
+   "id": "q-44191ae6",
+   "t": "q",
+   "d": 1,
+   "skill": "order-of-operations",
+   "A": "7 × 8 − 5",
+   "B": "7 × (8 − 5)",
+   "ans": "A",
+   "why": "Order of operations: multiply before subtracting, so 7 × 8 − 5 = 56 − 5 = 51. In Quantity B the parentheses come first: 7 × 3 = 21. Quantity A is greater."
+  },
+  {
+   "id": "q-ecc98a3d",
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-comparison",
+   "A": "⅞",
+   "B": "8/9",
+   "ans": "B",
+   "why": "Compare each fraction to 1: ⅞ is missing ⅛, while 8/9 is missing only ⅑. The smaller the missing piece, the closer the fraction is to 1. So 8/9 is bigger and Quantity B is greater."
+  },
+  {
+   "id": "q-1d0c512a",
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-of-number",
+   "A": "⅓ of 60",
+   "B": "¼ of 84",
+   "ans": "B",
+   "why": "⅓ of 60 = 20, and ¼ of 84 = 21. The fraction is smaller, but the number it acts on is enough bigger to win. Quantity B is greater."
+  },
+  {
+   "id": "q-6a9e2a20",
+   "t": "q",
+   "d": 1,
+   "skill": "variable-comparison",
+   "ctx": "n is a whole number from 1 to 5",
+   "A": "n + 3",
+   "B": "2 × n",
+   "ans": "D",
+   "why": "Try values from the allowed list. If n = 1, then n + 3 = 4 beats 2 × n = 2; if n = 3, both equal 6; if n = 5, then 2 × n = 10 wins. Because the winner changes, the answer cannot be determined."
+  },
+  {
+   "id": "q-c7e8d2a2",
+   "t": "q",
+   "d": 1,
+   "skill": "variable-comparison",
+   "ctx": "y is a whole number less than 10",
+   "A": "y",
+   "B": "5",
+   "ans": "D",
+   "why": "Whole numbers less than 10 run from 0 up to 9. If y = 8 then y beats 5, if y = 5 they are equal, and if y = 2 then 5 wins. Since the comparison changes, it cannot be determined."
+  },
+  {
+   "id": "q-72914fef",
+   "t": "q",
+   "d": 1,
+   "skill": "area-perimeter",
+   "ctx": "a rectangle has a perimeter of 20",
+   "A": "the area of the rectangle",
+   "B": "24",
+   "ans": "D",
+   "why": "A perimeter of 20 allows many rectangles. A 4 by 6 rectangle has area 24, equal to B; a 1 by 9 rectangle has area only 9; a 5 by 5 shape reaches 25. Because the area can be smaller than, equal to, or bigger than 24, the answer cannot be determined."
+  },
+  {
+   "id": "q-aa93f2ea",
+   "t": "q",
+   "d": 1,
+   "skill": "percent-of-number",
+   "A": "50% of 38",
+   "B": "20",
+   "ans": "B",
+   "why": "Half of 38 is 19, so 50% of 38 = 19. That falls just short of 20. Quantity B is greater."
+  },
+  {
+   "id": "q-5ca7b9a6",
+   "t": "q",
+   "d": 1,
+   "skill": "one-step-equation",
+   "A": "the solution of x − 4 = 11",
+   "B": "the solution of x + 4 = 18",
+   "ans": "A",
+   "why": "Undo each equation: x − 4 = 11 gives x = 15, while x + 4 = 18 gives x = 14. When 4 is already added on, x has less work to do. Quantity A is greater."
+  },
+  {
+   "id": "q-cfac3b8d",
+   "t": "q",
+   "d": 1,
+   "skill": "decimal-multiplication",
+   "A": "0.5 × 0.5",
+   "B": "0.5",
+   "ans": "B",
+   "why": "Multiplying a number by something less than 1 shrinks it. So 0.5 × 0.5 = 0.25, which is smaller than the original 0.5. Quantity B is greater."
+  },
+  {
+   "id": "q-4c6d60a7",
+   "t": "q",
+   "d": 1,
+   "skill": "perimeter",
+   "A": "the perimeter of a rectangle 9 by 2",
+   "B": "the perimeter of a square with side 5",
+   "ans": "A",
+   "why": "Add the sides: the rectangle has perimeter 9 + 2 + 9 + 2 = 22, and the square has 5 × 4 = 20. A long skinny rectangle can have a bigger distance around than a square. Quantity A is greater."
+  },
+  {
+   "id": "q-58174014",
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-comparison",
+   "A": "⅖",
+   "B": "3/10",
+   "ans": "A",
+   "why": "Give both fractions the denominator 10: ⅖ = 4/10, which is more than 3/10. Matching denominators lets you compare the tops directly. Quantity A is greater."
+  },
+  {
+   "id": "q-2e868573",
+   "t": "q",
+   "d": 1,
+   "skill": "distributive-shortcut",
+   "A": "4 × 99",
+   "B": "390",
+   "ans": "A",
+   "why": "Use a shortcut: 4 × 99 is 4 × 100 minus 4, which is 400 − 4 = 396. That beats 390 without any long multiplying. Quantity A is greater."
+  },
+  {
+   "id": "q-5e5ca7ca",
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-of-number",
+   "A": "half of 47",
+   "B": "24",
+   "ans": "B",
+   "why": "Half of 47 is 23.5, since half of 46 is 23 and half of the leftover 1 is 0.5. That lands just below 24. Quantity B is greater."
+  },
+  {
+   "id": "v-49d079f2",
+   "t": "v",
+   "d": 2,
+   "skill": "synonym",
+   "a": "reluctant",
+   "b": "unwilling",
+   "c": "diligent",
+   "ch": [
+    "hardworking",
+    "lazy",
+    "clever",
+    "cheerful"
+   ],
+   "ans": 0,
+   "why": "Synonyms: reluctant means unwilling to do something. Diligent means working carefully and steadily, so its synonym is hardworking. Lazy is the trap: it is the opposite of diligent, not a word with the same meaning."
+  },
+  {
+   "id": "v-f51f3b9c",
+   "t": "v",
+   "d": 2,
+   "skill": "synonym",
+   "a": "diminish",
+   "b": "decrease",
+   "c": "conceal",
+   "ch": [
+    "hide",
+    "reveal",
+    "search",
+    "whisper"
+   ],
+   "ans": 0,
+   "why": "Synonyms: diminish means to decrease or grow smaller. Conceal means to hide something from view. Reveal is the trap because it means to uncover, the exact opposite of conceal."
+  },
+  {
+   "id": "v-c2602a44",
+   "t": "v",
+   "d": 2,
+   "skill": "antonym",
+   "a": "humble",
+   "b": "arrogant",
+   "c": "generous",
+   "ch": [
+    "stingy",
+    "giving",
+    "wealthy",
+    "poor"
+   ],
+   "ans": 0,
+   "why": "Antonyms: humble and arrogant are opposites, and generous, giving freely, is the opposite of stingy, refusing to share. Giving is the trap: it describes a generous person, but we need the opposite trait."
+  },
+  {
+   "id": "v-0278c4b9",
+   "t": "v",
+   "d": 2,
+   "skill": "antonym",
+   "a": "temporary",
+   "b": "permanent",
+   "c": "victory",
+   "ch": [
+    "defeat",
+    "triumph",
+    "battle",
+    "trophy"
+   ],
+   "ans": 0,
+   "why": "Antonyms: temporary means lasting a short time, the opposite of permanent. The opposite of victory is defeat. Triumph is the trap because it is a synonym of victory, and the pattern demands an opposite."
+  },
+  {
+   "id": "v-8d26d847",
+   "t": "v",
+   "d": 2,
+   "skill": "part-whole",
+   "a": "chapter",
+   "b": "novel",
+   "c": "stanza",
+   "ch": [
+    "poem",
+    "rhyme",
+    "author",
+    "song"
+   ],
+   "ans": 0,
+   "why": "Part to whole: a chapter is one section of a novel, and a stanza is one group of lines in a poem. Rhyme is the trap: it is a feature poems often have, not the whole that a stanza belongs to."
+  },
+  {
+   "id": "v-e9ccd573",
+   "t": "v",
+   "d": 2,
+   "skill": "part-whole",
+   "a": "hinge",
+   "b": "door",
+   "c": "spoke",
+   "ch": [
+    "wheel",
+    "bicycle",
+    "pedal",
+    "road"
+   ],
+   "ans": 0,
+   "why": "Part to whole: a hinge is a part of a door, and a spoke is one of the thin rods inside a wheel. Bicycle is the trap because the spoke belongs directly to the wheel; the bicycle is a whole step further away."
+  },
+  {
+   "id": "v-21ee2fd0",
+   "t": "v",
+   "d": 2,
+   "skill": "tool-user",
+   "a": "telescope",
+   "b": "astronomer",
+   "c": "anvil",
+   "ch": [
+    "blacksmith",
+    "horseshoe",
+    "iron",
+    "stable"
+   ],
+   "ans": 0,
+   "why": "Tool to user: an astronomer uses a telescope, and a blacksmith, a worker who shapes hot metal, hammers it on an anvil, a heavy iron block. Horseshoe is the trap: it is a thing a blacksmith makes, not the user of the tool."
+  },
+  {
+   "id": "v-7d274090",
+   "t": "v",
+   "d": 2,
+   "skill": "tool-action",
+   "a": "oar",
+   "b": "row",
+   "c": "key",
+   "ch": [
+    "unlock",
+    "door",
+    "keyhole",
+    "metal"
+   ],
+   "ans": 0,
+   "why": "Tool to action: an oar is used to row a boat, and a key is used to unlock. Door is the trap because it is the object the key works on, not the action the key performs."
+  },
+  {
+   "id": "v-78451865",
+   "t": "v",
+   "d": 2,
+   "skill": "maker-product",
+   "a": "architect",
+   "b": "blueprint",
+   "c": "playwright",
+   "ch": [
+    "play",
+    "stage",
+    "actor",
+    "novel"
+   ],
+   "ans": 0,
+   "why": "Maker to product: an architect creates a blueprint, a building plan, and a playwright writes a play. Stage is the trap: it is where a play is performed, not the thing the playwright creates."
+  },
+  {
+   "id": "v-e9c60a78",
+   "t": "v",
+   "d": 2,
+   "skill": "worker-workplace",
+   "a": "pilot",
+   "b": "cockpit",
+   "c": "mechanic",
+   "ch": [
+    "garage",
+    "engine",
+    "wrench",
+    "driver"
+   ],
+   "ans": 0,
+   "why": "Worker to workplace: a pilot works in a cockpit, and a mechanic works in a garage. Engine is the trap because it is a thing the mechanic repairs, not the place where the work happens."
+  },
+  {
+   "id": "v-75cc8c25",
+   "t": "v",
+   "d": 2,
+   "skill": "category-member",
+   "a": "gem",
+   "b": "ruby",
+   "c": "metal",
+   "ch": [
+    "copper",
+    "rust",
+    "mine",
+    "shiny"
+   ],
+   "ans": 0,
+   "why": "Category to member: a ruby is one kind of gem, and copper is one kind of metal. Rust is the trap: it forms on some metals, but it is not itself a member of the metal category."
+  },
+  {
+   "id": "v-b136bced",
+   "t": "v",
+   "d": 2,
+   "skill": "intensity",
+   "a": "annoyed",
+   "b": "furious",
+   "c": "worried",
+   "ch": [
+    "panicked",
+    "calm",
+    "angry",
+    "sleepy"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: annoyed is mild irritation and furious is extreme anger. Worried is mild fear, so the extreme version is panicked. Calm is the trap because it is the opposite of worried, not a stronger form of it."
+  },
+  {
+   "id": "v-e62f6838",
+   "t": "v",
+   "d": 2,
+   "skill": "cause-effect",
+   "a": "insult",
+   "b": "anger",
+   "c": "compliment",
+   "ch": [
+    "delight",
+    "praise",
+    "gift",
+    "speech"
+   ],
+   "ans": 0,
+   "why": "Cause to effect: an insult causes anger, and a compliment, kind words about someone, causes delight. Praise is the trap: it is a synonym of compliment itself, not the feeling the compliment produces."
+  },
+  {
+   "id": "v-21605bb1",
+   "t": "v",
+   "d": 2,
+   "skill": "object-material",
+   "a": "statue",
+   "b": "marble",
+   "c": "tire",
+   "ch": [
+    "rubber",
+    "wheel",
+    "car",
+    "road"
+   ],
+   "ans": 0,
+   "why": "Object to material: a statue can be carved from marble, and a tire is made of rubber. Wheel is the trap because it is the thing a tire fits onto, not the material the tire is made from."
+  },
+  {
+   "id": "v-e0b0e3d6",
+   "t": "v",
+   "d": 2,
+   "skill": "instrument-measures",
+   "a": "barometer",
+   "b": "pressure",
+   "c": "odometer",
+   "ch": [
+    "distance",
+    "speed",
+    "car",
+    "weather"
+   ],
+   "ans": 0,
+   "why": "Instrument to what it measures: a barometer measures air pressure, and an odometer measures the distance a vehicle has traveled. Speed is the trap: that is what a speedometer measures, a near miss on the same dashboard."
+  },
+  {
+   "id": "v-e42901df",
+   "t": "v",
+   "d": 2,
+   "skill": "young-adult",
+   "a": "foal",
+   "b": "horse",
+   "c": "fawn",
+   "ch": [
+    "deer",
+    "antler",
+    "forest",
+    "hunter"
+   ],
+   "ans": 0,
+   "why": "Young to adult: a foal grows into a horse, and a fawn grows into a deer. Antler is the trap because it is a part of a deer, not the adult animal the fawn becomes."
+  },
+  {
+   "id": "v-a826daec",
+   "t": "v",
+   "d": 2,
+   "skill": "animal-home",
+   "a": "rabbit",
+   "b": "burrow",
+   "c": "bear",
+   "ch": [
+    "den",
+    "forest",
+    "cub",
+    "honey"
+   ],
+   "ans": 0,
+   "why": "Animal to home: a rabbit lives in a burrow, a tunnel it digs, and a bear lives in a den. Forest is the trap: it is the general area where bears roam, not the sheltered home a bear sleeps in."
+  },
+  {
+   "id": "v-ac9f0c73",
+   "t": "v",
+   "d": 2,
+   "skill": "tool-action",
+   "a": "hammer",
+   "b": "pound",
+   "c": "saw",
+   "ch": [
+    "cut",
+    "wood",
+    "sharp",
+    "build"
+   ],
+   "ans": 0,
+   "why": "Tool to action: a hammer is used to pound, and a saw is used to cut. Wood is the trap because it is the material the saw works on, not the action the saw performs."
+  },
+  {
+   "id": "v-4c1818a0",
+   "t": "v",
+   "d": 2,
+   "skill": "maker-product",
+   "a": "carpenter",
+   "b": "furniture",
+   "c": "florist",
+   "ch": [
+    "bouquet",
+    "flower",
+    "vase",
+    "garden"
+   ],
+   "ans": 0,
+   "why": "Maker to product: a carpenter builds furniture, and a florist arranges flowers into a bouquet. Flower is the trap: it is the material the florist starts with, not the finished product."
+  },
+  {
+   "id": "v-c13cf106",
+   "t": "v",
+   "d": 2,
+   "skill": "antonym",
+   "a": "adjacent",
+   "b": "distant",
+   "c": "ancient",
+   "ch": [
+    "modern",
+    "old",
+    "ruined",
+    "famous"
+   ],
+   "ans": 0,
+   "why": "Antonyms: adjacent means right next to something, the opposite of distant. Ancient means very old, so its opposite is modern. Old is the trap because it is a synonym of ancient, and the pattern demands an opposite."
+  },
+  {
+   "id": "q-fcaada31",
+   "t": "q",
+   "d": 2,
+   "skill": "exponents",
+   "A": "2³",
+   "B": "3²",
+   "ans": "B",
+   "why": "Compute each power: 2³ = 2 × 2 × 2 = 8, while 3² = 9. A bigger exponent does not always beat a bigger base. Quantity B is greater."
+  },
+  {
+   "id": "q-dbc14cbc",
+   "t": "q",
+   "d": 2,
+   "skill": "fraction-exponent",
+   "A": "(½)²",
+   "B": "½",
+   "ans": "B",
+   "why": "Squaring a fraction between 0 and 1 makes it smaller: (½)² = ¼. Multiplying by a number less than 1 shrinks the result. Quantity B is greater."
+  },
+  {
+   "id": "q-09da2a47",
+   "t": "q",
+   "d": 2,
+   "skill": "percent-fraction",
+   "A": "40% of 70",
+   "B": "⅖ of 70",
+   "ans": "C",
+   "why": "40% is the same as the fraction ⅖. Both quantities take the same share of the same 70, so both equal 28. The two quantities are equal."
+  },
+  {
+   "id": "q-2622c338",
+   "t": "q",
+   "d": 2,
+   "skill": "area-perimeter",
+   "A": "the area of a square with side 4",
+   "B": "the perimeter of a square with side 4",
+   "ans": "C",
+   "why": "Area is side × side: 4 × 4 = 16. Perimeter adds the 4 sides: 4 × 4 = 16 as well. For a side of exactly 4 the two numbers coincide, so the quantities are equal."
+  },
+  {
+   "id": "q-5ef34f42",
+   "t": "q",
+   "d": 2,
+   "skill": "average",
+   "A": "the average of 8, 10, and 12",
+   "B": "10",
+   "ans": "C",
+   "why": "The numbers 8, 10, and 12 are evenly spaced, so their average is the middle number, 10. No adding is needed once you spot the pattern. The two quantities are equal."
+  },
+  {
+   "id": "q-49289f91",
+   "t": "q",
+   "d": 2,
+   "skill": "average",
+   "A": "5²",
+   "B": "the average of 20 and 32",
+   "ans": "B",
+   "why": "5² = 25. The average of 20 and 32 is the number halfway between them, which is 26. Quantity B is greater."
+  },
+  {
+   "id": "q-05ab8253",
+   "t": "q",
+   "d": 2,
+   "skill": "exponents",
+   "A": "3³",
+   "B": "5²",
+   "ans": "A",
+   "why": "Work out each power: 3³ = 27 and 5² = 25. The smaller base wins here because it gets multiplied one extra time. Quantity A is greater."
+  },
+  {
+   "id": "q-64138a7f",
+   "t": "q",
+   "d": 2,
+   "skill": "order-of-operations",
+   "A": "6 + 4 × 3",
+   "B": "(6 + 4) × 3",
+   "ans": "B",
+   "why": "Order of operations: without parentheses, multiply first, so 6 + 4 × 3 = 6 + 12 = 18. With parentheses, 10 × 3 = 30. Quantity B is greater."
+  },
+  {
+   "id": "q-9d73f7bb",
+   "t": "q",
+   "d": 2,
+   "skill": "order-of-operations",
+   "A": "20 − 8 ÷ 2",
+   "B": "12",
+   "ans": "A",
+   "why": "Division comes before subtraction: 20 − 8 ÷ 2 = 20 − 4 = 16. Only the 8 gets divided, not the whole left side. Quantity A is greater."
+  },
+  {
+   "id": "q-28d5f1e5",
+   "t": "q",
+   "d": 2,
+   "skill": "area-perimeter",
+   "A": "the area of a rectangle 9 by 2",
+   "B": "the area of a rectangle 7 by 4",
+   "ans": "B",
+   "why": "Both rectangles have the same perimeter of 22, but 9 × 2 = 18 while 7 × 4 = 28. With the same distance around, the closer a rectangle is to a square, the bigger its area. Quantity B is greater."
+  },
+  {
+   "id": "q-fbacbb7d",
+   "t": "q",
+   "d": 2,
+   "skill": "percent-fraction",
+   "A": "30% of 90",
+   "B": "⅓ of 90",
+   "ans": "B",
+   "why": "⅓ of 90 is 30, and ⅓ written as a percent is about 33%, which is more than 30%. So 30% of 90 = 27 falls short of 30. Quantity B is greater."
+  },
+  {
+   "id": "q-0176d139",
+   "t": "q",
+   "d": 2,
+   "skill": "exponents",
+   "A": "1² + 2² + 3²",
+   "B": "(1 + 2 + 3)²",
+   "ans": "B",
+   "why": "Squaring the pieces first gives 1 + 4 + 9 = 14. Adding first and then squaring gives 6² = 36. Squaring a sum is not the same as adding the squares, and Quantity B is greater."
+  },
+  {
+   "id": "q-be082b2c",
+   "t": "q",
+   "d": 2,
+   "skill": "decimal-exponent",
+   "A": "0.6²",
+   "B": "0.3",
+   "ans": "A",
+   "why": "0.6² = 0.6 × 0.6 = 0.36. Squaring 0.6 shrinks it, but not all the way down to 0.3. Quantity A is greater."
+  },
+  {
+   "id": "q-b9651222",
+   "t": "q",
+   "d": 2,
+   "skill": "fraction-division",
+   "A": "½ ÷ ¼",
+   "B": "¼ ÷ ½",
+   "ans": "A",
+   "why": "Dividing by a smaller number gives a bigger answer: ½ ÷ ¼ asks how many quarters fit in a half, which is 2. The reverse, ¼ ÷ ½, gives only ½. Quantity A is greater."
+  },
+  {
+   "id": "q-82f551e5",
+   "t": "q",
+   "d": 2,
+   "skill": "average",
+   "A": "the average of 1, 2, 3, and 100",
+   "B": "25",
+   "ans": "A",
+   "why": "The outlier 100 drags the average up: 1 + 2 + 3 + 100 = 106, and 106 ÷ 4 = 26.5. One huge value can outweigh several small ones. Quantity A is greater."
+  },
+  {
+   "id": "q-4c666b45",
+   "t": "q",
+   "d": 2,
+   "skill": "exponents",
+   "A": "11²",
+   "B": "10² + 10",
+   "ans": "A",
+   "why": "11² = 121, while Quantity B gives 100 + 10 = 110. Going from 10² up to 11² actually adds 10 + 11 = 21, more than the 10 that B adds. Quantity A is greater."
+  },
+  {
+   "id": "q-36f15a2e",
+   "t": "q",
+   "d": 2,
+   "skill": "area-perimeter",
+   "A": "the perimeter of a rectangle with area 36 and one side 12",
+   "B": "the perimeter of a square with area 36",
+   "ans": "A",
+   "why": "If the area is 36 and one side is 12, the other side is 3, so the perimeter is 2 × (12 + 3) = 30. The square with area 36 has side 6 and perimeter 24. Stretching a shape long and thin raises its perimeter, so Quantity A is greater."
+  },
+  {
+   "id": "q-924ca966",
+   "t": "q",
+   "d": 2,
+   "skill": "exponents",
+   "ctx": "x is a positive number",
+   "A": "x³",
+   "B": "x²",
+   "ans": "D",
+   "why": "Test values on both sides of 1. If x = 2, then x³ = 8 beats x² = 4; if x = ½, then ⅛ is less than ¼; if x = 1 they are equal. The winner depends on x, so it cannot be determined."
+  },
+  {
+   "id": "q-995db6d8",
+   "t": "q",
+   "d": 2,
+   "skill": "average",
+   "ctx": "the average of two numbers is 20",
+   "A": "the larger of the two numbers",
+   "B": "30",
+   "ans": "D",
+   "why": "An average of 20 only fixes the sum of the two numbers at 40. They could be 20 and 20 (larger is 20, below 30), or 10 and 30 (equal to 30), or 5 and 35 (above 30). Since the larger number can land on either side of 30, the answer cannot be determined."
+  },
+  {
+   "id": "q-6fc95fdf",
+   "t": "q",
+   "d": 2,
+   "skill": "division-structure",
+   "ctx": "n is a whole number greater than 1",
+   "A": "24 ÷ n",
+   "B": "n",
+   "ans": "D",
+   "why": "Try small and large n. If n = 2, then 24 ÷ n = 12 beats 2; if n = 6, then 24 ÷ n = 4 loses to 6. The comparison flips as n grows, so it cannot be determined."
+  },
+  {
+   "id": "v-6cf27b47",
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "candid",
+   "b": "frank",
+   "c": "obstinate",
+   "ch": [
+    "stubborn",
+    "flexible",
+    "rude",
+    "silent"
+   ],
+   "ans": 0,
+   "why": "Synonyms: candid means honest and direct, just like frank. Obstinate means refusing to change your mind, so its synonym is stubborn. Flexible is the trap: it is closer to an opposite of obstinate than a match for it."
+  },
+  {
+   "id": "v-9ed7efe1",
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "frugal",
+   "b": "thrifty",
+   "c": "vigilant",
+   "ch": [
+    "watchful",
+    "careless",
+    "nervous",
+    "sleepy"
+   ],
+   "ans": 0,
+   "why": "Synonyms: frugal means careful with money, like thrifty. Vigilant means keeping careful watch for trouble, so its synonym is watchful. Careless is the trap because it is the opposite of vigilant."
+  },
+  {
+   "id": "v-bdf7a1c2",
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "adversary",
+   "b": "ally",
+   "c": "novice",
+   "ch": [
+    "expert",
+    "beginner",
+    "student",
+    "enemy"
+   ],
+   "ans": 0,
+   "why": "Antonyms: an adversary is an opponent, the opposite of an ally, a partner on your side. A novice is a beginner, so its opposite is an expert. Beginner is the trap: it is a synonym of novice, but the pattern demands the opposite."
+  },
+  {
+   "id": "v-449eeb21",
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "hostile",
+   "b": "friendly",
+   "c": "transparent",
+   "ch": [
+    "opaque",
+    "clear",
+    "glassy",
+    "dark"
+   ],
+   "ans": 0,
+   "why": "Antonyms: hostile means unfriendly, the opposite of friendly. Transparent means see-through, so its opposite is opaque, which means blocking light completely. Clear is the trap because it is a synonym of transparent, not its opposite."
+  },
+  {
+   "id": "v-329af19c",
+   "t": "v",
+   "d": 3,
+   "skill": "part-whole",
+   "a": "star",
+   "b": "constellation",
+   "c": "soldier",
+   "ch": [
+    "army",
+    "navy",
+    "battle",
+    "uniform"
+   ],
+   "ans": 0,
+   "why": "Part to whole: one star is a member of a constellation, a group of stars forming a pattern, and one soldier is a member of an army. Navy is the trap because soldiers serve in an army; it is sailors who belong to the navy."
+  },
+  {
+   "id": "v-daeec6b0",
+   "t": "v",
+   "d": 3,
+   "skill": "part-whole",
+   "a": "cell",
+   "b": "organism",
+   "c": "brick",
+   "ch": [
+    "wall",
+    "mortar",
+    "mason",
+    "clay"
+   ],
+   "ans": 0,
+   "why": "Part to whole: a cell is the tiny building block of an organism, a living thing, and a brick is the building block of a wall. Mortar is the trap: it is the paste holding bricks together, a neighboring part rather than the whole."
+  },
+  {
+   "id": "v-d4dcb4b6",
+   "t": "v",
+   "d": 3,
+   "skill": "tool-user",
+   "a": "palette",
+   "b": "painter",
+   "c": "gavel",
+   "ch": [
+    "judge",
+    "lawyer",
+    "courtroom",
+    "verdict"
+   ],
+   "ans": 0,
+   "why": "Tool to user: a painter holds a palette, the board for mixing paints, and a judge uses a gavel, the small wooden hammer struck for order. Lawyer is the trap because a lawyer works in the same courtroom but does not use the gavel."
+  },
+  {
+   "id": "v-81380528",
+   "t": "v",
+   "d": 3,
+   "skill": "tool-action",
+   "a": "axe",
+   "b": "chop",
+   "c": "drill",
+   "ch": [
+    "bore",
+    "hole",
+    "screwdriver",
+    "wood"
+   ],
+   "ans": 0,
+   "why": "Tool to action: an axe is used to chop, and a drill is used to bore, which means to make a hole. Hole is the trap: it is the result left behind, not the action the drill performs."
+  },
+  {
+   "id": "v-496ed68e",
+   "t": "v",
+   "d": 3,
+   "skill": "maker-product",
+   "a": "cartographer",
+   "b": "map",
+   "c": "choreographer",
+   "ch": [
+    "dance",
+    "dancer",
+    "stage",
+    "music"
+   ],
+   "ans": 0,
+   "why": "Maker to product: a cartographer draws maps, and a choreographer, who designs the steps for performers, creates a dance. Dancer is the trap because the dancer performs the dance rather than being the thing created."
+  },
+  {
+   "id": "v-0fce83e6",
+   "t": "v",
+   "d": 3,
+   "skill": "worker-workplace",
+   "a": "curator",
+   "b": "museum",
+   "c": "warden",
+   "ch": [
+    "prison",
+    "cell",
+    "prisoner",
+    "key"
+   ],
+   "ans": 0,
+   "why": "Worker to workplace: a curator, who cares for a collection, works in a museum, and a warden runs a prison. Cell is the trap: it is only one small room inside the prison, not the whole workplace."
+  },
+  {
+   "id": "v-1c3ee824",
+   "t": "v",
+   "d": 3,
+   "skill": "category-member",
+   "a": "emotion",
+   "b": "envy",
+   "c": "virtue",
+   "ch": [
+    "honesty",
+    "dishonesty",
+    "behavior",
+    "selfishness"
+   ],
+   "ans": 0,
+   "why": "Category to member: envy, wanting what others have, is one of the emotions, and honesty is one of the virtues, which are good character traits. Dishonesty is the trap because it is the opposite of a virtue, not a member of the category."
+  },
+  {
+   "id": "v-9ec1a219",
+   "t": "v",
+   "d": 3,
+   "skill": "intensity",
+   "a": "dislike",
+   "b": "loathe",
+   "c": "like",
+   "ch": [
+    "adore",
+    "tolerate",
+    "respect",
+    "ignore"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: dislike is mild and loathe means to hate intensely. Like grows into adore, which means to love greatly. Tolerate is the trap: it is weaker than like, so it moves in the wrong direction."
+  },
+  {
+   "id": "v-faebd2bb",
+   "t": "v",
+   "d": 3,
+   "skill": "cause-effect",
+   "a": "negligence",
+   "b": "accident",
+   "c": "generosity",
+   "ch": [
+    "gratitude",
+    "charity",
+    "wealth",
+    "apology"
+   ],
+   "ans": 0,
+   "why": "Cause to effect: negligence, careless lack of attention, causes accidents, and generosity causes gratitude in the person who receives it. Charity is the trap because it is a synonym of generosity itself, not the feeling it produces."
+  },
+  {
+   "id": "v-a584e0b1",
+   "t": "v",
+   "d": 3,
+   "skill": "object-material",
+   "a": "violin",
+   "b": "wood",
+   "c": "trumpet",
+   "ch": [
+    "brass",
+    "music",
+    "band",
+    "valve"
+   ],
+   "ans": 0,
+   "why": "Object to material: a violin is made of wood, and a trumpet is made of brass, a yellowish metal. Music is the trap: it is what the trumpet produces, not what the trumpet is made from."
+  },
+  {
+   "id": "v-2ec8deca",
+   "t": "v",
+   "d": 3,
+   "skill": "instrument-measures",
+   "a": "ruler",
+   "b": "length",
+   "c": "protractor",
+   "ch": [
+    "angle",
+    "degrees",
+    "circle",
+    "triangle"
+   ],
+   "ans": 0,
+   "why": "Instrument to what it measures: a ruler measures length, and a protractor measures an angle. Degrees is the trap because degrees are the units marked on the protractor, not the thing being measured."
+  },
+  {
+   "id": "v-58b4ef17",
+   "t": "v",
+   "d": 3,
+   "skill": "young-adult",
+   "a": "sapling",
+   "b": "tree",
+   "c": "larva",
+   "ch": [
+    "insect",
+    "cocoon",
+    "worm",
+    "egg"
+   ],
+   "ans": 0,
+   "why": "Young to adult: a sapling is a young tree, and a larva is the young form of an insect. Cocoon is the trap: it is the casing spun for the change, a stage along the way, not the adult form."
+  },
+  {
+   "id": "v-99c32c22",
+   "t": "v",
+   "d": 3,
+   "skill": "animal-home",
+   "a": "horse",
+   "b": "stable",
+   "c": "pig",
+   "ch": [
+    "sty",
+    "farm",
+    "mud",
+    "trough"
+   ],
+   "ans": 0,
+   "why": "Animal to home: a horse is kept in a stable, and a pig is kept in a sty, its fenced pen. Farm is the trap because it names the whole property, not the animal's own shelter."
+  },
+  {
+   "id": "v-e2327e05",
+   "t": "v",
+   "d": 3,
+   "skill": "intensity",
+   "a": "breeze",
+   "b": "gale",
+   "c": "shower",
+   "ch": [
+    "downpour",
+    "drizzle",
+    "umbrella",
+    "cloud"
+   ],
+   "ans": 0,
+   "why": "Degree of intensity: a breeze is a light wind and a gale is a violently strong one. A shower is light rain, so the extreme version is a downpour. Drizzle is the trap: it is even lighter than a shower, so it runs the wrong direction."
+  },
+  {
+   "id": "v-9d563717",
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "reckless",
+   "b": "cautious",
+   "c": "arrogant",
+   "ch": [
+    "humble",
+    "proud",
+    "famous",
+    "angry"
+   ],
+   "ans": 0,
+   "why": "Antonyms: reckless means careless of danger, the opposite of cautious. Arrogant means full of self-importance, so its opposite is humble. Proud is the trap because it is close to a synonym of arrogant, and the pattern demands an opposite."
+  },
+  {
+   "id": "v-bcf1361f",
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "obsolete",
+   "b": "outdated",
+   "c": "compulsory",
+   "ch": [
+    "required",
+    "optional",
+    "important",
+    "difficult"
+   ],
+   "ans": 0,
+   "why": "Synonyms: obsolete means no longer used, just like outdated. Compulsory means demanded by a rule, so its synonym is required. Optional is the trap: it is the opposite of compulsory, not a word with the same meaning."
+  },
+  {
+   "id": "q-c9f2c29c",
+   "t": "q",
+   "d": 3,
+   "skill": "percent-commutativity",
+   "A": "25% of 80",
+   "B": "80% of 25",
+   "ans": "C",
+   "why": "Percent of a number can be swapped: 25% of 80 and 80% of 25 both equal 20, because 0.25 × 80 = 0.80 × 25. The order of multiplying does not matter. The two quantities are equal."
+  },
+  {
+   "id": "q-98266dc9",
+   "t": "q",
+   "d": 3,
+   "skill": "difference-of-squares",
+   "A": "39 × 41",
+   "B": "40 × 40",
+   "ans": "B",
+   "why": "Spot the structure: 39 × 41 = (40 − 1) × (40 + 1) = 40² − 1 = 1599. A pair straddling 40 multiplies to just under 40². Quantity B is greater."
+  },
+  {
+   "id": "q-52daa1eb",
+   "t": "q",
+   "d": 3,
+   "skill": "negative-exponents",
+   "A": "(−2)³",
+   "B": "(−3)²",
+   "ans": "B",
+   "why": "An odd power keeps the negative sign: (−2)³ = −8. An even power wipes it out: (−3)² = 9. Any positive number beats any negative one, so Quantity B is greater."
+  },
+  {
+   "id": "q-22eaf02a",
+   "t": "q",
+   "d": 3,
+   "skill": "factors",
+   "A": "the number of factors of 12",
+   "B": "the number of factors of 16",
+   "ans": "A",
+   "why": "List them: 12 has factors 1, 2, 3, 4, 6, and 12, which is six. But 16 has only 1, 2, 4, 8, and 16, which is five. A number built from different primes tends to have more factors, so Quantity A is greater."
+  },
+  {
+   "id": "q-0af9d256",
+   "t": "q",
+   "d": 3,
+   "skill": "primes",
+   "A": "the smallest prime number",
+   "B": "the smallest odd prime number",
+   "ans": "B",
+   "why": "The smallest prime number is 2, the only even prime. The smallest odd prime is 3. Quantity B is greater."
+  },
+  {
+   "id": "q-bb59df75",
+   "t": "q",
+   "d": 3,
+   "skill": "negatives",
+   "A": "−5 + 8",
+   "B": "5 + (−8)",
+   "ans": "A",
+   "why": "−5 + 8 = 3, a positive answer because the 8 is bigger. Flipping both signs flips the result: 5 + (−8) = −3. Quantity A is greater."
+  },
+  {
+   "id": "q-6a564808",
+   "t": "q",
+   "d": 3,
+   "skill": "distributive",
+   "A": "17 × 6",
+   "B": "17 × 4 + 17 × 2",
+   "ans": "C",
+   "why": "Use the distributive rule: 17 × 4 + 17 × 2 = 17 × (4 + 2) = 17 × 6. Both quantities are the same product in disguise. The two quantities are equal."
+  },
+  {
+   "id": "q-12f5d314",
+   "t": "q",
+   "d": 3,
+   "skill": "fraction-commutativity",
+   "A": "½ of ⅓ of 60",
+   "B": "⅓ of ½ of 60",
+   "ans": "C",
+   "why": "Multiplication can happen in any order: ½ of ⅓ of 60 and ⅓ of ½ of 60 both equal 60 × ⅙ = 10. Reordering the fractions changes nothing. The two quantities are equal."
+  },
+  {
+   "id": "q-c27c6bf0",
+   "t": "q",
+   "d": 3,
+   "skill": "negatives",
+   "A": "(−4) × (−5)",
+   "B": "−(4 × 5)",
+   "ans": "A",
+   "why": "Two negatives multiply to a positive: (−4) × (−5) = 20. Quantity B is the negative of 4 × 5, which is −20. Quantity A is greater."
+  },
+  {
+   "id": "q-7cac87a3",
+   "t": "q",
+   "d": 3,
+   "skill": "number-patterns",
+   "A": "the sum of the first 10 odd numbers",
+   "B": "99",
+   "ans": "A",
+   "why": "The first 10 odd numbers are 1, 3, 5, and so on up to 19, and their sum is exactly 10² = 100. Odd numbers stack up into perfect squares. Since 100 beats 99, Quantity A is greater."
+  },
+  {
+   "id": "q-2d9a7a06",
+   "t": "q",
+   "d": 3,
+   "skill": "negatives",
+   "A": "−0.4",
+   "B": "−½",
+   "ans": "A",
+   "why": "Write −½ as −0.5. On the number line, −0.4 sits to the right of −0.5, closer to zero. For negative numbers, the one closer to zero is greater, so Quantity A is greater."
+  },
+  {
+   "id": "q-896fd14d",
+   "t": "q",
+   "d": 3,
+   "skill": "factors",
+   "A": "the greatest common factor of 18 and 24",
+   "B": "the number of factors of 64",
+   "ans": "B",
+   "why": "The greatest common factor of 18 and 24 is 6. The factors of 64 are 1, 2, 4, 8, 16, 32, and 64, which is seven of them. Quantity B is greater."
+  },
+  {
+   "id": "q-42210bb5",
+   "t": "q",
+   "d": 3,
+   "skill": "exponents",
+   "A": "3⁴",
+   "B": "4³",
+   "ans": "A",
+   "why": "3⁴ = 81 while 4³ = 64. For these two, the extra multiplication beats the bigger base. Quantity A is greater."
+  },
+  {
+   "id": "q-414fde33",
+   "t": "q",
+   "d": 3,
+   "skill": "decimal-structure",
+   "A": "0.3 × 0.3",
+   "B": "0.1",
+   "ans": "B",
+   "why": "Multiplying two numbers below 1 gives something smaller than either: 0.3 × 0.3 = 0.09. And 0.09 is less than 0.1. Quantity B is greater."
+  },
+  {
+   "id": "q-836cca17",
+   "t": "q",
+   "d": 3,
+   "skill": "percent-structure",
+   "A": "15% of 40 + 15% of 60",
+   "B": "14",
+   "ans": "A",
+   "why": "Combine before computing: 15% of 40 plus 15% of 60 is 15% of the whole 100, which is 15. Grouping the two amounts saves all the work. Since 15 beats 14, Quantity A is greater."
+  },
+  {
+   "id": "q-78cdad38",
+   "t": "q",
+   "d": 3,
+   "skill": "fraction-exponents",
+   "A": "(¾)³",
+   "B": "(¾)²",
+   "ans": "B",
+   "why": "Each extra factor of ¾ shrinks the result, because multiplying by a number below 1 makes things smaller. So (¾)³ is smaller than (¾)². Quantity B is greater."
+  },
+  {
+   "id": "q-2b40dac7",
+   "t": "q",
+   "d": 3,
+   "skill": "negatives",
+   "A": "5 − 9",
+   "B": "9 − 5",
+   "ans": "B",
+   "why": "5 − 9 = −4, a negative number, while 9 − 5 = 4, a positive one. Reversing a subtraction flips its sign. Quantity B is greater."
+  },
+  {
+   "id": "q-a53edd22",
+   "t": "q",
+   "d": 3,
+   "skill": "exponents",
+   "ctx": "x is a nonzero number",
+   "A": "x²",
+   "B": "x",
+   "ans": "D",
+   "why": "Test values around 1. If x = 3, then x² = 9 beats 3; if x = ½, then ¼ is less than ½; if x = 1 they are equal. The comparison depends on x, so it cannot be determined."
+  },
+  {
+   "id": "q-60dd0ef3",
+   "t": "q",
+   "d": 3,
+   "skill": "factors-primes",
+   "ctx": "p is a prime number",
+   "A": "the number of factors of 2 × p",
+   "B": "4",
+   "ans": "D",
+   "why": "If p = 2, then 2 × p = 4, whose only factors are 1, 2, and 4, so B is greater. If p is an odd prime like 3, then 2 × p = 6 has exactly four factors: 1, 2, p, and 2 × p, making the two equal. The outcome changes with p, so it cannot be determined."
+  },
+  {
+   "id": "q-22c19a96",
+   "t": "q",
+   "d": 3,
+   "skill": "product-sum",
+   "ctx": "a and b are whole numbers with a + b = 10",
+   "A": "a × b",
+   "B": "21",
+   "ans": "D",
+   "why": "The condition only fixes a + b = 10. If a = 5 and b = 5 the product is 25, above 21; if a = 3 and b = 7 it is exactly 21; if a = 1 and b = 9 it is only 9. The product can land on either side of 21, so it cannot be determined."
+  }
+ ]
+}
