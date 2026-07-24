@@ -1,5 +1,5 @@
 // SCAT practice webhook. Script Properties required:
-//   SCAT_TOKEN  — must match site/config.js token
+//   SCAT_TOKEN  — sha256 of pinSalt + PIN + ":webhook" (derived client-side at unlock; not stored in the repo)
 //   SHEET_ID    — Google Sheet for the attempt log
 //   GH_PAT      — fine-grained PAT, Contents R/W on the scat-practice repo (for regeneration)
 //   GH_REPO     — e.g. "meninder/scat-practice"
@@ -13,6 +13,11 @@ function doPost(e){
   try{ data = JSON.parse(e.postData.contents); }
   catch(err){ return out({ok: false, error: "bad json"}); }
   if(!data || data.token !== prop("SCAT_TOKEN")) return out({ok: false, error: "bad token"});
+
+  var cache = CacheService.getScriptCache();
+  var posts = Number(cache.get("posts") || 0) + 1;
+  cache.put("posts", String(posts), 21600);
+  if(posts > 30) return out({ok: false, error: "rate limited"});
 
   logToSheet(data);
   sendEmail(data);
@@ -59,6 +64,10 @@ function triggerGeneration(d){
   const needs = (d.lowTiers || []).map(function(t){
     return {strand: t.strand, tier: t.tier, count: Math.max(8, TOPUP_TO - t.unseen)};
   });
+  var cache2 = CacheService.getScriptCache();
+  var disp = Number(cache2.get("dispatches") || 0) + 1;
+  cache2.put("dispatches", String(disp), 21600);
+  if(disp > 3) return false;
   const resp = UrlFetchApp.fetch("https://api.github.com/repos/" + prop("GH_REPO") + "/dispatches", {
     method: "post",
     contentType: "application/json",

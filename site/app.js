@@ -32,6 +32,8 @@ async function tryPin(){
   const pin = $("#pinInput").value.trim();
   if(await sha256hex(CONFIG.pinSalt + pin) === CONFIG.pinHash){
     localStorage.setItem("scat_unlocked", CONFIG.pinHash);
+    const tok = await sha256hex(CONFIG.pinSalt + pin + ":webhook");
+    localStorage.setItem("scat_token", tok);
     renderPick(); show("pick");
   }else{
     $("#pinErr").textContent = "That's not it — try again.";
@@ -218,7 +220,7 @@ function finish(){
   saveState();
 
   renderResults({v, qn, sec, leveledUp, beatenNow, personalBest, atTop});
-  postResult({token: CONFIG.token, kid: KID.name, kidId: KID.id, level: KID.level,
+  postResult({token: localStorage.getItem("scat_token") || "", kid: KID.name, kidId: KID.id, level: KID.level,
     ts: Date.now(), v, q: qn, sec, levels: S.levels, leveledUp, beaten: beatenNow,
     personalBest, misses, lowTiers: lowTiers(BANK.items, {levels: S.levels, seen: S.seen})});
 }

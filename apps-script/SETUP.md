@@ -29,9 +29,9 @@ This walkthrough will set up an automated email and logging system for SCAT prac
 
 ### SCAT_TOKEN (required now)
 - **Property**: `SCAT_TOKEN`
-- **Value**: Generate a long random string
-  - Open Terminal and run: `openssl rand -hex 16`
-  - Copy the output and paste it as the value
+- **Value**: This is no longer a freely-chosen random string. It must equal the sha256 hex digest of `<pinSalt><PIN>:webhook`, where `pinSalt` is `scat-purewal-2026` and `<PIN>` is the family PIN (same PIN that unlocks the site). The site derives this token from the PIN at unlock time, so nothing secret needs to live in the repo.
+  - Open Terminal and run: `printf 'scat-purewal-2026<PIN>:webhook' | shasum -a 256` (replace `<PIN>` with the actual PIN, no spaces)
+  - Copy the resulting hex digest and paste it as the value
   - **Save this value** — you'll need it in Step 5
 
 ### SHEET_ID (required now)
@@ -69,6 +69,19 @@ If you need to add `GH_PAT` later:
    - Example: `https://script.googleapis.com/macros/d/DEPLOYMENT_ID/userweb/exec`
    - **Save this URL** — you need it for the final step
 
+### Updating the code later
+
+The webhook also now has basic rate limiting (max 30 posts and 3 generation dispatches per 6-hour window). If you need to change `Code.gs` after the initial deploy:
+
+1. Go to [script.google.com](https://script.google.com) → open the project
+2. Paste the new `Code.gs` contents into the editor, replacing the old code, and **Save**
+3. Click **Deploy** → **Manage deployments**
+4. Click the **pencil (edit)** icon on the existing deployment
+5. Set **Version** to **New version**
+6. Click **Deploy**
+
+The `/exec` URL stays the same, so nothing in `site/config.js` needs to change.
+
 ## Step 5: Test and Share
 
 Run this command in Terminal to test the webhook (replace placeholders):
@@ -87,6 +100,12 @@ Replace:
 - You should see: `{"ok":true,"dispatched":false}`
 - An email arrives at meninder.purewal@gmail.com with the subject line starting with "SCAT: Test 13/16"
 - A new row appears in your "SCAT Log" sheet with the test data
+
+For the temporary PIN `1234`, the token is the sha256 of `scat-purewal-20261234:webhook` — computed with `printf 'scat-purewal-20261234:webhook' | shasum -a 256`, which gives:
+
+```
+8c0d7fab81128598d1669ebcb2ad8424adfffa843512eed1aefe733905bfe287
+```
 
 ---
 
