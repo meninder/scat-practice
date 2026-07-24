@@ -36,9 +36,9 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           LEVELS: ${{ steps.req.outputs.levels }}
         run: |
-          echo "$LEVELS" | uv run python - <<'EOF'
-          import json, subprocess, sys
-          for level, needs in json.load(sys.stdin).items():
+          uv run python - <<'EOF'
+          import json, os, subprocess
+          for level, needs in json.loads(os.environ["LEVELS"]).items():
               subprocess.run(["uv","run","python","tools/generate/generate.py",
                               "--level",level,"--needs",json.dumps(needs)], check=True)
               subprocess.run(["uv","run","python","tools/generate/independent_check.py",
