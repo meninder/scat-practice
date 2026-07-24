@@ -39,6 +39,7 @@ def main():
     msg = client.messages.create(model=MODEL, max_tokens=32000,
         messages=[{"role": "user", "content": PROMPT.replace("{items}", json.dumps(stripped, ensure_ascii=False))}])
     text = msg.content[0].text
+    text = text.replace("```json", "").replace("```", "")
     checks = json.loads(text[text.index("{"): text.rindex("}") + 1])
     errs = run_checks(cands, checks)
     bad_ids = {e.split(":")[0] for e in errs}

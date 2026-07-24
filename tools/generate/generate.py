@@ -47,6 +47,7 @@ def main():
     msg = client.messages.create(model=MODEL, max_tokens=32000,
         messages=[{"role": "user", "content": build_prompt(args.level, needs, bank)}])
     text = msg.content[0].text
+    text = text.replace("```json", "").replace("```", "")
     text = text[text.index("["): text.rindex("]") + 1]
     cands = json.loads(text)
     existing_ids = {i["id"] for i in bank["items"]}
