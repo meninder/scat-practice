@@ -1,0 +1,55 @@
+name: Generate questions
+on:
+  repository_dispatch:
+    types: [bank_low]
+  workflow_dispatch:
+    inputs:
+      level:
+        description: "advanced or intermediate"
+        required: true
+      needs:
+        description: 'e.g. [{"strand":"q","tier":3,"count":8}]'
+        required: true
+  schedule:
+    - cron: "0 9 1 * *"
+permissions:
+  contents: write
+concurrency:
+  group: generate-bank
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - name: Resolve request
+        id: req
+        env:
+          CLIENT_PAYLOAD: ${{ toJSON(github.event.client_payload) }}
+          IN_LEVEL: ${{ inputs.level }}
+          IN_NEEDS: ${{ inputs.needs }}
+        run: uv run python tools/generate/resolve_request.py
+      - name: Generate, verify, merge
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          LEVELS: ${{ steps.req.outputs.levels }}
+        run: |
+          echo "$LEVELS" | uv run python - <<'EOF'
+          import json, subprocess, sys
+          for level, needs in json.load(sys.stdin).items():
+              subprocess.run(["uv","run","python","tools/generate/generate.py",
+                              "--level",level,"--needs",json.dumps(needs)], check=True)
+              subprocess.run(["uv","run","python","tools/generate/independent_check.py",
+                              "--level",level], check=True)
+              subprocess.run(["uv","run","python","tools/audit_bank.py",
+                              f"site/data/{level}.json"], check=True)
+          EOF
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add site/data/
+          git diff --cached --quiet || git commit -m "chore: add generated & verified questions"
+          git push
