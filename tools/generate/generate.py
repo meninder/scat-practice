@@ -44,9 +44,9 @@ def main():
     needs = json.loads(args.needs)
     bank = json.loads((ROOT / "site" / "data" / f"{args.level}.json").read_text())
     client = anthropic.Anthropic()
-    msg = client.messages.create(model=MODEL, max_tokens=32000,
-        messages=[{"role": "user", "content": build_prompt(args.level, needs, bank)}])
-    text = msg.content[0].text
+    with client.messages.stream(model=MODEL, max_tokens=32000,
+        messages=[{"role": "user", "content": build_prompt(args.level, needs, bank)}]) as stream:
+        text = "".join(stream.text_stream)
     text = text.replace("```json", "").replace("```", "")
     text = text[text.index("["): text.rindex("]") + 1]
     cands = json.loads(text)
