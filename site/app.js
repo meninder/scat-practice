@@ -21,7 +21,10 @@ function loadState(kid){
   return {history: [], sittingNo: 0, levels: {...kid.start}, seen: {},
           reviewQueue: {v: [], q: []}, beaten: 0, skills: {}, pending: []};
 }
-function saveState(){ localStorage.setItem(storeKey(KID.id), JSON.stringify(S)); }
+function saveState(){
+  try{ localStorage.setItem(storeKey(KID.id), JSON.stringify(S)); }
+  catch(e){ /* private mode or quota — results still render from in-memory S */ }
+}
 
 // ---------- PIN gate ----------
 async function sha256hex(s){
@@ -54,7 +57,7 @@ function renderPick(){
   CONFIG.kids.forEach(k => {
     const st = loadState(k);
     const sub = st.history.length
-      ? `${st.history.length} sittings · ${weekCount(st)} this week`
+      ? `${st.history.length} sittings · V${st.levels.v}/Q${st.levels.q} · ${weekCount(st)} this week`
       : "Ready for the first one";
     const b = document.createElement("button");
     b.className = "exam";
@@ -237,7 +240,7 @@ function renderResults(r){
     d.toLocaleDateString(undefined, {month: "short", day: "numeric"});
   $("#resTitle").textContent = grade(r.v + r.qn);
   const parts = [];
-  if(r.leveledUp.length) parts.push(`🔥 ${r.leveledUp.join(" and ")} moved up to challenge level ${r.leveledUp.includes("Verbal") ? S.levels.v : S.levels.q}!`);
+  if(r.leveledUp.length) parts.push("🔥 " + r.leveledUp.map(s => `${s} moved up to challenge level ${s === "Verbal" ? S.levels.v : S.levels.q}`).join(", and ") + "!");
   if(r.atTop) parts.push(`⭐ Holding the top of the ${cap(KID.level)} range.`);
   if(r.beatenNow) parts.push(`🏆 You just beat ${r.beatenNow} question${r.beatenNow === 1 ? "" : "s"} that beat you before — ${S.beaten} total.`);
   if(r.personalBest) parts.push(`📈 New personal best.`);
@@ -288,7 +291,8 @@ async function flushPending(){
     try{
       const r = await fetch(CONFIG.webhookUrl, {method: "POST",
         headers: {"Content-Type": "text/plain;charset=utf-8"}, body: JSON.stringify(p)});
-      if(!r.ok) remaining.push(p);
+      const j = await r.json().catch(() => ({ok: true}));   // unreadable body → assume delivered, don't loop forever
+      if(!r.ok || j.ok === false) remaining.push(p);
     }catch(e){ remaining.push(p); }
   }
   S.pending = remaining; saveState();
