@@ -35,6 +35,33 @@ test("review queue: repeat miss re-schedules instead of duplicating", () => {
   let q = updateReviewQueue([{id:"a",dueAt:5}], [{id:"a",correct:false}], 5).queue;
   assert.deepEqual(q, [{id:"a", dueAt:7}]);
 });
+test("ladder: correct-but-flagged doesn't tier up a strand a clean 7/8 would", () => {
+  assert.equal(updateLevel(2, 7, 7), 3);   // clean 7 → up
+  assert.equal(updateLevel(2, 7, 6), 2);   // 7 correct but one shaky → holds
+  assert.equal(updateLevel(2, 8, 2), 2);   // all correct, mostly shaky → holds, no up
+});
+test("ladder: flags never tier a strand down (tier-down keyed on wrong answers only)", () => {
+  assert.equal(updateLevel(2, 8, 0), 2);   // every correct flagged → no up, no down
+  assert.equal(updateLevel(2, 5, 0), 2);   // holds; flags can't push below the 5-6 band
+  assert.equal(updateLevel(2, 4, 0), 1);   // genuine <=4 correct still tiers down
+});
+test("review queue: flagged items come back; correct-but-flagged is not 'beaten'", () => {
+  // correct + flagged → scheduled, not beaten
+  let r = updateReviewQueue([], [{id:"a",correct:true,flagged:true}], 3);
+  assert.deepEqual(r.queue, [{id:"a", dueAt:5}]);
+  assert.deepEqual(r.beaten, []);
+  // wrong + flagged → scheduled
+  r = updateReviewQueue([], [{id:"b",correct:false,flagged:true}], 3);
+  assert.deepEqual(r.queue, [{id:"b", dueAt:5}]);
+  // an in-queue item answered correct-but-flagged stays (rescheduled), not cleared
+  r = updateReviewQueue([{id:"c",dueAt:5}], [{id:"c",correct:true,flagged:true}], 5);
+  assert.deepEqual(r.queue, [{id:"c", dueAt:7}]);
+  assert.deepEqual(r.beaten, []);
+  // correct + not flagged still clears and reports beaten
+  r = updateReviewQueue([{id:"d",dueAt:5}], [{id:"d",correct:true,flagged:false}], 5);
+  assert.deepEqual(r.queue, []);
+  assert.deepEqual(r.beaten, ["d"]);
+});
 test("assembly: 8 items, mostly current tier, 2 probes one tier up, no repeats", () => {
   const pool = [...mkV(20,1), ...mkV(20,2), ...mkV(20,3)];
   const out = assembleStrand(pool, freshState(2), seeded());

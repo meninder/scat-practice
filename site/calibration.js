@@ -3,8 +3,12 @@ export const STRAND_N = 8;
 export const PROBES = 2;
 export const LOW_THRESHOLD = 10;
 
-export function updateLevel(level, score){
-  if(score >= 7) return Math.min(3, level + 1);
+// score      = clean correct count for the strand (drives tier-down)
+// cleanScore = correct-and-not-flagged count (drives tier-up); a correct-but-flagged
+//   ("shaky") item counts toward score but NOT cleanScore, so it can't tier a strand up.
+//   Flags never tier a strand down — tier-down stays keyed on actual wrong answers.
+export function updateLevel(level, score, cleanScore = score){
+  if(cleanScore >= 7) return Math.min(3, level + 1);
   if(score <= 4) return Math.max(1, level - 1);
   return level;
 }
@@ -13,11 +17,14 @@ export function dueReviews(queue, sittingNo){
   return queue.filter(r => r.dueAt <= sittingNo).map(r => r.id);
 }
 
+// results: [{id, correct, flagged}]. A flagged item (correct or not) is scheduled
+// to come back, mirroring how misses are queued. Only a correct-AND-not-flagged item
+// clears the queue and counts as "beaten".
 export function updateReviewQueue(queue, results, sittingNo){
   const next = [...queue], beaten = [];
   for(const r of results){
     const i = next.findIndex(e => e.id === r.id);
-    if(r.correct){
+    if(r.correct && !r.flagged){
       if(i >= 0){ next.splice(i, 1); beaten.push(r.id); }
     }else{
       const entry = {id: r.id, dueAt: sittingNo + 2};

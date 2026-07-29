@@ -97,6 +97,15 @@
   .choice.sel{border-color:var(--accent);background:#eef4f9}
   .choice.sel .key{background:var(--accent);color:#fff;border-color:var(--accent)}
 
+  .flagrow{display:flex;justify-content:center;margin-top:16px}
+  .flagchip{
+    appearance:none;cursor:pointer;font-family:inherit;font-size:13px;font-weight:600;
+    border:1.5px dashed var(--line);background:var(--card-2);color:var(--ink-soft);
+    border-radius:999px;padding:7px 14px;transition:border-color .1s,background .1s,color .1s;
+  }
+  .flagchip:hover{border-color:var(--gold);color:var(--ink)}
+  .flagchip.on{border-style:solid;border-color:var(--gold);background:#fbf3df;color:#7a6a36}
+
   .nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
   .btn{appearance:none;cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;border-radius:11px;padding:12px 20px;border:1px solid var(--ink);background:var(--ink);color:#fff;transition:opacity .12s}
   .btn:hover{opacity:.9}

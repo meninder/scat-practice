@@ -9,17 +9,20 @@ const QI = {A: 0, B: 1, C: 2, D: 3};
 const cap = s => s[0].toUpperCase() + s.slice(1);
 
 let KID = null, BANK = null, S = null;
-let SET = null, idx = 0, answers = [], t0 = 0, timerId = null, qTime = [], qStart = 0;
+let SET = null, idx = 0, answers = [], flags = [], t0 = 0, timerId = null, qTime = [], qStart = 0;
 
 // ---------- per-kid persistent state ----------
 const storeKey = id => `scat_${id}_v1`;
 function loadState(kid){
+  const defaults = () => ({history: [], sittingNo: 0, levels: {...kid.start}, seen: {},
+          reviewQueue: {v: [], q: []}, beaten: 0, skills: {}, pending: []});
   try{
     const raw = localStorage.getItem(storeKey(kid.id));
-    if(raw) return JSON.parse(raw);
+    // No migration layer (see HANDOFF): default-merge so a returning user whose stored
+    // state predates a new field never hits an undefined in finish().
+    if(raw) return {...defaults(), ...JSON.parse(raw)};
   }catch(e){}
-  return {history: [], sittingNo: 0, levels: {...kid.start}, seen: {},
-          reviewQueue: {v: [], q: []}, beaten: 0, skills: {}, pending: []};
+  return defaults();
 }
 function saveState(){
   try{ localStorage.setItem(storeKey(KID.id), JSON.stringify(S)); }
@@ -130,6 +133,7 @@ function startSitting(){
     {level: S.levels.q, seen: S.seen, reviewQueue: S.reviewQueue.q, sittingNo});
   SET = {questions: [...vs, ...qs], sittingNo};
   idx = 0; answers = new Array(SET.questions.length).fill(null);
+  flags = new Array(SET.questions.length).fill(false);
   qTime = new Array(SET.questions.length).fill(0); qStart = 0;
   t0 = Date.now();
   if(timerId) clearInterval(timerId);
@@ -155,16 +159,18 @@ function renderQuestion(){
         <div class="analogy"><span class="w">${q.a}</span><span class="sep">:</span><span class="w">${q.b}</span>
         <span class="sep">::</span><span class="w">${q.c}</span><span class="sep">:</span><span class="blank">?</span></div>
         <div class="qhint">Which word completes the analogy in the same way?</div>
-        <div class="choices">${q.ch.map((c, i) => choiceHTML(i, c)).join("")}</div></div>`
+        <div class="choices">${q.ch.map((c, i) => choiceHTML(i, c)).join("")}</div>${flagHTML()}</div>`
     : `<div class="qcard fade">
         ${q.ctx ? `<div class="qcontext">${q.ctx}</div>` : ""}
         <div class="compare"><div class="col"><div class="lab">Quantity A</div><div class="val">${q.A}</div></div>
         <div class="vs">vs</div><div class="col"><div class="lab">Quantity B</div><div class="val">${q.B}</div></div></div>
-        <div class="choices">${QUANT_CHOICES.map((c, i) => choiceHTML(i, c)).join("")}</div></div>`;
+        <div class="choices">${QUANT_CHOICES.map((c, i) => choiceHTML(i, c)).join("")}</div>${flagHTML()}</div>`;
   host.querySelectorAll(".choice").forEach(el => {
     el.onclick = () => { answers[idx] = parseInt(el.dataset.i); markSelected(); };
   });
-  markSelected();
+  const fc = host.querySelector("#flagChip");
+  if(fc) fc.onclick = () => { flags[idx] = !flags[idx]; markFlag(); };
+  markSelected(); markFlag();
   $("#prevBtn").disabled = idx === 0;
   const last = idx === SET.questions.length - 1;
   $("#nextBtn").textContent = last ? "Finish & score" : "Next";
@@ -174,9 +180,19 @@ function renderQuestion(){
 function choiceHTML(i, label){
   return `<button class="choice" data-i="${i}"><span class="key">${i + 1}</span><span>${label}</span></button>`;
 }
+function flagHTML(){
+  return `<div class="flagrow"><button class="flagchip" id="flagChip" type="button">🤔 Didn't get this</button></div>`;
+}
 function markSelected(){
   document.querySelectorAll("#qhost .choice").forEach(el =>
     el.classList.toggle("sel", parseInt(el.dataset.i) === answers[idx]));
+}
+function markFlag(){
+  const fc = document.querySelector("#flagChip");
+  if(!fc) return;
+  const on = !!flags[idx];
+  fc.classList.toggle("on", on);
+  fc.textContent = on ? "🤔 Marked — didn't get this" : "🤔 Didn't get this";
 }
 function goPrev(){ if(idx > 0){ commitTime(); idx--; renderQuestion(); } }
 function goNext(){ commitTime(); if(idx < SET.questions.length - 1){ idx++; renderQuestion(); } else finish(); }
@@ -186,20 +202,34 @@ function correctIndex(q){ return q.t === "v" ? q.ans : QI[q.ans]; }
 function finish(){
   if(timerId) clearInterval(timerId);
   const sec = Math.floor((Date.now() - t0) / 1000);
-  let v = 0, qn = 0;
-  const results = {v: [], q: []}, misses = [];
+  let v = 0, qn = 0, cleanV = 0, cleanQ = 0;
+  const results = {v: [], q: []}, misses = [], studyItems = [];
   SET.questions.forEach((q, i) => {
     const ok = answers[i] === correctIndex(q);
-    results[q.t].push({id: q.id, correct: ok});
+    const flagged = !!flags[i];
+    results[q.t].push({id: q.id, correct: ok, flagged});
     const sk = S.skills[q.skill] || {r: 0, w: 0};
     ok ? sk.r++ : sk.w++;
     S.skills[q.skill] = sk;
     if(ok){ q.t === "v" ? v++ : qn++; }
-    else misses.push({
+    // A correct-but-flagged ("shaky") answer doesn't count toward the clean tally that tiers a strand up.
+    if(ok && !flagged){ q.t === "v" ? cleanV++ : cleanQ++; }
+    const stem = q.t === "v" ? `${q.a} : ${q.b} :: ${q.c} : ?` : `${q.ctx ? "(" + q.ctx + ") " : ""}${q.A}  vs  ${q.B}`;
+    const yourTxt = answers[i] === null ? "" : (q.t === "v" ? q.ch[answers[i]] : QUANT_CHOICES[answers[i]]);
+    const corTxt = q.t === "v" ? q.ch[q.ans] : QUANT_CHOICES[QI[q.ans]];
+    studyItems.push({
+      type: q.t === "v" ? "Verbal" : "Quant",
+      text: stem,
+      your: yourTxt,
+      correct: corTxt,
+      why: q.why,
+      wasCorrect: ok,
+      flagged});
+    if(!ok) misses.push({
       type: q.t === "v" ? "Verbal" : "Quantitative",
-      text: q.t === "v" ? `${q.a} : ${q.b} :: ${q.c} : ?` : `${q.ctx ? "(" + q.ctx + ") " : ""}${q.A}  vs  ${q.B}`,
-      your: answers[i] === null ? "left blank" : (q.t === "v" ? q.ch[answers[i]] : QUANT_CHOICES[answers[i]]),
-      correct: q.t === "v" ? q.ch[q.ans] : QUANT_CHOICES[QI[q.ans]],
+      text: stem,
+      your: answers[i] === null ? "left blank" : yourTxt,
+      correct: corTxt,
       why: q.why});
   });
 
@@ -210,7 +240,7 @@ function finish(){
   S.beaten += beatenNow;
 
   const leveledUp = [];
-  const newV = updateLevel(S.levels.v, v), newQ = updateLevel(S.levels.q, qn);
+  const newV = updateLevel(S.levels.v, v, cleanV), newQ = updateLevel(S.levels.q, qn, cleanQ);
   if(newV > S.levels.v) leveledUp.push("Verbal");
   if(newQ > S.levels.q) leveledUp.push("Quantitative");
   const atTop = (v >= 7 && S.levels.v === 3) || (qn >= 7 && S.levels.q === 3);
@@ -225,7 +255,7 @@ function finish(){
   renderResults({v, qn, sec, leveledUp, beatenNow, personalBest, atTop});
   postResult({token: localStorage.getItem("scat_token") || "", kid: KID.name, kidId: KID.id, level: KID.level,
     ts: Date.now(), v, q: qn, sec, levels: S.levels, leveledUp, beaten: beatenNow,
-    personalBest, misses, lowTiers: lowTiers(BANK.items, {levels: S.levels, seen: S.seen})});
+    personalBest, misses, studyItems, lowTiers: lowTiers(BANK.items, {levels: S.levels, seen: S.seen})});
 }
 
 function grade(total){
