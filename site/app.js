@@ -125,12 +125,24 @@ function shuffleChoices(q){
   const order = [0, 1, 2, 3].sort(() => Math.random() - 0.5);
   return {...q, ch: order.map(i => q.ch[i]), ans: order.indexOf(q.ans)};
 }
+function sampleRandom(pool, n){
+  const a = [...pool];
+  for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+  return a.slice(0, n);
+}
 function startSitting(){
   const sittingNo = S.sittingNo + 1;
-  const vs = assembleStrand(BANK.items.filter(i => i.t === "v"),
-    {level: S.levels.v, seen: S.seen, reviewQueue: S.reviewQueue.v, sittingNo}).map(shuffleChoices);
-  const qs = assembleQuant(BANK.items.filter(i => i.t === "q"),
-    {level: S.levels.q, seen: S.seen, reviewQueue: S.reviewQueue.q, sittingNo});
+  let vs, qs;
+  if(KID.test){
+    // Parent test profile: 8 random verbal + 8 random quant, any tier, ignore the ladder.
+    vs = sampleRandom(BANK.items.filter(i => i.t === "v"), 8).map(shuffleChoices);
+    qs = sampleRandom(BANK.items.filter(i => i.t === "q"), 8);
+  }else{
+    vs = assembleStrand(BANK.items.filter(i => i.t === "v"),
+      {level: S.levels.v, seen: S.seen, reviewQueue: S.reviewQueue.v, sittingNo}).map(shuffleChoices);
+    qs = assembleQuant(BANK.items.filter(i => i.t === "q"),
+      {level: S.levels.q, seen: S.seen, reviewQueue: S.reviewQueue.q, sittingNo});
+  }
   SET = {questions: [...vs, ...qs], sittingNo};
   idx = 0; answers = new Array(SET.questions.length).fill(null);
   flags = new Array(SET.questions.length).fill(false);
@@ -181,7 +193,7 @@ function choiceHTML(i, label){
   return `<button class="choice" data-i="${i}"><span class="key">${i + 1}</span><span>${label}</span></button>`;
 }
 function flagHTML(){
-  return `<div class="flagrow"><button class="flagchip" id="flagChip" type="button">🤔 Didn't get this</button></div>`;
+  return `<div class="flagrow"><button class="flagchip" id="flagChip" type="button">🤔 Don't really understand this one</button></div>`;
 }
 function markSelected(){
   document.querySelectorAll("#qhost .choice").forEach(el =>
@@ -192,7 +204,7 @@ function markFlag(){
   if(!fc) return;
   const on = !!flags[idx];
   fc.classList.toggle("on", on);
-  fc.textContent = on ? "🤔 Marked — didn't get this" : "🤔 Didn't get this";
+  fc.textContent = on ? "🤔 Marked — don't really understand this one" : "🤔 Don't really understand this one";
 }
 function goPrev(){ if(idx > 0){ commitTime(); idx--; renderQuestion(); } }
 function goNext(){ commitTime(); if(idx < SET.questions.length - 1){ idx++; renderQuestion(); } else finish(); }

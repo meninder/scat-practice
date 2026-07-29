@@ -6,5 +6,8 @@ export const CONFIG = {
     {id: "krish", name: "Krish", level: "advanced",     start: {v: 2, q: 2}},
     {id: "arya",  name: "Arya",  level: "advanced",     start: {v: 1, q: 1}},
     {id: "kira",  name: "Kira",  level: "intermediate", start: {v: 2, q: 2}},
+    // Parent test profile: separate storage key (never touches the kids' calibration),
+    // random questions each sitting (ignores the adaptive ladder). For trying the flow + email.
+    {id: "parent", name: "Test (Parent)", level: "advanced", start: {v: 2, q: 2}, test: true},
   ],
 };
