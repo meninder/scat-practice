@@ -4,6 +4,7 @@
 //   GH_PAT      — fine-grained PAT, Contents R/W on the scat-practice repo (for regeneration)
 //   GH_REPO     — e.g. "meninder/scat-practice"
 const PARENT_EMAIL = "meninder.purewal@gmail.com";
+const CC_EMAIL = "psjaiswal@gmail.com";
 const TOPUP_TO = 26;   // regeneration tops each low strand-tier up to this many items
 
 function prop(k){ return PropertiesService.getScriptProperties().getProperty(k); }
@@ -48,16 +49,41 @@ function sendEmail(d){
     (d.leveledUp && d.leveledUp.length ? "  (moved up: " + d.leveledUp.join(", ") + " 🔥)" : "") + "\n" +
     (d.beaten ? d.kid + " beat " + d.beaten + " question(s) that beat them before.\n" : "") +
     (d.personalBest ? "New personal best.\n" : "");
-  if((d.misses || []).length){
+  const strip = function(s){ return (s || "").replace(/<[^>]+>/g, ""); };
+  if((d.studyItems || []).length){
+    var review = [], rest = [];
+    d.studyItems.forEach(function(it){
+      if(it.wasCorrect === false || it.flagged) review.push(it);
+      else rest.push(it);
+    });
+    body += "\nStudy guide — go through this with " + d.kid + ".\n";
+    if(review.length){
+      body += "\n=== Review together (missed or flagged) ===\n";
+      review.forEach(function(it, i){
+        body += "\n" + (i + 1) + ". [" + it.type + "] " + it.text + "\n";
+        if(it.flagged) body += "   🤔 flagged — didn't understand" + (it.wasCorrect ? " (but answered correctly)" : "") + "\n";
+        body += "   answered: " + (it.your || "(blank)") + " · correct: " + it.correct + "\n";
+        body += "   " + strip(it.why) + "\n";
+      });
+    }
+    if(rest.length){
+      body += "\n=== Full run-through (got these right) ===\n";
+      rest.forEach(function(it, i){
+        body += "\n" + (i + 1) + ". [" + it.type + "] " + it.text + "\n";
+        body += "   correct: " + it.correct + "\n";
+        body += "   " + strip(it.why) + "\n";
+      });
+    }
+  } else if((d.misses || []).length){
     body += "\nTo review together:\n";
     d.misses.forEach(function(m, i){
       body += "\n" + (i + 1) + ". [" + m.type + "] " + m.text + "\n   answered: " + m.your +
-              " · correct: " + m.correct + "\n   " + m.why.replace(/<[^>]+>/g, "") + "\n";
+              " · correct: " + m.correct + "\n   " + strip(m.why) + "\n";
     });
   }
   if((d.lowTiers || []).length) body += "\n(Question bank running low for " + d.kid + " — new questions are being generated automatically.)\n";
   MailApp.sendEmail(PARENT_EMAIL, "SCAT: " + d.kid + " " + (d.v + d.q) + "/16" +
-    (d.leveledUp && d.leveledUp.length ? " · leveled up 🔥" : ""), body);
+    (d.leveledUp && d.leveledUp.length ? " · leveled up 🔥" : ""), body, {cc: CC_EMAIL});
 }
 
 function triggerGeneration(d){
