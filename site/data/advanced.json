@@ -1629,6 +1629,332 @@
    "ctx": "x is a positive number",
    "ans": "D",
    "why": "The mean is (x + 4 + 8) ÷ 3. For x = 3 it is 5, greater than x; for x = 6 it is 6, equal; for x = 12 it is 8, less. The winner changes with x, so it cannot be determined."
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "expand",
+   "b": "contract",
+   "c": "reveal",
+   "ch": [
+    "conceal",
+    "expose",
+    "announce",
+    "mystery"
+   ],
+   "ans": 0,
+   "why": "To expand means to grow larger, and to contract means to shrink — an Antonym relationship. The opposite of reveal (to show) is conceal, which means to hide. 'Expose' is the trap: it is a synonym of reveal, but the relationship demands an opposite.",
+   "id": "v-e55e6898"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "tool-action",
+   "a": "hammer",
+   "b": "pound",
+   "c": "saw",
+   "ch": [
+    "cut",
+    "blade",
+    "wood",
+    "sharpen"
+   ],
+   "ans": 0,
+   "why": "This is a Tool to action relationship: a hammer is used to pound, and a saw is used to cut. 'Blade' is the trap — it is a part of a saw, not the action a saw performs. 'Wood' is what a saw cuts, not what it does.",
+   "id": "v-ac9f0c73"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "young-adult",
+   "a": "foal",
+   "b": "horse",
+   "c": "tadpole",
+   "ch": [
+    "frog",
+    "pond",
+    "fish",
+    "insect"
+   ],
+   "ans": 0,
+   "why": "This is a Young to adult relationship: a foal grows into a horse, and a tadpole grows into a frog. 'Pond' is the trap — it names where a tadpole lives (animal to home), not the adult it becomes. 'Fish' only describes what a tadpole resembles.",
+   "id": "v-722a34f4"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "cause-effect",
+   "a": "exercise",
+   "b": "fitness",
+   "c": "study",
+   "ch": [
+    "knowledge",
+    "school",
+    "books",
+    "teacher"
+   ],
+   "ans": 0,
+   "why": "This is a Cause to effect relationship: exercise produces fitness, and study produces knowledge. 'School' is the trap — it is where studying happens, not what studying produces. 'Books' are tools for studying, not its result.",
+   "id": "v-2ae8df16"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "synonym",
+   "a": "obsolete",
+   "b": "outdated",
+   "c": "reluctant",
+   "ch": [
+    "hesitant",
+    "eager",
+    "careless",
+    "obedient"
+   ],
+   "ans": 0,
+   "why": "This is a Synonym relationship: obsolete means outdated (no longer in use), and reluctant means hesitant — unwilling to do something. 'Eager' is the trap: it is the antonym of reluctant, but the first pair tells us to find a word with the same meaning.",
+   "id": "v-4febf8e2"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "intensity",
+   "a": "hungry",
+   "b": "ravenous",
+   "c": "tired",
+   "ch": [
+    "exhausted",
+    "sleepy",
+    "energetic",
+    "bored"
+   ],
+   "ans": 0,
+   "why": "This is a Degree of intensity relationship: ravenous means extremely hungry, and exhausted means extremely tired. 'Sleepy' is the trap — it means about the same as tired, but the pattern requires a much stronger version of the word, not an equal one.",
+   "id": "v-d877e0f9"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "part-whole",
+   "a": "chapter",
+   "b": "novel",
+   "c": "stanza",
+   "ch": [
+    "poem",
+    "rhyme",
+    "poet",
+    "paragraph"
+   ],
+   "ans": 0,
+   "why": "This is a Part to whole relationship: a chapter is a section of a novel, and a <em>stanza</em> — a group of lines set apart — is a section of a poem. 'Poet' is the trap: it names the maker of a poem, not the whole that a stanza belongs to. 'Rhyme' is a feature of poems, not the whole.",
+   "id": "v-8d26d847"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "worker-workplace",
+   "a": "judge",
+   "b": "courtroom",
+   "c": "curator",
+   "ch": [
+    "museum",
+    "artifact",
+    "sculpture",
+    "historian"
+   ],
+   "ans": 0,
+   "why": "This is a Worker to workplace relationship: a judge works in a courtroom, and a <em>curator</em> — a person who selects and cares for a collection — works in a museum. 'Artifact' is the trap: it is an object a curator handles, not the place where a curator works.",
+   "id": "v-f601c207"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "transparent",
+   "b": "opaque",
+   "c": "garrulous",
+   "ch": [
+    "reticent",
+    "talkative",
+    "verbose",
+    "eloquent"
+   ],
+   "ans": 0,
+   "why": "This is an Antonym relationship: transparent (see-through) is the opposite of opaque (blocking light), and <em>garrulous</em> (excessively talkative) is the opposite of <em>reticent</em> (reserved and unwilling to speak). 'Talkative' is the trap — it is a synonym of garrulous, but the pattern demands its opposite. 'Verbose' also means wordy, so it fails for the same reason.",
+   "id": "v-1586c833"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "vociferous",
+   "b": "loud",
+   "c": "erudite",
+   "ch": [
+    "scholarly",
+    "ignorant",
+    "arrogant",
+    "quiet"
+   ],
+   "ans": 0,
+   "why": "This is a Synonym relationship: <em>vociferous</em> means loud and forceful in expression, and <em>erudite</em> means scholarly — showing deep learning. 'Ignorant' is the trap: it is the antonym of erudite, but the first pair sets a same-meaning pattern. 'Arrogant' describes an attitude, not learning.",
+   "id": "v-232f9569"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "maker-product",
+   "a": "playwright",
+   "b": "drama",
+   "c": "cartographer",
+   "ch": [
+    "map",
+    "geography",
+    "globe",
+    "compass"
+   ],
+   "ans": 0,
+   "why": "This is a Maker to product relationship: a playwright writes a drama, and a <em>cartographer</em> makes a map. 'Geography' is the trap — it is the field a cartographer studies, not the product created. A 'compass' is a tool a mapmaker might use, again the wrong role.",
+   "id": "v-3c3b46e2"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "instrument-measures",
+   "a": "barometer",
+   "b": "pressure",
+   "c": "altimeter",
+   "ch": [
+    "altitude",
+    "airplane",
+    "weather",
+    "distance"
+   ],
+   "ans": 0,
+   "why": "This is an Instrument to what it measures relationship: a barometer measures air pressure, and an <em>altimeter</em> measures altitude — height above the ground or sea level. 'Airplane' is the trap: it is where an altimeter is used, not what it measures. 'Weather' belongs with the barometer, not the altimeter.",
+   "id": "v-71ead511"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "percent-commutativity",
+   "A": "30% of 90",
+   "B": "90% of 30",
+   "ans": "C",
+   "why": "Percent-of is multiplication, and multiplication is commutative: a% of b always equals b% of a. Both quantities equal 0.30 × 90 = 0.90 × 30 = 27. The two quantities are equal.",
+   "id": "q-8ec38359"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "absolute-value",
+   "A": "|−15| − |6|",
+   "B": "|−15 − 6|",
+   "ans": "B",
+   "why": "Absolute value must be applied before you compare, not distributed over subtraction. Quantity A is 15 − 6 = 9, while Quantity B is |−21| = 21. Quantity B is greater.",
+   "id": "q-6217730e"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "exponents",
+   "A": "2⁶",
+   "B": "6²",
+   "ans": "A",
+   "why": "Swapping a base and an exponent usually changes the value, so compute each: 2⁶ = 64 while 6² = 36. Repeated doubling grows faster than squaring a small number. Quantity A is greater.",
+   "id": "q-2817f653"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "averages",
+   "A": "the average of 8, 12, and 16",
+   "B": "13",
+   "ans": "B",
+   "why": "When numbers are evenly spaced, the average is the middle number — no adding needed. The middle of 8, 12, 16 is 12, which is less than 13. Quantity B is greater.",
+   "id": "q-a97175e7"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "difference-of-squares",
+   "A": "79 × 81",
+   "B": "6400",
+   "ans": "B",
+   "why": "Use the difference of squares: 79 × 81 = (80 − 1)(80 + 1) = 80² − 1 = 6399. Quantity B is 80² = 6400, exactly 1 more. Quantity B is greater.",
+   "id": "q-b52192df"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "factorial-ratio",
+   "A": "9! ÷ 7!",
+   "B": "8 × 9",
+   "ans": "C",
+   "why": "When dividing factorials, everything up through 7! cancels: 9! ÷ 7! = 8 × 9 = 72. Quantity B is also 8 × 9 = 72. The two quantities are equal.",
+   "id": "q-52c1fae1"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "slope",
+   "A": "the slope of the line through (1, 2) and (4, 14)",
+   "B": "3",
+   "ans": "A",
+   "why": "Slope is rise over run: (14 − 2) ÷ (4 − 1) = 12 ÷ 3 = 4. Since 4 > 3, Quantity A is greater.",
+   "id": "q-67ed87a0"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "sign-even-odd-powers",
+   "A": "x³",
+   "B": "x²",
+   "ctx": "x is a nonzero real number",
+   "ans": "D",
+   "why": "Odd powers keep a number's sign and behavior, while even powers do not, so test values across the domain. If x = 2, then x³ = 8 > x² = 4; if x = ½, then ⅛ < ¼; if x = 1 they are equal. The comparison flips, so it cannot be determined.",
+   "id": "q-3697d3b6"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-rules",
+   "A": "3³⁰",
+   "B": "9¹⁶",
+   "ans": "B",
+   "why": "Rewrite to a common base: 9¹⁶ = (3²)¹⁶ = 3³². With the same base, the larger exponent wins, and 32 > 30. Quantity B is greater.",
+   "id": "q-fbe37562"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "radicals",
+   "A": "√3 × √27",
+   "B": "8",
+   "ans": "A",
+   "why": "The product rule for radicals says √a × √b = √(ab), so Quantity A is √81 = 9. Since 9 > 8, Quantity A is greater.",
+   "id": "q-c933f909"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-rules",
+   "A": "(3²)⁵",
+   "B": "3⁷",
+   "ans": "A",
+   "why": "A power raised to a power multiplies the exponents: (3²)⁵ = 3¹⁰, not 3⁷ — adding the exponents is the classic mistake. With the same base, 3¹⁰ > 3⁷. Quantity A is greater.",
+   "id": "q-0d634d66"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "sum-vs-product",
+   "A": "x + y",
+   "B": "xy",
+   "ctx": "x and y are positive numbers",
+   "ans": "D",
+   "why": "A sum and a product of positives can order either way, so sweep the domain. If x = y = 1, the sum 2 beats the product 1; if x = y = 3, the product 9 beats the sum 6; if x = y = 2, both equal 4. The comparison flips, so it cannot be determined.",
+   "id": "q-e589ae6a"
   }
  ]
 }

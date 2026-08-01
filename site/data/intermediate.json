@@ -1711,6 +1711,332 @@
    "ans": "A",
    "why": "Order of operations says division comes before subtraction unless parentheses change it. Quantity A is 18 − 2 = 16, but the parentheses in Quantity B force (18 − 6) first, giving 12 ÷ 3 = 4. Quantity A is greater.",
    "id": "q-733bae3f"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "synonym",
+   "a": "rapid",
+   "b": "swift",
+   "c": "silent",
+   "ch": [
+    "quiet",
+    "loud",
+    "gentle",
+    "invisible"
+   ],
+   "ans": 0,
+   "why": "Rapid and swift both mean fast, so the relationship is <em>synonym</em>. Silent means making no sound, and quiet means the same thing. 'Loud' is the trap — it is the opposite of silent, not a word with the same meaning.",
+   "id": "v-a344ea0a"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "part-whole",
+   "a": "branch",
+   "b": "tree",
+   "c": "fin",
+   "ch": [
+    "fish",
+    "water",
+    "swim",
+    "gill"
+   ],
+   "ans": 0,
+   "why": "A branch is a part of a tree, so the relationship is <em>part to whole</em> — a fin is a part of a fish. 'Gill' is the trap: it is another part of a fish, but the analogy needs the whole animal, not a second part. 'Water' is where a fish lives, and 'swim' is what a fin does.",
+   "id": "v-d5a557b8"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "young-adult",
+   "a": "kitten",
+   "b": "cat",
+   "c": "puppy",
+   "ch": [
+    "dog",
+    "wolf",
+    "kennel",
+    "bone"
+   ],
+   "ans": 0,
+   "why": "A kitten is a young cat, so the relationship is <em>young to adult</em> — a puppy grows into a dog. 'Wolf' is the trap: it is an adult animal in the dog family, but a puppy grows into a dog, not a wolf. A kennel is a dog's shelter, not the animal itself.",
+   "id": "v-4b22675c"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "shallow",
+   "b": "deep",
+   "c": "narrow",
+   "ch": [
+    "wide",
+    "slim",
+    "tight",
+    "long"
+   ],
+   "ans": 0,
+   "why": "Shallow and deep are opposites, so the relationship is <em>antonym</em> — the opposite of narrow is wide. 'Slim' is the trap: it means nearly the same as narrow, but the analogy demands the opposite. 'Tight' and 'long' describe size but are not opposites of narrow.",
+   "id": "v-ea383615"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "tool-user",
+   "a": "stethoscope",
+   "b": "doctor",
+   "c": "trowel",
+   "ch": [
+    "gardener",
+    "rake",
+    "soil",
+    "flower"
+   ],
+   "ans": 0,
+   "why": "A stethoscope is a tool used by a doctor, so the relationship is <em>tool to user</em>. A trowel — a small hand shovel — is used by a gardener. 'Rake' is the trap: it is another gardening tool, but the analogy needs the person who uses the tool, not a second tool.",
+   "id": "v-b9875136"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "intensity",
+   "a": "tap",
+   "b": "pound",
+   "c": "sip",
+   "ch": [
+    "gulp",
+    "drink",
+    "nibble",
+    "thirst"
+   ],
+   "ans": 0,
+   "why": "To tap is to hit lightly and to pound is to hit hard, so the relationship is <em>degree of intensity</em>. A sip is a tiny drink, and a gulp is a big, forceful one. 'Drink' is the trap: it names the same action but shows no increase in intensity.",
+   "id": "v-ca9e27e8"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "cause-effect",
+   "a": "collision",
+   "b": "dent",
+   "c": "joke",
+   "ch": [
+    "laughter",
+    "humor",
+    "comedian",
+    "silence"
+   ],
+   "ans": 0,
+   "why": "A collision (a crash) causes a dent, so the relationship is <em>cause to effect</em> — a joke causes laughter. 'Humor' is the trap: it is the quality inside a joke, not the result the joke produces. A comedian is the person who tells the joke.",
+   "id": "v-cefdf14d"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "worker-workplace",
+   "a": "actor",
+   "b": "stage",
+   "c": "scientist",
+   "ch": [
+    "laboratory",
+    "experiment",
+    "microscope",
+    "discovery"
+   ],
+   "ans": 0,
+   "why": "An actor works on a stage, so the relationship is <em>worker to workplace</em> — a scientist works in a laboratory. 'Experiment' is the trap: it is what a scientist does, not the place where the work happens. A microscope is a tool, not a workplace.",
+   "id": "v-5d7b5700"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "meager",
+   "b": "scanty",
+   "c": "ample",
+   "ch": [
+    "abundant",
+    "scarce",
+    "precious",
+    "average"
+   ],
+   "ans": 0,
+   "why": "Meager and scanty both mean very small in amount, so the relationship is <em>synonym</em>. Ample means more than enough, and abundant means the same — existing in great plenty. 'Scarce' is the trap: it is the opposite of ample, not a match for it.",
+   "id": "v-f29cf2f3"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "prohibit",
+   "b": "permit",
+   "c": "condemn",
+   "ch": [
+    "praise",
+    "criticize",
+    "forbid",
+    "judge"
+   ],
+   "ans": 0,
+   "why": "Prohibit (to forbid) and permit (to allow) are opposites, so the relationship is <em>antonym</em>. To condemn is to strongly disapprove of something, and its opposite is to praise. 'Criticize' is the trap: it means nearly the same as condemn, but the analogy demands the opposite.",
+   "id": "v-7d068e64"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "maker-product",
+   "a": "weaver",
+   "b": "tapestry",
+   "c": "blacksmith",
+   "ch": [
+    "horseshoe",
+    "anvil",
+    "forge",
+    "iron"
+   ],
+   "ans": 0,
+   "why": "A weaver makes a tapestry (a woven wall hanging), so the relationship is <em>maker to product</em> — a blacksmith makes horseshoes. 'Anvil' is the trap: it is the heavy block a blacksmith works on, a tool rather than a product. 'Forge' is the workplace and 'iron' is the material.",
+   "id": "v-3bd4eadb"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "tool-action",
+   "a": "loom",
+   "b": "weave",
+   "c": "plow",
+   "ch": [
+    "till",
+    "harvest",
+    "farmer",
+    "soil"
+   ],
+   "ans": 0,
+   "why": "A loom is the machine used to weave cloth, so the relationship is <em>tool to action</em>. A plow is used to till — to turn over and break up soil for planting. 'Harvest' is the trap: it is a farming action, but it is gathering crops, which a plow does not do.",
+   "id": "v-51f736b2"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-decimal",
+   "A": "0.7",
+   "B": "¾",
+   "ans": "B",
+   "why": "Convert to the same form: ¾ = 0.75. Since 0.75 > 0.7, Quantity B is greater.",
+   "id": "q-daaf2a66"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "perimeter",
+   "A": "the perimeter of a rectangle 12 by 3",
+   "B": "the perimeter of a square with side 7",
+   "ans": "A",
+   "why": "Perimeter adds all four sides: the rectangle gives 2 × (12 + 3) = 30, and the square gives 4 × 7 = 28. Since 30 > 28, Quantity A is greater.",
+   "id": "q-871ee3ad"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "percent-of-number",
+   "A": "25% of 60",
+   "B": "15",
+   "ans": "C",
+   "why": "25% means one quarter, and a quarter of 60 is 60 ÷ 4 = 15. Both quantities equal 15, so they are equal.",
+   "id": "q-c070fb3e"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "one-step-equation",
+   "A": "the solution of 3x = 24",
+   "B": "the solution of x − 2 = 9",
+   "ans": "B",
+   "why": "Undo each equation with one step: 3x = 24 gives x = 24 ÷ 3 = 8, and x − 2 = 9 gives x = 9 + 2 = 11. Since 11 > 8, Quantity B is greater.",
+   "id": "q-3e8be882"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "exponents",
+   "A": "2⁴",
+   "B": "4²",
+   "ans": "C",
+   "why": "Compute each power: 2⁴ = 2 × 2 × 2 × 2 = 16, and 4² = 16. The two quantities are equal — but be careful, swapping base and exponent does not usually give a match.",
+   "id": "q-5f04bd80"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "averages",
+   "A": "the average of 6, 11, and 16",
+   "B": "12",
+   "ans": "B",
+   "why": "The average is the sum divided by the count: (6 + 11 + 16) ÷ 3 = 33 ÷ 3 = 11. Since 11 < 12, Quantity B is greater.",
+   "id": "q-dc5d5b20"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "variable-exponent",
+   "A": "x²",
+   "B": "3x",
+   "ctx": "x is a whole number from 1 to 9",
+   "ans": "D",
+   "why": "Test values across the range: if x = 2, then x² = 4 is less than 3x = 6, but if x = 9, then x² = 81 is greater than 3x = 27. At x = 3 the two are equal. Because the comparison flips, it cannot be determined.",
+   "id": "q-be635f95"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "order-of-operations",
+   "A": "24 ÷ 4 + 2",
+   "B": "24 ÷ (4 + 2)",
+   "ans": "A",
+   "why": "Order of operations says divide before adding when there are no parentheses: 24 ÷ 4 + 2 = 6 + 2 = 8. With parentheses, 24 ÷ (4 + 2) = 24 ÷ 6 = 4. Since 8 > 4, Quantity A is greater.",
+   "id": "q-3f41940c"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "number-patterns",
+   "A": "the sum of the first five even numbers",
+   "B": "28",
+   "ans": "A",
+   "why": "Pair the ends instead of adding one by one: 2 + 4 + 6 + 8 + 10 pairs into (2 + 10) + (4 + 8) + 6 = 12 + 12 + 6 = 30. Since 30 > 28, Quantity A is greater.",
+   "id": "q-25133674"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "negatives-exponents",
+   "A": "(−3)²",
+   "B": "−3²",
+   "ans": "A",
+   "why": "Parentheses decide what gets squared: (−3)² squares the whole number, giving 9, while −3² squares only the 3 and then applies the minus sign, giving −9. Since 9 > −9, Quantity A is greater.",
+   "id": "q-ae3c0579"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "primes",
+   "A": "the number of prime numbers less than 10",
+   "B": "5",
+   "ans": "B",
+   "why": "A prime has exactly two factors, itself and 1. The primes below 10 are 2, 3, 5, and 7 — remember that 1 is not prime — so there are 4 of them. Since 4 < 5, Quantity B is greater.",
+   "id": "q-4270d0cb"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-growth",
+   "A": "n²",
+   "B": "2ⁿ",
+   "ctx": "n is a whole number greater than 1",
+   "ans": "D",
+   "why": "Squaring and doubling-repeatedly grow at different speeds, so test values: n = 2 gives 4 = 4, n = 3 gives 9 > 8, but n = 5 gives 25 < 32. The comparison flips across the domain, so it cannot be determined.",
+   "id": "q-a02ad622"
   }
  ]
 }
