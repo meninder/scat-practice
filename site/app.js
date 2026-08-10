@@ -20,7 +20,14 @@ function loadState(kid){
     const raw = localStorage.getItem(storeKey(kid.id));
     // No migration layer (see HANDOFF): default-merge so a returning user whose stored
     // state predates a new field never hits an undefined in finish().
-    if(raw) return {...defaults(), ...JSON.parse(raw)};
+    if(raw){
+      const st = {...defaults(), ...JSON.parse(raw)};
+      // Pre-idempotency leftovers: these have been re-POSTed on every sitting since they
+      // were queued (that's the duplicate-email/duplicate-row bug) and the server can't
+      // dedupe them. They're near-certainly delivered — drop them instead of replaying.
+      st.pending = (st.pending || []).filter(p => p && p.postId);
+      return st;
+    }
   }catch(e){}
   return defaults();
 }
@@ -322,20 +329,27 @@ function renderReview(){
 }
 
 // ---------- webhook with offline retry ----------
+// Every payload carries a stable `postId`. A post can reach the server and still look
+// failed here (the Apps Script 302 hop, a dropped connection, a rate-limited {ok:false}),
+// so retries are unavoidable — Code.gs dedupes on postId so a replay costs nothing
+// instead of sending the parent a second email and appending a second Sheet row.
+const MAX_TRIES = 6;
 async function postResult(payload){
-  S.pending.push(payload); saveState();
+  S.pending.push({...payload, postId: `${KID.id}-${payload.ts}`, tries: 0});
+  saveState();
   await flushPending();
 }
 async function flushPending(){
   if(!CONFIG.webhookUrl.startsWith("http") || !S.pending.length) return;
   const remaining = [];
   for(const p of S.pending){
+    if((p.tries || 0) >= MAX_TRIES) continue;   // give up rather than replay forever
     try{
       const r = await fetch(CONFIG.webhookUrl, {method: "POST",
         headers: {"Content-Type": "text/plain;charset=utf-8"}, body: JSON.stringify(p)});
       const j = await r.json().catch(() => ({ok: true}));   // unreadable body → assume delivered, don't loop forever
-      if(!r.ok || j.ok === false) remaining.push(p);
-    }catch(e){ remaining.push(p); }
+      if(!r.ok || j.ok === false) remaining.push({...p, tries: (p.tries || 0) + 1});
+    }catch(e){ remaining.push({...p, tries: (p.tries || 0) + 1}); }
   }
   S.pending = remaining; saveState();
 }
