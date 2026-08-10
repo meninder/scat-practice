@@ -40,17 +40,19 @@ None of the above blocks the kids using the site today.
 
 4. **The webhook always returns HTTP 200.** `Code.gs` signals failure via a JSON body `{ok:false}`, not an HTTP error code. `app.js` `flushPending` checks the body, not just the status — don't "simplify" it back to `if(!r.ok)` or failed posts (bad token, rate-limited) get silently dropped.
 
-5. **Apps Script needs a *new version* deploy to take code changes.** Editing `Code.gs` in the editor isn't enough. Deploy → Manage deployments → pencil → Version: New version → Deploy. The `/exec` URL stays the same.
+5. **Webhook posts are retried, so they must stay idempotent.** A post can reach Apps Script and still look failed to the browser (the `/exec` 302 hop, a dropped connection, a rate-limited `{ok:false}`), so `flushPending` re-sends it. Every payload carries a stable `postId` (`<kidId>-<ts>`) and `Code.gs::alreadyHandled` short-circuits repeats *before* the rate counter, the Sheet append, and the email. Without that, one sitting re-emails the parent and re-logs a row on every later sitting — the bug that filled the Sheet with redundant rows. Don't drop `postId` from the payload, don't move the dedupe check below `logToSheet`, and keep the client's `MAX_TRIES` cap so a genuinely undeliverable post eventually stops.
 
-6. **Python is uv-only.** `uv run …`, `uv add …`. No pip, no conda.
+6. **Apps Script needs a *new version* deploy to take code changes.** Editing `Code.gs` in the editor isn't enough. Deploy → Manage deployments → pencil → Version: New version → Deploy. The `/exec` URL stays the same.
 
-7. **The generation API calls must stream.** The Anthropic SDK requires streaming for long requests at the `max_tokens` used here. `generate.py`/`independent_check.py` use `client.messages.stream(...)`. Don't switch them back to `messages.create()` or the Action fails with a streaming-required error.
+7. **Python is uv-only.** `uv run …`, `uv add …`. No pip, no conda.
 
-8. **Item IDs are content hashes.** `id = "<t>-" + sha256(normalized stem)[:8]` (`audit_bank.py::item_id`). This is how dedupe and seen/review tracking work. Changing a question's stem changes its ID (and resets its seen/review state); changing only its explanation does not.
+8. **The generation API calls must stream.** The Anthropic SDK requires streaming for long requests at the `max_tokens` used here. `generate.py`/`independent_check.py` use `client.messages.stream(...)`. Don't switch them back to `messages.create()` or the Action fails with a streaming-required error.
 
-9. **`localStorage` state has no migration layer.** `loadState` returns the parsed object as-is. If you add a new field to the state shape, either bump the store-key version (`scat_<id>_v1` → `_v2`, which resets kids' history) or add default-merging to `loadState`, or a returning user's `finish()` can hit an undefined field.
+9. **Item IDs are content hashes.** `id = "<t>-" + sha256(normalized stem)[:8]` (`audit_bank.py::item_id`). This is how dedupe and seen/review tracking work. Changing a question's stem changes its ID (and resets its seen/review state); changing only its explanation does not.
 
-10. **The bank is the source of difficulty, not the code.** "Too hard / too easy" is almost always a content problem (tier tagging or item quality), fixed by editing `site/data/*.json` per the authoring spec — not by touching `calibration.js`.
+10. **`localStorage` state has no migration layer.** `loadState` returns the parsed object as-is. If you add a new field to the state shape, either bump the store-key version (`scat_<id>_v1` → `_v2`, which resets kids' history) or add default-merging to `loadState`, or a returning user's `finish()` can hit an undefined field.
+
+11. **The bank is the source of difficulty, not the code.** "Too hard / too easy" is almost always a content problem (tier tagging or item quality), fixed by editing `site/data/*.json` per the authoring spec — not by touching `calibration.js`.
 
 ---
 
@@ -78,6 +80,9 @@ gh workflow run generate.yml -f level=intermediate -f 'needs=[{"strand":"v","tie
 gh run watch $(gh run list --workflow=generate.yml -L1 --json databaseId --jq '.[0].databaseId')
 ```
 Requires the `ANTHROPIC_API_KEY` repo secret. The Action authors → blind-verifies → audits → commits only survivors, then Pages redeploys.
+
+### Clean duplicate rows out of the SCAT Log sheet
+In the Apps Script editor, pick `previewSheetDuplicates` from the function dropdown and Run — it only reports (check Execution log). If the count looks right, run `dedupeSheetLog` to delete them. It keeps the first row of each identical (When, Kid, Total, Seconds) group; two real sittings can't share a millisecond timestamp.
 
 ### Re-run the automated tests
 ```bash
