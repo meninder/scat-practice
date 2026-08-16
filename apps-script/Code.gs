@@ -19,7 +19,7 @@ function doPost(e){
   // already handled — so without this one sitting can email the parent and append a
   // Sheet row several times over. Must run before the rate counter: a replay is not
   // new work and shouldn't spend the budget. ok:true so the client stops retrying.
-  if(alreadyHandled(data.postId)) return out({ok: true, duplicate: true});
+  if(alreadyHandled(sittingKey(data))) return out({ok: true, duplicate: true});
 
   var cache = CacheService.getScriptCache();
   var posts = Number(cache.get("posts") || 0) + 1;
@@ -33,10 +33,21 @@ function doPost(e){
   return out({ok: true, dispatched: dispatched});
 }
 
-// True if this postId was handled before. First sighting records it and returns false.
+// Identity of a sitting, derived from fields every client version has always sent: ts is
+// stamped once in finish() and rides along unchanged through every retry, and no two
+// sittings by one kid share a millisecond. Deliberately NOT dependent on the newer
+// postId — keying on that alone let pre-fix queue items (which have none) replay forever
+// from any browser still running old app.js. postId is honoured when present.
+function sittingKey(d){
+  if(d.postId) return String(d.postId);
+  const who = d.kidId || d.kid, when = d.ts;
+  return who && when ? who + "-" + when : "";
+}
+
+// True if this sitting was handled before. First sighting records it and returns false.
 // Cache is the fast path; Script Properties is the durable one (cache entries expire and
-// a kid can re-open the app days later with a stuck queue item). Undated posts from an
-// older client can't be deduped — let them through rather than swallow a real sitting.
+// a kid can re-open the app days later with a stuck queue item). A payload with no usable
+// key at all is let through rather than swallowing a real sitting.
 const SEEN_KEEP = 300;
 function alreadyHandled(postId){
   if(!postId) return false;
