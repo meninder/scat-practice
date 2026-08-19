@@ -5,6 +5,17 @@
 //   GH_REPO     — e.g. "meninder/scat-practice"
 const PARENT_EMAIL = "meninder.purewal@gmail.com";
 const CC_EMAIL = "psjaiswal@gmail.com";
+// Each kid is cc'd on their own sitting only — never on a sibling's. Keyed by kidId from
+// config.js, with the display name as a fallback for older payloads. The parent test
+// profile has no entry on purpose: those sittings stay between the two parents.
+const KID_EMAIL = {
+  krish: "krish.purewal@gmail.com",
+  arya:  "arya.purewal@gmail.com",
+  kira:  "kira.purewal@gmail.com"
+};
+function kidEmail(d){
+  return KID_EMAIL[d.kidId] || KID_EMAIL[String(d.kid || "").toLowerCase()] || "";
+}
 const TOPUP_TO = 26;   // regeneration tops each low strand-tier up to this many items
 
 function prop(k){ return PropertiesService.getScriptProperties().getProperty(k); }
@@ -158,8 +169,9 @@ function sendEmail(d){
     });
   }
   if((d.lowTiers || []).length) body += "\n(Question bank running low for " + d.kid + " — new questions are being generated automatically.)\n";
+  const cc = [CC_EMAIL, kidEmail(d)].filter(String).join(",");
   MailApp.sendEmail(PARENT_EMAIL, "SCAT: " + d.kid + " " + (d.v + d.q) + "/16" +
-    (d.leveledUp && d.leveledUp.length ? " · leveled up 🔥" : ""), body, {cc: CC_EMAIL});
+    (d.leveledUp && d.leveledUp.length ? " · leveled up 🔥" : ""), body, {cc: cc});
 }
 
 function triggerGeneration(d){
