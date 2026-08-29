@@ -2037,6 +2037,16 @@
    "ans": "D",
    "why": "Squaring and doubling-repeatedly grow at different speeds, so test values: n = 2 gives 4 = 4, n = 3 gives 9 > 8, but n = 5 gives 25 < 32. The comparison flips across the domain, so it cannot be determined.",
    "id": "q-a02ad622"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "counting-factors",
+   "A": "the number of factors of 36",
+   "B": "the number of factors of 100",
+   "ans": "C",
+   "why": "How many factors a number has depends only on the exponents in its prime factorization: 36 = 2² × 3² and 100 = 2² × 5², so both have the same pattern. Each gives (2 + 1) × (2 + 1) = 9 factors. You never need to list them — the two quantities are equal.",
+   "id": "q-f87e0c3d"
   }
  ]
 }
