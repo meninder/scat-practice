@@ -79,7 +79,7 @@ None of the above blocks the kids using the site today.
 gh workflow run generate.yml -f level=intermediate -f 'needs=[{"strand":"v","tier":2,"count":4},{"strand":"q","tier":2,"count":4}]'
 gh run watch $(gh run list --workflow=generate.yml -L1 --json databaseId --jq '.[0].databaseId')
 ```
-Requires the `ANTHROPIC_API_KEY` repo secret. The Action authors → blind-verifies → audits → commits only survivors, then Pages redeploys.
+Requires the `ANTHROPIC_API_KEY` repo secret — it must be a **workspace-scoped** key, not an identity-linked one (see Secrets below). The Action authors → blind-verifies → audits → commits only survivors, then Pages redeploys.
 
 ### Clean duplicate rows out of the SCAT Log sheet
 In the Apps Script editor, pick `previewSheetDuplicates` from the function dropdown and Run — it only reports (check Execution log). If the count looks right, run `dedupeSheetLog` to delete them. It keeps the first row of each identical (When, Kid, Total, Seconds) group; two real sittings can't share a millisecond timestamp.
@@ -92,7 +92,14 @@ uv run pytest -q && node --test tests/calibration.test.mjs
 ### Where the external pieces live
 - **Apps Script project** (the webhook): script.google.com, under the parent's Google account. Source of truth is `apps-script/Code.gs`; the deployed copy must be re-pasted + re-versioned when that file changes.
 - **SCAT Log sheet:** a Google Sheet in the parent's Drive; its ID is in the Apps Script `SHEET_ID` property.
-- **Secrets:** `ANTHROPIC_API_KEY` → GitHub repo secret. `SCAT_TOKEN`, `SHEET_ID`, `GH_PAT`, `GH_REPO` → Apps Script Script Properties. None are in the repo.
+- **Secrets:** `ANTHROPIC_API_KEY` → GitHub repo secret. **Create it workspace-scoped, not identity-linked:** identity-linked keys need an `anthropic-workspace-id` header on every request, which the bare `anthropic.Anthropic()` in `tools/generate/` does not send, so they fail with `400 ... anthropic-workspace-id is required` — a 400, not a 401, so the key looks broken when it is only the wrong type. Setting `ANTHROPIC_WORKSPACE_ID` does not help (the SDK reads it only on the workload-identity-federation path).
+  `SCAT_TOKEN`, `SHEET_ID`, `GH_PAT`, `GH_REPO` → Apps Script Script Properties. None are in the repo.
+
+  Verify a new key before installing it:
+  ```bash
+  ANTHROPIC_API_KEY='<new key>' uv run python -c "import anthropic; print(anthropic.Anthropic().models.list().data[0].id)"
+  gh secret set ANTHROPIC_API_KEY --repo meninder/scat-practice
+  ```
 
 ---
 
