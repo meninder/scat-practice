@@ -1955,6 +1955,315 @@
    "ans": "D",
    "why": "A sum and a product of positives can order either way, so sweep the domain. If x = y = 1, the sum 2 beats the product 1; if x = y = 3, the product 9 beats the sum 6; if x = y = 2, both equal 4. The comparison flips, so it cannot be determined.",
    "id": "q-e589ae6a"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "antonym",
+   "a": "hostile",
+   "b": "friendly",
+   "c": "ancient",
+   "ch": [
+    "modern",
+    "old",
+    "historic",
+    "crumbling"
+   ],
+   "ans": 0,
+   "why": "Hostile means unfriendly, so the first pair are antonyms — opposites. The opposite of ancient (very old) is modern. 'Old' is the trap: it is a synonym of ancient, but the relationship demands an opposite.",
+   "id": "v-0a47f650"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "part-whole",
+   "a": "key",
+   "b": "keyboard",
+   "c": "rung",
+   "ch": [
+    "ladder",
+    "step",
+    "climb",
+    "rope"
+   ],
+   "ans": 0,
+   "why": "A key is one part of a whole keyboard, and a rung is one of the crossbars that makes up a ladder. The relationship is part to whole. 'Step' is the trap: it is nearly a synonym of rung, but the answer must be the whole object.",
+   "id": "v-a93fae7f"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "tool-action",
+   "a": "oar",
+   "b": "row",
+   "c": "scissors",
+   "ch": [
+    "cut",
+    "blade",
+    "sharpen",
+    "paper"
+   ],
+   "ans": 0,
+   "why": "An oar is the tool you use to row, and scissors are the tool you use to cut. The relationship is tool to action. 'Blade' is the trap — it is a part of the scissors, not the action the scissors perform.",
+   "id": "v-da778617"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "animal-home",
+   "a": "spider",
+   "b": "web",
+   "c": "bird",
+   "ch": [
+    "nest",
+    "tree",
+    "egg",
+    "flock"
+   ],
+   "ans": 0,
+   "why": "A spider builds and lives in a web, and a bird builds and lives in a nest. The relationship is animal to its home. 'Tree' is the trap: a nest may sit in a tree, but the tree is not the home the bird builds.",
+   "id": "v-4c4912a0"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "intensity",
+   "a": "drizzle",
+   "b": "downpour",
+   "c": "breeze",
+   "ch": [
+    "gale",
+    "wind",
+    "calm",
+    "cloud"
+   ],
+   "ans": 0,
+   "why": "A drizzle is light rain and a downpour is very heavy rain, so the pair moves from mild to extreme. A gale is a very strong wind, matching the same jump in intensity from a gentle breeze. 'Wind' is the trap — it names the general category, not a stronger degree.",
+   "id": "v-b8e85da9"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "worker-workplace",
+   "a": "surgeon",
+   "b": "operating room",
+   "c": "pilot",
+   "ch": [
+    "cockpit",
+    "airplane",
+    "runway",
+    "altitude"
+   ],
+   "ans": 0,
+   "why": "A surgeon does their work in an operating room, and a pilot does their work in a cockpit. The relationship is worker to workplace. 'Airplane' is the trap: the pilot flies the whole plane, but the specific place they sit and work is the cockpit.",
+   "id": "v-f5ddfcd8"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "synonym",
+   "a": "reluctant",
+   "b": "hesitant",
+   "c": "adjacent",
+   "ch": [
+    "neighboring",
+    "connected",
+    "distant",
+    "similar"
+   ],
+   "ans": 0,
+   "why": "Reluctant and hesitant both mean unwilling or slow to act, so the pair are synonyms. Adjacent means right next to something, and its synonym is neighboring. 'Connected' is the trap — adjacent things sit beside each other but do not have to be joined.",
+   "id": "v-1c2ce213"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "synonym",
+   "a": "acrimonious",
+   "b": "bitter",
+   "c": "clandestine",
+   "ch": [
+    "secret",
+    "criminal",
+    "open",
+    "nocturnal"
+   ],
+   "ans": 0,
+   "why": "Acrimonious means bitter or sharp in tone, so the first pair are synonyms. Clandestine means done in secret, so its synonym is secret. 'Criminal' is the trap — clandestine acts are hidden but not necessarily against the law.",
+   "id": "v-e2273169"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "antonym",
+   "a": "dearth",
+   "b": "abundance",
+   "c": "brevity",
+   "ch": [
+    "verbosity",
+    "shortness",
+    "silence",
+    "clarity"
+   ],
+   "ans": 0,
+   "why": "A dearth is a serious lack, and an abundance is a plentiful supply, so the pair are antonyms. Brevity means shortness in speech or writing; its opposite is verbosity, meaning wordiness. 'Shortness' is the trap — it is a synonym of brevity, but the relationship demands an opposite.",
+   "id": "v-f1cfa99f"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "cause-effect",
+   "a": "embargo",
+   "b": "shortage",
+   "c": "vaccination",
+   "ch": [
+    "immunity",
+    "disease",
+    "needle",
+    "hospital"
+   ],
+   "ans": 0,
+   "why": "An embargo (an official ban on trade) causes a shortage, and a vaccination causes immunity — the body's protection against a disease. The relationship is cause to effect. 'Disease' is the trap: it is what a vaccination prevents, the reverse of its effect.",
+   "id": "v-49805a53"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "instrument-measures",
+   "a": "odometer",
+   "b": "distance",
+   "c": "hygrometer",
+   "ch": [
+    "humidity",
+    "temperature",
+    "weight",
+    "rainfall"
+   ],
+   "ans": 0,
+   "why": "An odometer measures the distance a vehicle has traveled, and a hygrometer measures humidity — the amount of moisture in the air. The relationship is instrument to what it measures. 'Temperature' is the trap: it is weather-related, but it is measured by a thermometer, not a hygrometer.",
+   "id": "v-ea5fd11a"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "absolute-value",
+   "A": "|−4| × |−6|",
+   "B": "|−4 × 6|",
+   "ans": "C",
+   "why": "The absolute value of a product equals the product of the absolute values: |−4| × |−6| = 4 × 6 = 24, and |−4 × 6| = |−24| = 24. Both sides are 24, so the two quantities are equal.",
+   "id": "q-d0d20efc"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "exponents",
+   "A": "3⁴",
+   "B": "4³",
+   "ans": "A",
+   "why": "Compute each power: 3⁴ = 81 while 4³ = 64. Swapping the base and the exponent changes the value. Quantity A is greater.",
+   "id": "q-42210bb5"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "percent-change",
+   "A": "60 decreased by 10%",
+   "B": "55",
+   "ans": "B",
+   "why": "Decreasing by 10% means keeping 90%: 90% of 60 is 54. Since 54 < 55, Quantity B is greater.",
+   "id": "q-eeb76041"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "averages",
+   "A": "the average of 7, 14, and 21",
+   "B": "13",
+   "ans": "A",
+   "why": "The numbers are evenly spaced, so their average is the middle number: (7 + 14 + 21) ÷ 3 = 14. Since 14 > 13, Quantity A is greater.",
+   "id": "q-49ebbea3"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "difference-of-squares",
+   "A": "71 × 69",
+   "B": "4900",
+   "ans": "B",
+   "why": "Use the <em>difference of squares</em>: 71 × 69 = (70 + 1)(70 − 1) = 70² − 1 = 4899. That is one less than 4900, so Quantity B is greater.",
+   "id": "q-3381ba70"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "factorials",
+   "A": "6! ÷ 4!",
+   "B": "5² + 5",
+   "ans": "C",
+   "why": "Factorial ratios cancel: 6! ÷ 4! = 6 × 5 = 30. Quantity B is 25 + 5 = 30. The two quantities are equal.",
+   "id": "q-d2b75f9a"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "slope",
+   "A": "the slope of the line through (0, 1) and (2, 8)",
+   "B": "3",
+   "ans": "A",
+   "why": "Slope is rise over run: (8 − 1) ÷ (2 − 0) = 7 ÷ 2 = 3.5. Since 3.5 > 3, Quantity A is greater.",
+   "id": "q-97ba9e81"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "odd-powers",
+   "A": "x³",
+   "B": "x",
+   "ctx": "x is a real number",
+   "ans": "D",
+   "why": "An odd power keeps the sign but changes the size, so the comparison flips: if x = 2 then x³ = 8 > x, but if x = ½ then x³ = ⅛ < x, and if x = 1 the two are equal. Since the winner depends on x, the answer cannot be determined.",
+   "id": "q-d956c187"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "radicals",
+   "A": "(√5)⁴",
+   "B": "20",
+   "ans": "A",
+   "why": "Squaring a square root removes it: (√5)⁴ = (√5 × √5)² = 5² = 25. Since 25 > 20, Quantity A is greater.",
+   "id": "q-b7867513"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "exponent-rules",
+   "A": "4¹⁰",
+   "B": "2²¹",
+   "ans": "B",
+   "why": "Rewrite with a common base: 4¹⁰ = (2²)¹⁰ = 2²⁰. Since 2²⁰ < 2²¹, Quantity B is greater — no giant numbers needed.",
+   "id": "q-0b6704ae"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "fraction-powers",
+   "A": "(⅔)³",
+   "B": "⅔ × ⅔",
+   "ans": "B",
+   "why": "Multiplying by an extra factor below 1 shrinks a number, so the cube must be smaller than the square: (⅔)³ = 8⁄27 while ⅔ × ⅔ = 4⁄9 = 12⁄27. Quantity B is greater.",
+   "id": "q-124fe771"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "squares-vs-absolute-value",
+   "A": "|x|",
+   "B": "x²",
+   "ctx": "x is a real number",
+   "ans": "D",
+   "why": "Test values across the whole domain: if x = 2 then x² = 4 beats |x| = 2, but if x = ½ then x² = ¼ loses to |x| = ½, and at x = 1 they are equal. The winner flips depending on x, so it cannot be determined.",
+   "id": "q-828f856b"
   }
  ]
 }

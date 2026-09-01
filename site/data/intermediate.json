@@ -2047,6 +2047,332 @@
    "ans": "C",
    "why": "How many factors a number has depends only on the exponents in its prime factorization: 36 = 2² × 3² and 100 = 2² × 5², so both have the same pattern. Each gives (2 + 1) × (2 + 1) = 9 factors. You never need to list them — the two quantities are equal.",
    "id": "q-f87e0c3d"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "synonym",
+   "a": "moist",
+   "b": "damp",
+   "c": "enormous",
+   "ch": [
+    "huge",
+    "tiny",
+    "heavy",
+    "tall"
+   ],
+   "ans": 0,
+   "why": "Moist and damp both mean slightly wet, so the relationship is Synonym — words with the same meaning. Enormous means extremely large, and its synonym is huge. 'Tiny' is the trap: it is about size but is the opposite of enormous, not its match.",
+   "id": "v-716ea3aa"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "part-whole",
+   "a": "sleeve",
+   "b": "shirt",
+   "c": "brim",
+   "ch": [
+    "hat",
+    "coat",
+    "head",
+    "feather"
+   ],
+   "ans": 0,
+   "why": "A sleeve is one part of a shirt, so the relationship is Part to whole. The brim is the flat edge that sticks out around a hat, so the whole it belongs to is a hat. 'Head' is the trap — a brim sits near your head, but a head is not the thing a brim is part of.",
+   "id": "v-4ab41dc1"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "animal-home",
+   "a": "chicken",
+   "b": "coop",
+   "c": "dog",
+   "ch": [
+    "kennel",
+    "leash",
+    "bone",
+    "puppy"
+   ],
+   "ans": 0,
+   "why": "A coop is the small shelter where a chicken lives, so the relationship is Animal to its home. A dog's home is a kennel. 'Leash' is the trap: it belongs to the dog topic but is a piece of equipment, not a place to live.",
+   "id": "v-e05af808"
+  },
+  {
+   "t": "v",
+   "d": 1,
+   "skill": "young-adult",
+   "a": "gosling",
+   "b": "goose",
+   "c": "lamb",
+   "ch": [
+    "sheep",
+    "wool",
+    "goat",
+    "flock"
+   ],
+   "ans": 0,
+   "why": "A gosling is a baby goose, so the relationship is Young to adult. A lamb grows up to be a sheep. 'Wool' is the trap — it comes from a sheep, but it is a product, not the adult animal.",
+   "id": "v-980b1af7"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "antonym",
+   "a": "abundant",
+   "b": "scarce",
+   "c": "complex",
+   "ch": [
+    "simple",
+    "complicated",
+    "confusing",
+    "large"
+   ],
+   "ans": 0,
+   "why": "Abundant means existing in large amounts and scarce means in short supply, so the relationship is Antonym — opposites. The opposite of complex, meaning made of many connected parts, is simple. 'Complicated' is the trap: it means the same as complex, but the relationship demands its opposite.",
+   "id": "v-c028a183"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "cause-effect",
+   "a": "lightning",
+   "b": "thunder",
+   "c": "wound",
+   "ch": [
+    "scar",
+    "injury",
+    "bandage",
+    "doctor"
+   ],
+   "ans": 0,
+   "why": "Lightning causes the thunder we hear, so the relationship is Cause to effect. A wound leaves behind a scar. 'Injury' is the trap — it is a synonym for wound itself, not something the wound causes.",
+   "id": "v-96b6b3cb"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "tool-action",
+   "a": "shovel",
+   "b": "dig",
+   "c": "sieve",
+   "ch": [
+    "sift",
+    "flour",
+    "stir",
+    "kitchen"
+   ],
+   "ans": 0,
+   "why": "A shovel is the tool used to dig, so the relationship is Tool to action. A sieve — a mesh strainer — is used to sift, meaning to separate fine particles from coarse ones. 'Flour' is the trap: it is something you sift, not the action the tool performs.",
+   "id": "v-965065d0"
+  },
+  {
+   "t": "v",
+   "d": 2,
+   "skill": "worker-workplace",
+   "a": "sailor",
+   "b": "ship",
+   "c": "miner",
+   "ch": [
+    "mine",
+    "coal",
+    "pickaxe",
+    "cave"
+   ],
+   "ans": 0,
+   "why": "A sailor works aboard a ship, so the relationship is Worker to workplace. A miner works in a mine. 'Coal' is the trap — it is what a miner digs up, a product rather than a place.",
+   "id": "v-e0c8e2bb"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "intensity",
+   "a": "glance",
+   "b": "stare",
+   "c": "mishap",
+   "ch": [
+    "catastrophe",
+    "accident",
+    "luck",
+    "error"
+   ],
+   "ans": 0,
+   "why": "A glance is a quick look and a stare is a long, intense one, so the relationship is Degree of intensity — the second word is a much stronger version of the first. A mishap is a small accident, and its extreme version is a catastrophe, a terrible disaster. 'Accident' is the trap: it restates mishap at the same strength instead of intensifying it.",
+   "id": "v-b241cd58"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "maker-product",
+   "a": "journalist",
+   "b": "article",
+   "c": "potter",
+   "ch": [
+    "vase",
+    "clay",
+    "kiln",
+    "wheel"
+   ],
+   "ans": 0,
+   "why": "A journalist writes articles, so the relationship is Maker to product. A potter — someone who shapes objects from clay — makes vases. 'Clay' is the trap: it is the potter's material, not the finished product.",
+   "id": "v-8290581b"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "object-material",
+   "a": "anchor",
+   "b": "iron",
+   "c": "sail",
+   "ch": [
+    "canvas",
+    "mast",
+    "wind",
+    "rope"
+   ],
+   "ans": 0,
+   "why": "An anchor is made of iron, so the relationship is Object to material. A sail is made of canvas, a strong woven cloth. 'Mast' is the trap — it belongs on the same ship, but it is a neighboring part, not what a sail is made of.",
+   "id": "v-58822abd"
+  },
+  {
+   "t": "v",
+   "d": 3,
+   "skill": "category-member",
+   "a": "grain",
+   "b": "barley",
+   "c": "fabric",
+   "ch": [
+    "linen",
+    "thread",
+    "clothing",
+    "seam"
+   ],
+   "ans": 0,
+   "why": "Barley is one member of the category grain, so the relationship is Category to member. Linen — a light cloth woven from the flax plant — is a member of the category fabric. 'Thread' is the trap: fabric is made from thread, so it is a component, not a type of fabric.",
+   "id": "v-80bfaa10"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "fraction-decimal",
+   "A": "⅚",
+   "B": "0.8",
+   "ans": "A",
+   "why": "Comparing a fraction to a decimal is easiest when both are decimals: ⅚ = 0.8333…, while 0.8 = ⅘. Since 0.8333… > 0.8, Quantity A is greater.",
+   "id": "q-fa6e6b1e"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "perimeter",
+   "A": "the perimeter of a square with side 8",
+   "B": "the perimeter of a rectangle 11 by 6",
+   "ans": "B",
+   "why": "Perimeter adds all four sides: the square gives 4 × 8 = 32, while the rectangle gives 2 × (11 + 6) = 34. Quantity B is greater.",
+   "id": "q-2a8ca648"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "percent",
+   "A": "30% of 50",
+   "B": "50% of 30",
+   "ans": "C",
+   "why": "a% of b always equals b% of a, because both equal (a × b) ÷ 100. Here both come to 15, so the two quantities are equal — no need to compute twice.",
+   "id": "q-d898b5d7"
+  },
+  {
+   "t": "q",
+   "d": 1,
+   "skill": "one-step-equation",
+   "A": "the solution of x + 7 = 15",
+   "B": "the solution of 2x = 14",
+   "ans": "A",
+   "why": "Solve each one-step equation: x + 7 = 15 gives x = 8, and 2x = 14 gives x = 7. Since 8 > 7, Quantity A is greater.",
+   "id": "q-ab9b1c87"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "exponents",
+   "A": "2⁷",
+   "B": "7²",
+   "ans": "A",
+   "why": "The exponent tells you how many times to multiply the base: 2⁷ = 128 doubles seven times, while 7² = 49. Repeated doubling grows much faster than squaring a small number. Quantity A is greater.",
+   "id": "q-380fd5bc"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "averages",
+   "A": "the average of 5, 9, and 13",
+   "B": "the average of 7 and 11",
+   "ans": "C",
+   "why": "The numbers 5, 9, 13 are evenly spaced, so their average is the middle value, 9. Likewise 7 and 11 balance evenly around 9. Spotting the symmetry beats adding — the two quantities are equal.",
+   "id": "q-86e62f5e"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "order-of-operations",
+   "A": "5 + 3 × 4",
+   "B": "5 × 3 + 4",
+   "ans": "B",
+   "why": "Multiplication comes before addition: 5 + 3 × 4 = 5 + 12 = 17, while 5 × 3 + 4 = 15 + 4 = 19. Quantity B is greater.",
+   "id": "q-3f612e95"
+  },
+  {
+   "t": "q",
+   "d": 2,
+   "skill": "area-perimeter",
+   "A": "the area of the rectangle",
+   "B": "30",
+   "ctx": "A rectangle has a perimeter of 24",
+   "ans": "D",
+   "why": "A perimeter of 24 fixes the sum of the two side lengths (12) but not the sides themselves. A 6 × 6 rectangle has area 36, which is more than 30, but a 2 × 10 rectangle has area 20, which is less. The comparison flips, so it cannot be determined.",
+   "id": "q-bb8fcdf7"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "difference-of-squares",
+   "A": "29 × 31",
+   "B": "30 × 30",
+   "ans": "B",
+   "why": "Difference of squares: 29 × 31 = (30 − 1)(30 + 1) = 30² − 1 = 899. That is exactly 1 less than 900, so Quantity B is greater — no long multiplication needed.",
+   "id": "q-64b86fa0"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "even-odd-powers",
+   "A": "(−1)⁹⁹",
+   "B": "(−1)¹⁰⁰",
+   "ans": "B",
+   "why": "An odd power of a negative number stays negative, while an even power turns positive. So (−1)⁹⁹ = −1 and (−1)¹⁰⁰ = 1. Quantity B is greater.",
+   "id": "q-b895ae4c"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "factors",
+   "A": "the number of factors of 30",
+   "B": "the number of factors of 25",
+   "ans": "A",
+   "why": "30 = 2 × 3 × 5 has 8 factors (1, 2, 3, 5, 6, 10, 15, 30), while 25 = 5² has only 3 (1, 5, 25). A product of several different primes piles up factors; a square of one prime has very few. Quantity A is greater.",
+   "id": "q-a68c9ff4"
+  },
+  {
+   "t": "q",
+   "d": 3,
+   "skill": "sign-behavior",
+   "A": "x²",
+   "B": "−x",
+   "ctx": "x is a negative number",
+   "ans": "D",
+   "why": "Since x is negative, −x is positive, so test values. If x = −2, then x² = 4 beats −x = 2; if x = −½, then x² = ¼ loses to ½; if x = −1 they tie. The answer flips across the domain, so it cannot be determined.",
+   "id": "q-1d860632"
   }
  ]
 }
